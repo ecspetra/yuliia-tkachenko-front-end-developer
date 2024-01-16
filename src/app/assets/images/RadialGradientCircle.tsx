@@ -1,9 +1,32 @@
-const RadialGradientCircle = () => {
+import { FC } from 'react'
+
+interface PropsType {
+	color: string
+	size?: number
+	className?: string
+}
+
+const RadialGradientCircle: FC<PropsType> = ({
+	color,
+	size = 800,
+	className,
+}) => {
+	if (!color || !size) return null
+
+	const gradientId = `grad-${color}-${size}-${Math.random()
+		.toString(36)
+		.substr(2, 9)}`
+
 	return (
-		<svg width='800' height='800' xmlns='http://www.w3.org/2000/svg'>
+		<svg
+			width={size}
+			height={size}
+			className={className}
+			xmlns='http://www.w3.org/2000/svg'
+		>
 			<defs>
 				<radialGradient
-					id='grad'
+					id={gradientId}
 					cx='50%'
 					cy='50%'
 					r='50%'
@@ -12,7 +35,15 @@ const RadialGradientCircle = () => {
 				>
 					<stop
 						offset='0%'
-						style={{ stopColor: 'green', stopOpacity: 1 }}
+						style={{ stopColor: color, stopOpacity: 1 }}
+					/>
+					<stop
+						offset='50%'
+						style={{ stopColor: color, stopOpacity: 0.5 }}
+					/>
+					<stop
+						offset='80%'
+						style={{ stopColor: color, stopOpacity: 0.1 }}
 					/>
 					<stop
 						offset='100%'
@@ -20,7 +51,12 @@ const RadialGradientCircle = () => {
 					/>
 				</radialGradient>
 			</defs>
-			<circle cx='400' cy='400' r='400' fill='url(#grad)' />
+			<circle
+				cx={size / 2}
+				cy={size / 2}
+				r={size / 2}
+				fill={`url(#${gradientId})`}
+			/>
 		</svg>
 	)
 }
