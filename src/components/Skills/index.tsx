@@ -12,9 +12,10 @@ const Skills = () => {
 				<BackgroundShape className='w-[1300px] absolute top-[calc(50%+400px)] left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2 opacity-15 -rotate-90 z-10' />
 			</div>
 			<div className='container mx-auto h-full relative z-10 flex justify-between items-start gap-6'>
-				<Title className='text-center'>
-					My <span className='text-white'>skills</span>
-				</Title>
+				<div>
+					<Title variant='h3'>Skills</Title>
+					<Title className='text-center'>What I do</Title>
+				</div>
 				<div className='relative max-w-5xl'>
 					<RadialGradientCircle
 						color='#22d3ee'

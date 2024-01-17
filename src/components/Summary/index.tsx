@@ -24,7 +24,9 @@ const Introduction = () => (
 				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[calc(50%-50px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 rounded-xl flex flex-col justify-center items-start z-20'>
 					<BackgroundShape5 className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					<span className='text-7xl relative z-30'>2</span>
-					<p className='relative z-30'>years of experience</p>
+					<p className='relative z-30 leading-none'>
+						years of experience
+					</p>
 				</div>
 				<img
 					className='relative z-10 rounded-3xl'
@@ -33,11 +35,9 @@ const Introduction = () => (
 				/>
 			</div>
 			<div className='max-w-2xl relative z-10'>
-				<Title variant='h3'>Introduction</Title>
-				<Title variant='h2' className='!text-white'>
-					About me
-				</Title>
-				<p className='font-extralight mb-12'>
+				<Title variant='h3'>Summary</Title>
+				<Title variant='h2'>About me</Title>
+				<p className='mb-12'>
 					Since the beginning of my journey as a developer, I have
 					worked on a wide variety of tasks both by myself and in
 					collaboration with talented people. I have experience in
@@ -45,7 +45,7 @@ const Introduction = () => (
 					websites.Nowadays I’m focused on learning ReactJS to
 					continue professional growth.
 				</p>
-				<div className='text-base text-white font-extralight'>
+				<div className='text-base'>
 					{CONTACTS_LIST.map((item, idx) => (
 						<p key={idx} className='mb-2'>
 							<FontAwesomeIcon
@@ -70,7 +70,7 @@ const Introduction = () => (
 					<Button context='social-link'>
 						<FontAwesomeIcon icon={item.icon} />
 					</Button>
-					<span className='[writing-mode:vertical-lr] text-base font-extralight text-lime-400'>
+					<span className='[writing-mode:vertical-lr] text-base text-lime-400'>
 						{item.title}
 					</span>
 				</div>

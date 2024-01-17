@@ -11,13 +11,8 @@ type PropsType = {
 const SkillsItem: FC<PropsType> = ({ children, idx }) => (
 	<div className='w-[calc((100%-48px)/3)] p-6 bg-zinc-950 rounded-xl border border-zinc-700'>
 		<span className='block text-sm text-zinc-500 mb-3'>{idx}</span>
-		<div className='flex justify-between items-center text-white'>
-			<Title
-				variant='h3'
-				className='!text-xl text-white border-b-2 border-lime-400 !-mb-6 pb-6'
-			>
-				{children}
-			</Title>
+		<div className='flex justify-between items-center'>
+			<Title variant='h3-large'>{children}</Title>
 			<FontAwesomeIcon className='text-lime-400' icon={faCode} />
 		</div>
 	</div>

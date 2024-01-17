@@ -13,8 +13,8 @@ const TopBanner = () => (
 		<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 			<div className='relative max-w-2xl z-10'>
 				<Title variant='h1'>
-					Hi! I'm{' '}
-					<span className='border-b-2 border-lime-400 text-white'>
+					<span className='text-zinc-400'>Hi! I'm </span>
+					<span className='border-b-2 border-lime-400'>
 						Yuliia Tkachenko.
 					</span>
 				</Title>
