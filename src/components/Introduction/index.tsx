@@ -4,6 +4,7 @@ import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
+import BackgroundShape5 from '@/app/assets/images/BackgroundShape5'
 
 const Introduction = () => (
 	<div className='py-60'>
@@ -19,6 +20,12 @@ const Introduction = () => (
 					size={1100}
 					className='absolute top-[calc(50%+200px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
+				<div className='w-8 h-8 bg-lime-400 absolute top-[calc(50%+100px)] left-[calc(50%-260px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_8px_8px_rgba(163,230,53,0.3)]' />
+				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[calc(50%-50px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 rounded-xl flex flex-col justify-center items-start z-20'>
+					<BackgroundShape5 className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					<span className='text-7xl relative z-30'>2</span>
+					<p className='relative z-30'>years of experience</p>
+				</div>
 				<img
 					className='relative z-10 rounded-3xl'
 					src={introductionImage.src}
@@ -38,7 +45,7 @@ const Introduction = () => (
 					websites.Nowadays I’m focused on learning ReactJS to
 					continue professional growth.
 				</p>
-				<div className='text-base font-extralight'>
+				<div className='text-base text-white font-extralight'>
 					{CONTACTS_LIST.map((item, idx) => (
 						<p key={idx} className='mb-2'>
 							<FontAwesomeIcon
@@ -63,7 +70,7 @@ const Introduction = () => (
 					<Button context='social-link'>
 						<FontAwesomeIcon icon={item.icon} />
 					</Button>
-					<span className='[writing-mode:vertical-lr] text-base font-extralight'>
+					<span className='[writing-mode:vertical-lr] text-base font-extralight text-lime-400'>
 						{item.title}
 					</span>
 				</div>

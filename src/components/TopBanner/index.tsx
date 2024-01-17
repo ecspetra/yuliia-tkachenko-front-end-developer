@@ -4,15 +4,12 @@ import Button from '@/app/components/Button'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
-import BackgroundLines from '@/app/assets/images/BackgroundLines'
 import BackgroundShape from '@/app/assets/images/BackgroundShape'
-import BackgroundShape2 from '@/app/assets/images/BackgroundShape2'
 import BackgroundShape3 from '@/app/assets/images/BackgroundShape3'
 import BackgroundShape4 from '@/app/assets/images/BackgroundShape4'
 
 const TopBanner = () => (
 	<div className='relative w-screen'>
-		{/*<BackgroundLines className='w-[2000px] absolute top-60 left-[80%] -translate-y-1/2 -translate-x-1/2 -rotate-[160deg] opacity-50' />*/}
 		<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 			<div className='relative max-w-2xl z-10'>
 				<Title variant='h1'>
@@ -34,7 +31,7 @@ const TopBanner = () => (
 			</div>
 			<div className='max-w-xl relative'>
 				<BackgroundShape className='w-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
-				<BackgroundShape3 className='absolute top-[calc(50%-200px)] left-[calc(50%-250px)] -translate-y-1/2 -translate-x-1/2' />
+				<BackgroundShape3 className='w-[450px] absolute top-[calc(50%-200px)] left-[calc(50%-250px)] -translate-y-1/2 -translate-x-1/2' />
 				<BackgroundShape4 className='animate-spin custom-animation-duration w-40 h-40 absolute -top-12 left-16 z-20 rounded-full' />
 				<RadialGradientCircle
 					color='#22d3ee'
@@ -49,7 +46,7 @@ const TopBanner = () => (
 					color='#eab308'
 					className='absolute top-[calc(50%-200px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 opacity-40'
 				/>
-				<div className='w-12 h-12 bg-lime-400 absolute top-[calc(50%+340px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full' />
+				<div className='w-12 h-12 bg-lime-400 absolute top-[calc(50%+340px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_15px_15px_rgba(163,230,53,0.3)]' />
 				<img
 					className='relative z-10 rounded-3xl'
 					src={topBannerImage.src}
