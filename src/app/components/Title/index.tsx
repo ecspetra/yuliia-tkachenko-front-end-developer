@@ -47,7 +47,7 @@ const Title: FC<PropsType> = ({ children, variant = 'h2', className }) => {
 				return (
 					<h3
 						className={classNames(
-							'font-extrabold uppercase tracking-[4px] text-xl border-b-2 border-lime-400 -mb-6 pb-6',
+							'font-extrabold uppercase tracking-[4px] text-xl border-b-2 border-lime-400',
 							className
 						)}
 					>

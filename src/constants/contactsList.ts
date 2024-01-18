@@ -4,20 +4,20 @@ import {
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
 import {
-	faLocationDot,
-	faSquarePhone,
+	faEarthAmericas,
+	faPhoneVolume,
 	faEnvelope,
 	faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons'
 
 export const CONTACTS_LIST = [
 	{
-		icon: faLocationDot,
+		icon: faEarthAmericas,
 		title: 'Address',
 		value: 'Vancouver, BC, Canada',
 	},
 	{
-		icon: faSquarePhone,
+		icon: faPhoneVolume,
 		title: 'Phone',
 		value: '+1 (778) 957 63 12',
 	},

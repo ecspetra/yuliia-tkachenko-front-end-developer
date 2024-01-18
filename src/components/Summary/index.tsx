@@ -7,7 +7,7 @@ import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import BackgroundShape5 from '@/app/assets/images/BackgroundShape5'
 
 const Introduction = () => (
-	<div className='py-60'>
+	<div className='px-6 py-60'>
 		<div className='w-full flex justify-between items-center max-w-6xl gap-16 mb-12'>
 			<div className='max-w-lg relative'>
 				<RadialGradientCircle
@@ -23,7 +23,7 @@ const Introduction = () => (
 				<div className='w-8 h-8 bg-lime-400 absolute top-[calc(50%+100px)] left-[calc(50%-260px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_8px_8px_rgba(163,230,53,0.3)]' />
 				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[calc(50%-50px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 rounded-xl flex flex-col justify-center items-start z-20'>
 					<BackgroundShape5 className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
-					<span className='text-7xl relative z-30'>2</span>
+					<span className='text-7xl relative z-30'>2+</span>
 					<p className='relative z-30 leading-none'>
 						years of experience
 					</p>

@@ -11,7 +11,7 @@ const Skills = () => {
 			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-[calc(100%-210px)] overflow-hidden'>
 				<BackgroundShape className='w-[1300px] absolute top-[calc(50%+400px)] left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2 opacity-15 -rotate-90 z-10' />
 			</div>
-			<div className='container mx-auto h-full relative z-10 flex justify-between items-start gap-6'>
+			<div className='container mx-auto px-6 h-full relative z-10 flex justify-between items-start gap-6'>
 				<div>
 					<Title variant='h3'>Skills</Title>
 					<Title className='text-center'>What I do</Title>

@@ -30,4 +30,15 @@ export const EXPERIENCE_LIST = [
 		],
 		teckStack: ['JavaScript', 'JQuery', 'HTML', 'CSS', 'SASS', 'Git'],
 	},
+	{
+		company: 'Byte',
+		country: 'Ukraine',
+		job: 'Volunteer',
+		date: '01.2021 — 02.2021',
+		description: 'Worked as a mentor in an IT Academy for children.',
+		responsibilities: [
+			'Developed manuals for teaching children programming and UI/UX design',
+		],
+		teckStack: ['JavaScript', 'HTML', 'CSS', 'Photoshop'],
+	},
 ]

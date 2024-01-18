@@ -1,16 +1,30 @@
 import Title from '@/app/components/Title'
 import ExperienceItem from '@/components/Experience/ExperienceItem'
 import { EXPERIENCE_LIST } from '@/constants/experienceList'
+import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 
 const Experience = () => (
-	<div className='w-full max-w-6xl pt-40 pb-80'>
+	<div className='w-full relative max-w-6xl px-6 py-40'>
+		<RadialGradientCircle
+			color='#22d3ee'
+			size={1300}
+			className='absolute top-[70%] -left-[40%] opacity-20'
+		/>
+		<RadialGradientCircle
+			color='#a3e635'
+			className='absolute top-[85%] -left-[10%] opacity-20'
+		/>
 		<Title variant='h3' className='text-center'>
-			History
+			Work history
 		</Title>
 		<Title className='text-center !mb-36'>Experience</Title>
 		<div>
 			{EXPERIENCE_LIST.map((item, idx) => (
-				<ExperienceItem key={idx} experience={item} />
+				<ExperienceItem
+					key={idx}
+					experience={item}
+					idx={`0${idx + 1}`}
+				/>
 			))}
 		</div>
 	</div>

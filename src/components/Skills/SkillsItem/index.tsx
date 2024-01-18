@@ -12,7 +12,9 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => (
 	<div className='w-[calc((100%-48px)/3)] p-6 bg-zinc-950 rounded-xl border border-zinc-700'>
 		<span className='block text-sm text-zinc-500 mb-3'>{idx}</span>
 		<div className='flex justify-between items-center'>
-			<Title variant='h3-large'>{children}</Title>
+			<Title variant='h3-large' className='!-mb-6 !pb-6'>
+				{children}
+			</Title>
 			<FontAwesomeIcon className='text-lime-400' icon={faCode} />
 		</div>
 	</div>
