@@ -4,6 +4,8 @@ import { SKILLS_LIST } from '@/constants/skillsList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundShape6 from '@/app/assets/images/BackgroundShape6'
 import BackgroundShape from '@/app/assets/images/BackgroundShape'
+import BackgroundShape8 from '@/app/assets/images/CircleShape'
+import CircleShape from '@/app/assets/images/CircleShape'
 
 const Skills = () => {
 	return (
@@ -16,7 +18,7 @@ const Skills = () => {
 					<Title variant='h3'>Skills</Title>
 					<Title className='text-center'>What I do</Title>
 				</div>
-				<div className='relative max-w-5xl'>
+				<div className='relative max-w-6xl'>
 					<RadialGradientCircle
 						color='#22d3ee'
 						size={1300}
@@ -30,8 +32,11 @@ const Skills = () => {
 					<div className='relative'>
 						<div className='w-[800px] absolute top-[calc(50%+100px)] left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2'>
 							<BackgroundShape6 className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
-							<div className='w-8 h-8 bg-lime-400 absolute top-[calc(50%+100px)] left-[calc(50%-300px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_15px_15px_rgba(163,230,53,0.3)]' />
-							<div className='w-24 h-24 bg-zinc-900 absolute top-[calc(50%-50px)] left-[calc(50%-500px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full' />
+							<CircleShape className='w-12 absolute top-[calc(50%+100px)] left-[calc(50%-300px)] -translate-y-1/2 -translate-x-1/2 z-20' />
+							<CircleShape
+								className='w-24 absolute top-[calc(50%-50px)] left-[calc(50%-500px)] -translate-y-1/2 -translate-x-1/2 z-20'
+								color='#18181b'
+							/>
 						</div>
 						<div className='flex flex-wrap justify-start items-stretch gap-6 relative z10'>
 							{SKILLS_LIST.map((item, idx) => (

@@ -1,13 +1,22 @@
 import Title from '@/app/components/Title'
 import { EXPERIENCE_LIST } from '@/constants/experienceList'
 import ProjectsItem from '@/components/Projects/ProjectsItem'
+import { PROJECTS_LIST } from '@/constants/projectsList'
 
 const Projects = () => (
-	<div>
-		<Title className='text-center'>Projects</Title>
-		<div className='flex flex-wrap justify-center items-stretch gap-4 max-w-md'>
-			{EXPERIENCE_LIST.map((item, idx) => (
-				<ProjectsItem key={idx} />
+	<div className='container px-6 py-40'>
+		<div className='text-center'>
+			<Title variant='h3'>Portfolio</Title>
+			<Title className='!mb-40'>A few of my pet projects</Title>
+		</div>
+		<div className='w-full max-w-6xl mx-auto flex flex-wrap justify-center items-stretch gap-4'>
+			{PROJECTS_LIST.map((item, idx) => (
+				<ProjectsItem
+					key={idx}
+					project={item}
+					isEven={idx % 2 === 0}
+					idx={idx}
+				/>
 			))}
 		</div>
 	</div>

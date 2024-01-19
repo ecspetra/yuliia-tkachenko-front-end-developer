@@ -14,10 +14,10 @@ const Experience = () => (
 			color='#a3e635'
 			className='absolute top-[85%] -left-[10%] opacity-20'
 		/>
-		<Title variant='h3' className='text-center'>
-			Work history
-		</Title>
-		<Title className='text-center !mb-36'>Experience</Title>
+		<div className='text-center'>
+			<Title variant='h3'>Work</Title>
+			<Title className='!mb-40'>Experience</Title>
+		</div>
 		<div>
 			{EXPERIENCE_LIST.map((item, idx) => (
 				<ExperienceItem

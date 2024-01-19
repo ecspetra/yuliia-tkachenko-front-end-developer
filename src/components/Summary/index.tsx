@@ -1,15 +1,16 @@
 import Title from '@/app/components/Title'
-import introductionImage from '@/app/assets/images/introduction-image.jpg'
+import summaryImage from '@/app/assets/images/summary-image.jpg'
 import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import BackgroundShape5 from '@/app/assets/images/BackgroundShape5'
+import CircleShape from '@/app/assets/images/CircleShape'
 
 const Introduction = () => (
-	<div className='px-6 py-60'>
-		<div className='w-full flex justify-between items-center max-w-6xl gap-16 mb-12'>
-			<div className='max-w-lg relative'>
+	<div className='max-w-6xl px-6 py-60'>
+		<div className='w-full flex justify-between items-center gap-16 mb-12'>
+			<div className='w-full max-w-1/2 relative'>
 				<RadialGradientCircle
 					color='#22d3ee'
 					size={1100}
@@ -20,7 +21,7 @@ const Introduction = () => (
 					size={1100}
 					className='absolute top-[calc(50%+200px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
-				<div className='w-8 h-8 bg-lime-400 absolute top-[calc(50%+100px)] left-[calc(50%-260px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_8px_8px_rgba(163,230,53,0.3)]' />
+				<CircleShape className='w-8 absolute top-[calc(50%+100px)] left-[calc(50%-260px)] -translate-y-1/2 -translate-x-1/2 z-20' />
 				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[calc(50%-50px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 rounded-xl flex flex-col justify-center items-start z-20'>
 					<BackgroundShape5 className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					<span className='text-7xl relative z-30'>2+</span>
@@ -30,11 +31,11 @@ const Introduction = () => (
 				</div>
 				<img
 					className='relative z-10 rounded-3xl'
-					src={introductionImage.src}
-					alt='Top Banner'
+					src={summaryImage.src}
+					alt='Summary'
 				/>
 			</div>
-			<div className='max-w-2xl relative z-10'>
+			<div className='w-full max-w-1/2 relative z-10'>
 				<Title variant='h3'>Summary</Title>
 				<Title variant='h2'>About me</Title>
 				<p className='mb-12'>

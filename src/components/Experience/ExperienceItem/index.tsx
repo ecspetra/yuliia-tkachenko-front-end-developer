@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
+import Tag from '@/components/Tag'
 
 type ExperienceItemType = {
 	company: string
@@ -70,17 +71,10 @@ const ExperienceItem: FC<PropsType> = ({ experience, idx }) => {
 						))}
 					</ul>
 					<p>
-						Teck stack:{' '}
-						<span className='ml-2 text-lime-400'>
-							{teckStack.map((item, idx) => (
-								<span
-									key={idx}
-									className='bg-lime-900/30 text-base px-4 py-2 mr-2 rounded-3xl'
-								>
-									{item}
-								</span>
-							))}
-						</span>
+						<span className='mr-4'>Teck stack:</span>
+						{teckStack.map((item, idx) => (
+							<Tag key={idx} tag={item} />
+						))}
 					</p>
 				</div>
 			</div>

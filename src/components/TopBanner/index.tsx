@@ -7,6 +7,8 @@ import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundShape from '@/app/assets/images/BackgroundShape'
 import BackgroundShape3 from '@/app/assets/images/BackgroundShape3'
 import BackgroundShape4 from '@/app/assets/images/BackgroundShape4'
+import CircleShape from '@/app/assets/images/CircleShape'
+import LinesShape from '@/app/assets/images/LinesShape'
 
 const TopBanner = () => (
 	<div className='relative w-screen'>
@@ -46,7 +48,8 @@ const TopBanner = () => (
 					color='#eab308'
 					className='absolute top-[calc(50%-200px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 opacity-40'
 				/>
-				<div className='w-12 h-12 bg-lime-400 absolute top-[calc(50%+340px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 z-20 rounded-full drop-shadow-[0_15px_15px_rgba(163,230,53,0.3)]' />
+				<CircleShape className='w-12 absolute top-[calc(50%+340px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 z-20' />
+				<LinesShape className='w-24 absolute top-[calc(50%-150px)] left-[calc(50%+230px)] -translate-y-1/2 -translate-x-1/2 z-20' />
 				<img
 					className='relative z-10 rounded-3xl'
 					src={topBannerImage.src}
