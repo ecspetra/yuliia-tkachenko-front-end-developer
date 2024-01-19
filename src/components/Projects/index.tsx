@@ -1,5 +1,4 @@
 import Title from '@/app/components/Title'
-import { EXPERIENCE_LIST } from '@/constants/experienceList'
 import ProjectsItem from '@/components/Projects/ProjectsItem'
 import { PROJECTS_LIST } from '@/constants/projectsList'
 

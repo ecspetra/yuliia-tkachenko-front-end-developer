@@ -4,7 +4,6 @@ import { SKILLS_LIST } from '@/constants/skillsList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundShape6 from '@/app/assets/images/BackgroundShape6'
 import BackgroundShape from '@/app/assets/images/BackgroundShape'
-import BackgroundShape8 from '@/app/assets/images/CircleShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 
 const Skills = () => {
