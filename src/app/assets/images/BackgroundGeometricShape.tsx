@@ -45,7 +45,6 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 						d='M343.444454,43.276161l-60.406216,67.282646L408.453151,213.324238l44.63316-170.048077h-109.641857Z'
 						transform='matrix(1.764207 0 0 1.764207-499.338042-76.348115)'
 						fill='#a3e635'
-						stroke-width='0.6'
 					/>
 				)
 			case '6':

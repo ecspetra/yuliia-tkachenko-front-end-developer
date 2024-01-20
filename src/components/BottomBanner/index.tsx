@@ -7,7 +7,6 @@ import getInTouchImage from '@/app/assets/images/get-in-touch-image.jpg'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
-import Footer from '@/app/components/Footer'
 
 const BottomBanner = () => {
 	return (

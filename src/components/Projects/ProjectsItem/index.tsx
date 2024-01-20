@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import Title from '@/app/components/Title'
 import Tag from '@/components/Tag'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
