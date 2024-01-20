@@ -4,7 +4,7 @@ import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
-import BackgroundShape5 from '@/app/assets/images/BackgroundShape5'
+import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 
 const Introduction = () => (
@@ -13,17 +13,18 @@ const Introduction = () => (
 			<div className='w-full max-w-1/2 relative'>
 				<RadialGradientCircle
 					color='#22d3ee'
-					size={1100}
-					className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
+					className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
 				<RadialGradientCircle
 					color='#a3e635'
-					size={1100}
-					className='absolute top-[calc(50%+200px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 opacity-20'
+					className='scale-[4] absolute -bottom-[40%] -right-[10%] opacity-20'
 				/>
-				<CircleShape className='w-8 absolute top-[calc(50%+100px)] left-[calc(50%-260px)] -translate-y-1/2 -translate-x-1/2 z-20' />
-				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[calc(50%-50px)] left-[calc(50%+200px)] -translate-y-1/2 -translate-x-1/2 rounded-xl flex flex-col justify-center items-start z-20'>
-					<BackgroundShape5 className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+				<CircleShape className='w-8 absolute top-[70%] -left-[3%] z-20' />
+				<div className='text-zinc-950 max-w-32 uppercase text-sm font-extrabold absolute top-[20%] -right-[3%] px-5 rounded-xl flex flex-col justify-center items-start z-20'>
+					<BackgroundGeometricShape
+						variant='2'
+						className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+					/>
 					<span className='text-7xl relative z-30'>2+</span>
 					<p className='relative z-30 leading-none'>
 						years of experience
@@ -35,7 +36,7 @@ const Introduction = () => (
 					alt='Summary'
 				/>
 			</div>
-			<div className='w-full max-w-1/2 relative z-10'>
+			<div className='w-full max-w-1/2 relative z-50'>
 				<Title variant='h3'>Summary</Title>
 				<Title variant='h2'>About me</Title>
 				<p className='mb-12'>
@@ -62,15 +63,13 @@ const Introduction = () => (
 				</div>
 			</div>
 		</div>
-		<div className='flex justify-center items-start gap-4 relative z-10'>
+		<div className='flex justify-center items-start gap-4'>
 			{SOCIAL_LINKS_LIST.map((item, idx) => (
 				<div
 					key={idx}
 					className='flex flex-col justify-start items-center gap-4'
 				>
-					<Button context='social-link'>
-						<FontAwesomeIcon icon={item.icon} />
-					</Button>
+					<Button context='social-link' icon={item.icon} />
 					<span className='[writing-mode:vertical-lr] text-base text-lime-400'>
 						{item.title}
 					</span>

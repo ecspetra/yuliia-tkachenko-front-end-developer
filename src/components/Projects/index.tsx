@@ -4,7 +4,7 @@ import { PROJECTS_LIST } from '@/constants/projectsList'
 
 const Projects = () => (
 	<div className='container px-6 py-40'>
-		<div className='text-center'>
+		<div className='text-center relative z-50'>
 			<Title variant='h3'>Portfolio</Title>
 			<Title className='!mb-40'>A few of my pet projects</Title>
 		</div>

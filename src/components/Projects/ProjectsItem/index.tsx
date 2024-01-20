@@ -44,19 +44,17 @@ const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
 			>
 				<RadialGradientCircle
 					color={isEven ? '#a3e635' : '#eab308'}
-					className='absolute -bottom-[60%] -right-[40%] opacity-20'
+					className='scale-[3] absolute -bottom-[30%] -right-[20%] opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
 						color={isEven ? '#22d3ee' : '#a3e635'}
-						size={1000}
-						className='absolute -bottom-[60%] right-0 opacity-15'
+						className='scale-[4] absolute bottom-[10%] right-0 opacity-15'
 					/>
 				)}
 				{isShowCircleShape && (
 					<CircleShape className='w-12 absolute top-[20%] -left-[5%] z-20' />
 				)}
-
 				<div className='bg-zinc-800 relative z-10 rounded-3xl'>
 					<img
 						className='aspect-[4/3] rounded-3xl object-cover mix-blend-luminosity'
@@ -73,7 +71,7 @@ const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
 				</div>
 			</div>
 			<div
-				className={`w-full relative z-20 max-w-1/2 ${
+				className={`w-full relative z-50 max-w-1/2 ${
 					isEven ? 'order-first' : 'order-last'
 				}`}
 			>
@@ -88,16 +86,12 @@ const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
 				</p>
 				<p className='mb-8'>{description}</p>
 				<div className='flex justify-start items-center gap-4'>
-					<Button context='text-button'>
-						Preview
-						<FontAwesomeIcon
-							className='ml-2'
-							icon={faArrowUpRightFromSquare}
-						/>
-					</Button>
-					<Button context='text-button'>
+					<Button
+						context='preview-link'
+						icon={faArrowUpRightFromSquare}
+					/>
+					<Button context='simple-button' icon={faGithub}>
 						GitHub repository
-						<FontAwesomeIcon className='ml-2' icon={faGithub} />
 					</Button>
 				</div>
 			</div>
