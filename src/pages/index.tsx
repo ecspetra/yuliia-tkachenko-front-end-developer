@@ -18,7 +18,7 @@ const outfitFont = Outfit({
 const Home = () => {
 	return (
 		<>
-			<Header />
+			<Header className={`${outfitFont.variable} font-sans`} />
 			<main
 				className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${outfitFont.variable} font-sans font-extralight text-xl text-white`}
 			>
@@ -29,8 +29,8 @@ const Home = () => {
 				<Education />
 				<Projects />
 				<BottomBanner />
-				<Footer />
 			</main>
+			<Footer className={`${outfitFont.variable} font-sans`} />
 		</>
 	)
 }

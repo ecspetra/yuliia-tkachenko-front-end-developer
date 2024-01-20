@@ -41,4 +41,17 @@ export const EXPERIENCE_LIST = [
 		],
 		teckStack: ['JavaScript', 'HTML', 'CSS', 'Photoshop'],
 	},
+	{
+		company: 'Livelib',
+		country: 'Ukraine',
+		job: 'UI/UX Designer',
+		date: '07.2017 — 01.2021',
+		description:
+			'Worked as UI/UX designer on social network, created as a platform for famous book writers.',
+		responsibilities: [
+			'Developed design for banners, landing pages, corporate websites, advertisement, mailing lists',
+			'Successfully managed multiple projects simultaneously, meeting deadlines and exceeding client expectations',
+		],
+		teckStack: ['Photoshop', 'Illustrator', 'Figma'],
+	},
 ]

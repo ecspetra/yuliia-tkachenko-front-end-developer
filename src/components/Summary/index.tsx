@@ -25,9 +25,9 @@ const Introduction = () => (
 						variant='2'
 						className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 					/>
-					<span className='text-7xl relative z-30'>2+</span>
+					<span className='text-7xl relative z-30'>6+</span>
 					<p className='relative z-30 leading-none'>
-						years of experience
+						years of experience in IT
 					</p>
 				</div>
 				<img
@@ -40,12 +40,13 @@ const Introduction = () => (
 				<Title variant='h3'>Summary</Title>
 				<Title variant='h2'>About me</Title>
 				<p className='mb-12'>
-					Since the beginning of my journey as a developer, I have
-					worked on a wide variety of tasks both by myself and in
-					collaboration with talented people. I have experience in
-					development of web applications, landing pages, corporate
-					websites.Nowadays I’m focused on learning ReactJS to
-					continue professional growth.
+					Have 2+ years of experience in Front End Development and 4+
+					years in UI/UX Design. Since the beginning of my journey as
+					a developer, I have worked on a wide variety of tasks both
+					by myself and in collaboration with talented people. I have
+					experience in development of web applications, landing
+					pages, corporate websites.Nowadays I’m focused on learning
+					ReactJS to continue professional growth.
 				</p>
 				<div className='text-base'>
 					{CONTACTS_LIST.map((item, idx) => (

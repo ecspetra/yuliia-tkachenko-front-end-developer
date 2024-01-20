@@ -34,7 +34,7 @@ const ExperienceItem: FC<PropsType> = ({ experience, idx }) => {
 		<div className='w-full mb-16 pb-16 border-b border-zinc-700 last:mb-0 last:pb-0 last:border-none relative z-50'>
 			<div className='flex justify-between items-start gap-16'>
 				<div className='w-full max-w-64'>
-					<Title className='!mb-4 border-b-2 border-lime-400 pb-4'>
+					<Title className='!mb-4 border-b border-lime-400 pb-4'>
 						{company}
 					</Title>
 					<div className='text-base'>

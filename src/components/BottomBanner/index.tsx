@@ -7,6 +7,7 @@ import getInTouchImage from '@/app/assets/images/get-in-touch-image.jpg'
 import { faFile } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
+import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 
 const BottomBanner = () => {
 	return (
@@ -30,12 +31,13 @@ const BottomBanner = () => {
 						color='#22d3ee'
 						className='scale-[4] absolute -bottom-[10%] -right-[10%] opacity-30'
 					/>
+					<BlurCircleShape className='absolute bottom-[50%] -right-[10%] z-20' />
 					<CircleShape className='w-12 absolute -bottom-6 left-[10%] z-20' />
 					<LinesShape className='w-24 absolute top-[10%] right-0 z-20' />
 					<img
 						className='relative z-10 rounded-3xl'
 						src={getInTouchImage.src}
-						alt='Top Banner'
+						alt='Bottom Banner'
 					/>
 				</div>
 				<div className='relative z-50'>

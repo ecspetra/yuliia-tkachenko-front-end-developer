@@ -4,8 +4,11 @@ import weatherboxImage1 from '@/app/assets/images/weatherbox-image-1.png'
 import weatherboxImage2 from '@/app/assets/images/weatherbox-image-2.png'
 import trackslynImage1 from '@/app/assets/images/trackslyn-image-1.png'
 import trackslynImage2 from '@/app/assets/images/trackslyn-image-2.png'
+import designPortfolioImage1 from '@/app/assets/images/design-portfolio-image-1.png'
+import designPortfolioImage2 from '@/app/assets/images/design-portfolio-image-2.png'
+import designPortfolioImage3 from '@/app/assets/images/design-portfolio-image-3.png'
 
-export const PROJECTS_LIST = [
+export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'CinemaStreet (latest)',
 		description:
@@ -47,4 +50,10 @@ export const PROJECTS_LIST = [
 		teckStack: ['React', 'TypeScript', 'HTML', 'SCSS', 'Spotify API'],
 		images: [trackslynImage1, trackslynImage2],
 	},
+]
+
+export const UI_UX_DESIGNER_PROJECTS_LIST = [
+	designPortfolioImage1,
+	designPortfolioImage2,
+	designPortfolioImage3,
 ]

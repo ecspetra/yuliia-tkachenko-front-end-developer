@@ -16,5 +16,5 @@ export const SKILLS_LIST = [
 	'JIRA',
 	'Photoshop',
 	'Figma',
-	'Firebase',
+	'Illustrator',
 ]

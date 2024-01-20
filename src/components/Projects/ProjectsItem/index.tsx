@@ -58,14 +58,14 @@ const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
 					<img
 						className='aspect-[4/3] rounded-3xl object-cover mix-blend-luminosity'
 						src={images[0].src}
-						alt='Top Banner'
+						alt='portfolio-project'
 					/>
 				</div>
 				<div className='max-w-80 bg-zinc-800 aspect-[4/3] absolute -bottom-6 -right-6 z-10 rounded-3xl border border-zinc-700'>
 					<img
 						className='aspect-[4/3] rounded-3xl object-cover mix-blend-luminosity'
 						src={images[1].src}
-						alt='Top Banner'
+						alt='portfolio-project'
 					/>
 				</div>
 			</div>

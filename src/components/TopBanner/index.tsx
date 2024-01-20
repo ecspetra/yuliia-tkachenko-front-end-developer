@@ -8,6 +8,7 @@ import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricSha
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
+import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 
 const TopBanner = () => (
 	<div className='relative w-screen'>
@@ -15,7 +16,7 @@ const TopBanner = () => (
 			<div className='relative max-w-2xl z-10'>
 				<Title variant='h1'>
 					<span className='text-zinc-400'>Hi! I'm </span>
-					<span className='border-b-2 border-lime-400'>
+					<span className='border-b border-lime-400'>
 						Yuliia Tkachenko.
 					</span>
 				</Title>
@@ -43,6 +44,7 @@ const TopBanner = () => (
 					color='#eab308'
 					className='scale-[3] absolute -top-[10%] -right-[10%] opacity-40'
 				/>
+				<BlurCircleShape className='absolute bottom-[20%] -right-[10%] z-20' />
 				<CircleShape className='w-12 absolute -bottom-6 right-[10%] z-20' />
 				<LinesShape className='w-24 absolute top-[20%] right-0 z-20' />
 				<img
