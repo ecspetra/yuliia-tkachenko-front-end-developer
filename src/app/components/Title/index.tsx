@@ -1,13 +1,19 @@
-import { FC, ReactNode } from 'react'
+import { FC, RefObject, ReactNode } from 'react'
 import classNames from 'classnames'
 
 type PropsType = {
 	children: ReactNode
 	variant?: 'h1' | 'h2' | 'h3' | 'h3-large'
 	className?: string
+	titleRef?: RefObject<HTMLHeadingElement>
 }
 
-const Title: FC<PropsType> = ({ children, variant = 'h2', className }) => {
+const Title: FC<PropsType> = ({
+	children,
+	variant = 'h2',
+	className,
+	titleRef,
+}) => {
 	const getTitleVariant = () => {
 		switch (variant) {
 			case 'h1':
@@ -17,6 +23,7 @@ const Title: FC<PropsType> = ({ children, variant = 'h2', className }) => {
 							'text-8xl font-bold mb-12',
 							className
 						)}
+						ref={titleRef}
 					>
 						{children}
 					</h1>

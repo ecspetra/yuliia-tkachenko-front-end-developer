@@ -5,8 +5,14 @@ import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
+import { useRef } from 'react'
+import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 
 const Skills = () => {
+	const animatedGeometricShapeRef = useRef(null)
+	const animatedBlurCircleRef = useRef(null)
+	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+
 	return (
 		<div className='relative py-40 w-screen'>
 			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-[calc(100%-210px)] overflow-hidden'>
@@ -26,11 +32,16 @@ const Skills = () => {
 						color='#eab308'
 						className='scale-[4] absolute bottom-[10%] right-[30%] opacity-30'
 					/>
-					<div className='w-[800px] h-[800px] absolute top-[10%] -left-[15%]'>
-						<BackgroundGeometricShape
-							variant='3'
-							className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
-						/>
+					<div className='w-[30vw] h-[30vw] absolute top-[10%] -left-[15%]'>
+						<div
+							ref={animatedGeometricShapeRef}
+							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+						>
+							<BackgroundGeometricShape
+								variant='3'
+								className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+							/>
+						</div>
 						<div className='w-60 h-60 absolute top-[30%] -left-[30%]'>
 							<CircleShape className='w-12 absolute bottom-0 right-0 z-20' />
 							<CircleShape

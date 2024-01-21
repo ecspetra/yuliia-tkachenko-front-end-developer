@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import Title from '@/app/components/Title'
 import Tag from '@/components/Tag'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -6,6 +6,7 @@ import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
+import useProjectItemAnimation from '@/hooks/useProjectItemAnimation'
 
 type ProjectsItemType = {
 	title: string
@@ -34,6 +35,9 @@ const ProjectsItem: FC<PropsType> = ({
 	isEven,
 	idx,
 }) => {
+	const bigImageRef = useRef(null)
+	const smallImageRef = useRef(null)
+	useProjectItemAnimation(bigImageRef, smallImageRef)
 	const isShowLargeRadialGradientCircle = idx !== 2
 	const isShowCircleShape = idx === 1
 
@@ -57,14 +61,20 @@ const ProjectsItem: FC<PropsType> = ({
 				{isShowCircleShape && (
 					<CircleShape className='w-12 absolute top-[20%] -left-[5%] z-20' />
 				)}
-				<div className='bg-zinc-800 relative z-10 rounded-3xl'>
+				<div
+					ref={bigImageRef}
+					className='bg-zinc-800 relative z-10 rounded-3xl'
+				>
 					<img
 						className='aspect-[4/3] rounded-3xl object-cover mix-blend-luminosity'
 						src={images[0].src}
 						alt='portfolio-project'
 					/>
 				</div>
-				<div className='max-w-80 bg-zinc-800 aspect-[4/3] absolute -bottom-6 -right-6 z-10 rounded-3xl border border-zinc-700'>
+				<div
+					ref={smallImageRef}
+					className='max-w-80 bg-zinc-800 aspect-[4/3] absolute -bottom-6 -right-6 z-10 rounded-3xl border border-zinc-700'
+				>
 					<img
 						className='aspect-[4/3] rounded-3xl object-cover mix-blend-luminosity'
 						src={images[1].src}
