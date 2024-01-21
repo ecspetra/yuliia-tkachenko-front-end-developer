@@ -6,6 +6,7 @@ import {
 } from '@/constants/projectsList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
+import ProjectsImageItem from '@/components/Projects/ProjectsImageItem'
 
 const Projects = () => (
 	<div className='container px-6 py-40'>
@@ -42,16 +43,7 @@ const Projects = () => (
 			/>
 			<CircleShape className='w-4 absolute bottom-[30%] -right-[10%] z-20' />
 			{UI_UX_DESIGNER_PROJECTS_LIST.map((item, idx) => (
-				<div
-					key={idx}
-					className='bg-zinc-800 relative z-10 rounded-3xl'
-				>
-					<img
-						className='h-full w-full rounded-3xl object-cover mix-blend-luminosity'
-						src={item.src}
-						alt='portfolio-project'
-					/>
-				</div>
+				<ProjectsImageItem key={idx} image={item} />
 			))}
 		</div>
 	</div>

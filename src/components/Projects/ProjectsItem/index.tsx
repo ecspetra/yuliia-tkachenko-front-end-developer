@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Title from '@/app/components/Title'
 import Tag from '@/components/Tag'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
@@ -13,7 +13,7 @@ type ProjectsItemType = {
 	repositoryLink: string
 	previewLink: string
 	teckStack: string[]
-	images: string[]
+	images: { src: string }[]
 }
 
 type PropsType = {
@@ -22,15 +22,18 @@ type PropsType = {
 	idx: number
 }
 
-const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
-	const {
+const ProjectsItem: FC<PropsType> = ({
+	project: {
 		title,
 		description,
 		repositoryLink,
 		previewLink,
 		teckStack,
 		images,
-	} = project
+	},
+	isEven,
+	idx,
+}) => {
 	const isShowLargeRadialGradientCircle = idx !== 2
 	const isShowCircleShape = idx === 1
 
@@ -87,7 +90,7 @@ const ProjectsItem: FC<PropsType> = ({ project, isEven, idx }) => {
 				<div className='flex justify-start items-center gap-4'>
 					<Button
 						context='preview-link'
-						icon={faArrowUpRightFromSquare}
+						icon={faSquareArrowUpRight}
 					/>
 					<Button context='simple-button' icon={faGithub}>
 						GitHub repository

@@ -23,7 +23,7 @@ const TopBanner = () => (
 				<Title variant='h2' className='!text-lime-400'>
 					Front End Developer
 				</Title>
-				<Button icon={faFile} />
+				<Button />
 			</div>
 			<div className='max-w-xl relative'>
 				<BackgroundLinesShape className='w-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />

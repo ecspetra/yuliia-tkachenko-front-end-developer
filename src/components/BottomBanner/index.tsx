@@ -3,8 +3,7 @@ import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
-import getInTouchImage from '@/app/assets/images/get-in-touch-image.jpg'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
+import bottomBannerImage from '@/app/assets/images/bottom-banner-image.jpg'
 import Button from '@/app/components/Button'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
@@ -36,7 +35,7 @@ const BottomBanner = () => {
 					<LinesShape className='w-24 absolute top-[10%] right-0 z-20' />
 					<img
 						className='relative z-10 rounded-3xl'
-						src={getInTouchImage.src}
+						src={bottomBannerImage.src}
 						alt='Bottom Banner'
 					/>
 				</div>
@@ -49,7 +48,7 @@ const BottomBanner = () => {
 						Download it!
 					</Title>
 					<p className='mb-16'>I will be glad to work with you ;)</p>
-					<Button icon={faFile} />
+					<Button />
 				</div>
 			</div>
 		</div>

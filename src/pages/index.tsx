@@ -1,4 +1,4 @@
-import { Outfit } from 'next/font/google'
+import { Urbanist } from 'next/font/google'
 import TopBanner from '@/components/TopBanner'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
@@ -9,18 +9,18 @@ import Education from '@/components/Education'
 import BottomBanner from '../components/BottomBanner'
 import Footer from '@/app/components/Footer'
 
-const outfitFont = Outfit({
-	weight: ['100', '200', '300', '400', '600', '700'],
+const urbanistFont = Urbanist({
+	weight: ['400', '600', '700', '800'],
 	subsets: ['latin'],
-	variable: '--font-outfit',
+	variable: '--font-urbanist',
 })
 
 const Home = () => {
 	return (
 		<>
-			<Header className={`${outfitFont.variable} font-sans`} />
+			<Header className={`${urbanistFont.variable} font-sans`} />
 			<main
-				className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${outfitFont.variable} font-sans font-extralight text-xl text-white`}
+				className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${urbanistFont.variable} font-sans font-normal leading-normal tracking-wide text-xl text-white`}
 			>
 				<TopBanner />
 				<Introduction />
@@ -30,7 +30,7 @@ const Home = () => {
 				<Projects />
 				<BottomBanner />
 			</main>
-			<Footer className={`${outfitFont.variable} font-sans`} />
+			<Footer className={`${urbanistFont.variable} font-sans`} />
 		</>
 	)
 }

@@ -2,20 +2,21 @@ import { FC, ReactNode } from 'react'
 import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 type PropsType = {
-	icon: IconProp
+	icon?: IconProp
 	children?: ReactNode
 	context?: 'basic' | 'preview-link' | 'simple-button' | 'social-link'
 }
 
 const Button: FC<PropsType> = ({ children, icon, context = 'basic' }) => {
 	const basicButtonClassNames =
-		'bg-lime-400 text-black px-6 py-4 font-bold border-2 border-lime-400 hover:bg-transparent rounded-[32px]'
+		'bg-lime-400 text-zinc-950 px-6 py-4 border border-lime-400 rounded-[32px] hover:text-lime-400 after:duration-300 after:w-0 after:h-0 after:bg-zinc-900 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 	const simpleButtonClassNames =
-		'bg-zinc-800 hover:text-lime-400 border border-zinc-700 px-6 py-4 rounded-[32px]'
+		'bg-zinc-800 border border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 	const socialLinkButtonClassNames =
-		'w-16 h-16 bg-zinc-950 !text-2xl text-lime-400 flex justify-center items-center rounded-full'
+		'w-16 h-16 bg-zinc-950 !text-2xl text-lime-400 flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-lime-400 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 
 	const isBasicButton = context === 'basic'
 
@@ -31,23 +32,31 @@ const Button: FC<PropsType> = ({ children, icon, context = 'basic' }) => {
 	return context === 'basic' || context === 'preview-link' ? (
 		<button
 			className={classNames(
-				'duration-300 text-lg',
+				'duration-300 text-lg relative font-bold',
 				basicButtonClassNames
 			)}
 		>
-			{isBasicButton ? 'Download CV' : 'Preview'}
-			<FontAwesomeIcon className='ml-2' icon={icon} />
+			<span className='relative z-20'>
+				{isBasicButton ? 'Download CV' : 'Preview'}
+			</span>
+			<FontAwesomeIcon
+				className='ml-2 relative z-20'
+				icon={isBasicButton ? faCircleArrowDown : icon}
+			/>
 		</button>
 	) : (
 		<button
 			className={classNames(
-				'duration-300 text-lg relative z-50',
+				'duration-300 text-lg relative z-50 font-bold',
 				getButtonClassNames()
 			)}
 		>
-			{children}
+			<span className='relative z-20'>{children}</span>
 			{icon && (
-				<FontAwesomeIcon className={children && 'ml-2'} icon={icon} />
+				<FontAwesomeIcon
+					className={`${children && 'ml-2'} relative z-20`}
+					icon={icon}
+				/>
 			)}
 		</button>
 	)
