@@ -90,9 +90,14 @@ const ProjectsItem: FC<PropsType> = ({
 				<div className='flex justify-start items-center gap-4'>
 					<Button
 						context='preview-link'
+						link={previewLink}
 						icon={faSquareArrowUpRight}
 					/>
-					<Button context='simple-button' icon={faGithub}>
+					<Button
+						context='simple-button'
+						link={repositoryLink}
+						icon={faGithub}
+					>
 						GitHub repository
 					</Button>
 				</div>

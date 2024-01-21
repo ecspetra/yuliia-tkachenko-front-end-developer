@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title'
 import topBannerImage from '@/app/assets/images/top-banner-image.jpg'
 import Button from '@/app/components/Button'
-import { faFile } from '@fortawesome/free-solid-svg-icons'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'

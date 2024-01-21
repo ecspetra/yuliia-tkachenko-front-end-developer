@@ -75,7 +75,11 @@ const Introduction = () => (
 					key={idx}
 					className='flex flex-col justify-start items-center gap-4'
 				>
-					<Button context='social-link' icon={item.icon} />
+					<Button
+						context='social-link'
+						link={item.link}
+						icon={item.icon}
+					/>
 					<span className='[writing-mode:vertical-lr] text-base text-lime-400'>
 						{item.title}
 					</span>
