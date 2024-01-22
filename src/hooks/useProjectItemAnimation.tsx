@@ -4,50 +4,57 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const useProjectItemAnimation = (
-	bigImageRef: RefObject<HTMLDivElement>,
-	smallImageRef: RefObject<HTMLDivElement>
+	imageRef: RefObject<HTMLDivElement>,
+	refName: 'bigImage' | 'smallImage'
 ) => {
 	useEffect(() => {
-		const bigImage = bigImageRef.current
-		const smallImage = smallImageRef.current
+		const image = imageRef.current
 
-		gsap.fromTo(
-			bigImage,
-			{
-				opacity: 0,
-				y: 200,
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 1,
-				scrollTrigger: {
-					trigger: bigImage,
-					start: 'top bottom',
-					end: 'bottom center',
-					toggleActions: 'play none none reverse',
-				},
+		const createAnimashion = () => {
+			switch (refName) {
+				case 'bigImage':
+					return gsap.fromTo(
+						image,
+						{
+							opacity: 0,
+							y: 200,
+						},
+						{
+							opacity: 1,
+							y: 0,
+							duration: 1,
+							scrollTrigger: {
+								trigger: image,
+								start: 'top bottom',
+								end: 'bottom center',
+								toggleActions: 'play none none reverse',
+							},
+						}
+					)
+				case 'smallImage':
+					return gsap.fromTo(
+						image,
+						{
+							opacity: 0,
+							y: 300,
+						},
+						{
+							opacity: 1,
+							y: 0,
+							duration: 2,
+							scrollTrigger: {
+								trigger: image,
+								start: 'top bottom',
+								end: 'bottom center',
+								toggleActions: 'play none none reverse',
+							},
+						}
+					)
 			}
-		)
-		gsap.fromTo(
-			smallImage,
-			{
-				opacity: 0,
-				y: 300,
-			},
-			{
-				opacity: 1,
-				y: 0,
-				duration: 2,
-				scrollTrigger: {
-					trigger: smallImage,
-					start: 'top bottom',
-					end: 'bottom center',
-					toggleActions: 'play none none reverse',
-				},
-			}
-		)
-	}, [bigImageRef, smallImageRef])
+		}
+
+		createAnimashion()
+	}, [imageRef, refName])
 }
 
 export default useProjectItemAnimation

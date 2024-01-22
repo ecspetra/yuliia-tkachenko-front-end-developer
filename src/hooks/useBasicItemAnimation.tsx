@@ -1,8 +1,9 @@
 import { RefObject, useEffect } from 'react'
 import gsap from 'gsap'
 
-const useProjectItemAnimation = (
+const useBasicItemAnimation = (
 	itemRef: RefObject<HTMLDivElement>,
+	delay: number,
 	idx: number
 ) => {
 	useEffect(() => {
@@ -19,7 +20,7 @@ const useProjectItemAnimation = (
 				opacity: 1,
 				y: 0,
 				duration: 1,
-				delay: idx * 0.1,
+				delay: idx * delay,
 			}
 		)
 
@@ -44,4 +45,4 @@ const useProjectItemAnimation = (
 	}, [itemRef, idx])
 }
 
-export default useProjectItemAnimation
+export default useBasicItemAnimation

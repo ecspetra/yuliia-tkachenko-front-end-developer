@@ -2,7 +2,7 @@ import { FC, ReactNode, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
-import useSkillItemAnimation from '@/hooks/useSkillItemAnimation'
+import useBasicItemAnimation from '@/hooks/useBasicItemAnimation'
 
 type PropsType = {
 	children: ReactNode
@@ -11,7 +11,7 @@ type PropsType = {
 
 const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 	const skillItemRef = useRef(null)
-	useSkillItemAnimation(skillItemRef, idx)
+	useBasicItemAnimation(skillItemRef, 0.1, idx)
 
 	return (
 		<div

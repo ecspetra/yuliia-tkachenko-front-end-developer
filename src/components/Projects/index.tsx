@@ -43,7 +43,7 @@ const Projects = () => (
 			/>
 			<CircleShape className='w-4 absolute bottom-[30%] -right-[10%] z-20' />
 			{UI_UX_DESIGNER_PROJECTS_LIST.map((item, idx) => (
-				<ProjectsImageItem key={idx} image={item} />
+				<ProjectsImageItem key={idx} image={item} idx={idx} />
 			))}
 		</div>
 	</div>

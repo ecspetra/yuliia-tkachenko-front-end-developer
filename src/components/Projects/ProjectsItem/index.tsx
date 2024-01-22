@@ -37,7 +37,8 @@ const ProjectsItem: FC<PropsType> = ({
 }) => {
 	const bigImageRef = useRef(null)
 	const smallImageRef = useRef(null)
-	useProjectItemAnimation(bigImageRef, smallImageRef)
+	useProjectItemAnimation(bigImageRef, 'bigImage')
+	useProjectItemAnimation(smallImageRef, 'smallImage')
 	const isShowLargeRadialGradientCircle = idx !== 2
 	const isShowCircleShape = idx === 1
 
