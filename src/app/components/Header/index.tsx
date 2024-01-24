@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC } from 'react'
 import classNames from 'classnames'
 import Title from '@/app/components/Title'
 import { HEADER_ANCHORS } from '@/constants/anchors'

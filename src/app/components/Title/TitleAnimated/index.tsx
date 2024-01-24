@@ -8,7 +8,7 @@ const TitleAnimated = () => {
 
 	return (
 		<Title variant='h1' className='invisible' titleRef={textRef}>
-			<span className='text-zinc-400 mr-4'>Hi! I'm</span>
+			<span className='text-zinc-400 mr-4'>Hi! I&apos;m</span>
 			<span>
 				Yuliia
 				<span className='animated-border w-full h-0.5 block bg-lime-400' />
