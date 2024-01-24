@@ -9,32 +9,19 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 import { useRef } from 'react'
-import useTextAnimation from '@/hooks/useTextAnimation'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
+import TitleAnimated from '@/app/components/Title/TitleAnimated'
 
 const TopBanner = () => {
-	const animatedTextRef = useRef<HTMLHeadingElement>(null)
 	const animatedGeometricShapeRef = useRef(null)
 	const animatedBlurCircleRef = useRef(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
-	useTextAnimation(animatedTextRef)
 
 	return (
-		<div className='relative w-screen'>
+		<div className='relative w-screen' id='top-banner'>
 			<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 				<div className='relative max-w-2xl z-10'>
-					<Title
-						variant='h1'
-						className='animated-text invisible'
-						titleRef={animatedTextRef}
-					>
-						<span className='text-zinc-400 mr-4'>Hi! I'm</span>
-						<span className='border-b border-lime-400'>Yuliia</span>
-						<br />
-						<span className='border-b border-lime-400'>
-							Tkachenko.
-						</span>
-					</Title>
+					<TitleAnimated />
 					<Title variant='h2' className='!text-lime-400'>
 						Front End Developer
 					</Title>

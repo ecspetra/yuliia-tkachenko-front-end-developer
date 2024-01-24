@@ -1,16 +1,16 @@
 import Title from '@/app/components/Title'
-import ProjectsItem from '@/components/Projects/ProjectsItem'
 import {
 	FRONT_END_DEVELOPER_PROJECTS_LIST,
 	UI_UX_DESIGNER_PROJECTS_LIST,
 } from '@/constants/projectsList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
-import ProjectsImageItem from '@/components/Projects/ProjectsImageItem'
+import PortfolioFrontEndItem from '@/components/Portfolio/PortfolioFrontEndItem'
+import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignItem'
 
-const Projects = () => (
-	<div className='container px-6 py-40'>
-		<div className='max-w-2xl mx-auto text-center relative z-50'>
+const Portfolio = () => (
+	<div className='container px-6 py-40' id='portfolio'>
+		<div className='max-w-2xl mx-auto text-center relative z-40'>
 			<Title variant='h3'>Front End Developer portfolio</Title>
 			<Title className='!mb-40'>
 				A few of my pet projects from Front End Developer portfolio
@@ -18,7 +18,7 @@ const Projects = () => (
 		</div>
 		<div className='w-full max-w-6xl mx-auto flex flex-wrap justify-center items-stretch gap-4'>
 			{FRONT_END_DEVELOPER_PROJECTS_LIST.map((item, idx) => (
-				<ProjectsItem
+				<PortfolioFrontEndItem
 					key={idx}
 					project={item}
 					isEven={idx % 2 === 0}
@@ -26,7 +26,7 @@ const Projects = () => (
 				/>
 			))}
 		</div>
-		<div className='max-w-2xl mx-auto text-center relative z-50'>
+		<div className='max-w-2xl mx-auto text-center relative z-40'>
 			<Title variant='h3'>UI/UX designer portfolio</Title>
 			<Title className='!mb-40'>
 				A few of my pet projects from UI/UX designer portfolio
@@ -43,10 +43,10 @@ const Projects = () => (
 			/>
 			<CircleShape className='w-4 absolute bottom-[30%] -right-[10%] z-20' />
 			{UI_UX_DESIGNER_PROJECTS_LIST.map((item, idx) => (
-				<ProjectsImageItem key={idx} image={item} idx={idx} />
+				<PortfolioUIUXDesignItem key={idx} image={item} idx={idx} />
 			))}
 		</div>
 	</div>
 )
 
-export default Projects
+export default Portfolio

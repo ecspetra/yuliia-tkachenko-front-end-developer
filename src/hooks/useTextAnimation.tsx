@@ -2,16 +2,17 @@ import { RefObject, useEffect } from 'react'
 import SplitType from 'split-type'
 import { gsap } from 'gsap'
 
-const useTextAnimation = (animatedTextRef: RefObject<HTMLHeadingElement>) => {
+const useTextAnimation = (textRef: RefObject<HTMLHeadingElement>) => {
 	useEffect(() => {
 		const startAnimation = () => {
-			if (animatedTextRef.current) {
-				animatedTextRef.current.style.visibility = 'hidden'
+			if (textRef.current) {
+				textRef.current.style.visibility = 'hidden'
 
-				const ourText = new SplitType(animatedTextRef.current, {
+				const animatedText = new SplitType(textRef.current, {
 					types: 'chars',
+					tagName: 'span',
 				})
-				const chars = ourText.chars
+				const chars = animatedText.chars
 
 				gsap.fromTo(
 					chars,
@@ -28,7 +29,7 @@ const useTextAnimation = (animatedTextRef: RefObject<HTMLHeadingElement>) => {
 					}
 				)
 
-				animatedTextRef.current.style.visibility = 'visible'
+				textRef.current.style.visibility = 'visible'
 			}
 		}
 
@@ -38,9 +39,9 @@ const useTextAnimation = (animatedTextRef: RefObject<HTMLHeadingElement>) => {
 			}
 		}
 
-		document.addEventListener('visibilitychange', handleVisibilityChange)
-
 		startAnimation()
+
+		document.addEventListener('visibilitychange', handleVisibilityChange)
 
 		return () => {
 			document.removeEventListener(
@@ -48,7 +49,7 @@ const useTextAnimation = (animatedTextRef: RefObject<HTMLHeadingElement>) => {
 				handleVisibilityChange
 			)
 		}
-	}, [animatedTextRef])
+	}, [textRef])
 }
 
 export default useTextAnimation

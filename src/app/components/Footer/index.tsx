@@ -6,14 +6,14 @@ type PropsType = {
 }
 
 const Footer: FC<PropsType> = ({ className }) => (
-	<div
+	<footer
 		className={classNames(
 			'w-screen bg-zinc-950 p-4 min-h-12 text-center text-sm text-zinc-500',
 			className
 		)}
 	>
 		<p>Created by Yuliia Tkachenko, 2024</p>
-	</div>
+	</footer>
 )
 
 export default Footer

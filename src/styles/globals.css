@@ -32,6 +32,19 @@ body {
   }
 }
 
+@keyframes border-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .custom-animation-duration {
   animation: spin 13s linear infinite;
+}
+
+.animated-border {
+  animation: border-grow 4s linear;
 }

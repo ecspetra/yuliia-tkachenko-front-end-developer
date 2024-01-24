@@ -2,7 +2,7 @@ import { FC, ReactNode, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
-import useBasicItemAnimation from '@/hooks/useBasicItemAnimation'
+import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
 
 type PropsType = {
 	children: ReactNode
@@ -11,7 +11,8 @@ type PropsType = {
 
 const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 	const skillItemRef = useRef(null)
-	useBasicItemAnimation(skillItemRef, 0.1, idx)
+	const spanRef = useRef(null)
+	useSkillsItemAnimation(skillItemRef, spanRef, idx)
 
 	return (
 		<div
@@ -20,9 +21,13 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 		>
 			<span className='block text-sm text-zinc-500 mb-3'>{idx}</span>
 			<div className='flex justify-between items-center'>
-				<Title variant='h3-large' className='!-mb-6 !pb-6'>
-					{children}
-				</Title>
+				<div>
+					<Title variant='h3-large'>{children}</Title>
+					<span
+						ref={spanRef}
+						className='w-full h-0.5 bg-lime-400 block mt-6 -mb-6'
+					/>
+				</div>
 				<FontAwesomeIcon className='text-lime-400' icon={faCode} />
 			</div>
 		</div>

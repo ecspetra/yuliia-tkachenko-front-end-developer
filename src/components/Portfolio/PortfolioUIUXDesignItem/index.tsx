@@ -1,19 +1,19 @@
 import { FC, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons'
-import useBasicItemAnimation from '@/hooks/useBasicItemAnimation'
+import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 
 type PropsType = {
 	image: { fullSizeSrc: string; thumbnailSrc: string }
 	idx: number
 }
 
-const ProjectsImageItem: FC<PropsType> = ({
+const PortfolioUIUXDesignItem: FC<PropsType> = ({
 	image: { fullSizeSrc, thumbnailSrc },
 	idx,
 }) => {
 	const fullPageImageRef = useRef(null)
-	useBasicItemAnimation(fullPageImageRef, 0.5, idx)
+	usePortfolioImagesAnimation(fullPageImageRef, 'fullPageImage', idx)
 
 	return (
 		<div
@@ -42,4 +42,4 @@ const ProjectsImageItem: FC<PropsType> = ({
 	)
 }
 
-export default ProjectsImageItem
+export default PortfolioUIUXDesignItem

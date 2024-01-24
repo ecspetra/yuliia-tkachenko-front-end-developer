@@ -7,7 +7,10 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 
 const Education = () => (
-	<div className='container relative mx-auto bg-zinc-950 rounded-3xl text-center'>
+	<div
+		className='container relative mx-auto bg-zinc-950 rounded-3xl text-center'
+		id='education'
+	>
 		<CircleShape className='w-8 absolute -top-3 left-[25%] z-20' />
 		<div className='py-40 px-6 relative rounded-3xl overflow-hidden'>
 			<BackgroundLinesShape className='w-full absolute -bottom-[35%] -right-[45%] opacity-10 -rotate-120 z-10' />
@@ -25,7 +28,7 @@ const Education = () => (
 				className='w-[600px] absolute top-[30%] -left-[20%]'
 			/>
 			<LinesShape className='w-24 absolute top-[15%] left-[90%] z-20' />
-			<div className='relative z-50'>
+			<div className='relative z-40'>
 				<Title variant='h3'>Education</Title>
 				<Title>Master of Computer Science</Title>
 				<p>Pryazovskyi State Technical University</p>

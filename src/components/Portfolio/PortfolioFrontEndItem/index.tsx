@@ -6,9 +6,9 @@ import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
-import useProjectItemAnimation from '@/hooks/useProjectItemAnimation'
+import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 
-type ProjectsItemType = {
+type PortfolioFrontEndItemType = {
 	title: string
 	description: string
 	repositoryLink: string
@@ -18,12 +18,12 @@ type ProjectsItemType = {
 }
 
 type PropsType = {
-	project: ProjectsItemType
+	project: PortfolioFrontEndItemType
 	isEven: boolean
 	idx: number
 }
 
-const ProjectsItem: FC<PropsType> = ({
+const PortfolioFrontEndItem: FC<PropsType> = ({
 	project: {
 		title,
 		description,
@@ -37,8 +37,8 @@ const ProjectsItem: FC<PropsType> = ({
 }) => {
 	const bigImageRef = useRef(null)
 	const smallImageRef = useRef(null)
-	useProjectItemAnimation(bigImageRef, 'bigImage')
-	useProjectItemAnimation(smallImageRef, 'smallImage')
+	usePortfolioImagesAnimation(bigImageRef, 'bigImage')
+	usePortfolioImagesAnimation(smallImageRef, 'smallImage')
 	const isShowLargeRadialGradientCircle = idx !== 2
 	const isShowCircleShape = idx === 1
 
@@ -84,7 +84,7 @@ const ProjectsItem: FC<PropsType> = ({
 				</div>
 			</div>
 			<div
-				className={`w-full relative z-50 max-w-1/2 ${
+				className={`w-full relative z-40 max-w-1/2 ${
 					isEven ? 'order-first' : 'order-last'
 				}`}
 			>
@@ -117,4 +117,4 @@ const ProjectsItem: FC<PropsType> = ({
 	)
 }
 
-export default ProjectsItem
+export default PortfolioFrontEndItem

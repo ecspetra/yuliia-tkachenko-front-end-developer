@@ -16,7 +16,10 @@ const BottomBanner = () => {
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
 
 	return (
-		<div className='relative py-40 w-screen bg-zinc-950 overflow-hidden'>
+		<div
+			className='relative py-40 w-screen bg-zinc-950 overflow-hidden'
+			id='bottom-banner'
+		>
 			<div className='container mx-auto px-6 h-full relative z-10 flex justify-between items-center gap-6'>
 				<div className='max-w-xl relative'>
 					<BackgroundLinesShape className='w-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
@@ -55,7 +58,7 @@ const BottomBanner = () => {
 						alt='Bottom Banner'
 					/>
 				</div>
-				<div className='relative z-50'>
+				<div className='relative z-40'>
 					<Title variant='h3'>Resume</Title>
 					<Title className='!text-7xl'>
 						Want to see my{' '}

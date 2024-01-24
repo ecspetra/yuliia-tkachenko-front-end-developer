@@ -7,8 +7,8 @@ import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 
-const Introduction = () => (
-	<div className='max-w-6xl px-6 py-60'>
+const Summary = () => (
+	<div className='max-w-6xl px-6 py-60' id='summary'>
 		<div className='w-full flex justify-between items-center gap-16 mb-12'>
 			<div className='w-full max-w-1/2 relative'>
 				<RadialGradientCircle
@@ -36,7 +36,7 @@ const Introduction = () => (
 					alt='Summary'
 				/>
 			</div>
-			<div className='w-full max-w-1/2 relative z-50'>
+			<div className='w-full max-w-1/2 relative z-40'>
 				<Title variant='h3'>Summary</Title>
 				<Title variant='h2'>About me</Title>
 				<div className='mb-12'>
@@ -89,4 +89,4 @@ const Introduction = () => (
 	</div>
 )
 
-export default Introduction
+export default Summary

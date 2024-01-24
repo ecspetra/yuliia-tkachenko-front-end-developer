@@ -54,7 +54,7 @@ const Title: FC<PropsType> = ({
 				return (
 					<h3
 						className={classNames(
-							'font-bold uppercase tracking-[4px] text-xl border-b-2 border-lime-400',
+							'font-bold uppercase tracking-[4px] text-xl',
 							className
 						)}
 					>

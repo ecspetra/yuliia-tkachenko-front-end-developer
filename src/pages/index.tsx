@@ -2,9 +2,9 @@ import { Urbanist } from 'next/font/google'
 import TopBanner from '@/components/TopBanner'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
-import Projects from '@/components/Projects'
+import Projects from '../components/Portfolio'
 import Header from '@/app/components/Header'
-import Introduction from '../components/Summary'
+import Summary from '../components/Summary'
 import Education from '@/components/Education'
 import BottomBanner from '../components/BottomBanner'
 import Footer from '@/app/components/Footer'
@@ -23,7 +23,7 @@ const Home = () => {
 				className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${urbanistFont.variable} font-sans font-normal leading-normal tracking-wide text-xl text-white`}
 			>
 				<TopBanner />
-				<Introduction />
+				<Summary />
 				<Skills />
 				<Experience />
 				<Education />
