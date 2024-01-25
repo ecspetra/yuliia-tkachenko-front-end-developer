@@ -85,14 +85,14 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 					<stop
 						offset='30%'
 						style={{
-							stopColor: 'var(--global-color-two)',
+							stopColor: 'rgb(var(--global-color-two))',
 							stopOpacity: 1,
 						}}
 					/>
 					<stop
 						offset='100%'
 						style={{
-							stopColor: 'var(--global-color-four)',
+							stopColor: 'rgb(var(--global-color-four))',
 							stopOpacity: 1,
 						}}
 					/>

@@ -7,7 +7,7 @@ interface PropsType {
 
 const CircleShape: FC<PropsType> = ({
 	className,
-	color = 'var(--global-color-two)',
+	color = 'rgb(var(--global-color-two))',
 }) => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'

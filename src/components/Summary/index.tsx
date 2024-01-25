@@ -80,7 +80,7 @@ const Summary = () => (
 						link={item.link}
 						icon={item.icon}
 					/>
-					<span className='[writing-mode:vertical-lr] text-base text-lime-400'>
+					<span className='[writing-mode:vertical-lr] text-base text-global-color-two'>
 						{item.title}
 					</span>
 				</div>

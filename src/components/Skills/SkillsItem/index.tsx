@@ -25,10 +25,13 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 					<Title variant='h3-large'>{children}</Title>
 					<span
 						ref={spanRef}
-						className='w-full h-0.5 bg-lime-400 block mt-6 -mb-6'
+						className='w-full h-0.5 bg-global-color-two block mt-6 -mb-6'
 					/>
 				</div>
-				<FontAwesomeIcon className='text-lime-400' icon={faCode} />
+				<FontAwesomeIcon
+					className='text-global-color-two'
+					icon={faCode}
+				/>
 			</div>
 		</div>
 	)

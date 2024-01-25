@@ -11,12 +11,12 @@ const TitleAnimated = () => {
 			<span className='text-zinc-400 mr-4'>Hi! I&apos;m</span>
 			<span>
 				Yuliia
-				<span className='animated-border w-full h-0.5 block bg-lime-400' />
+				<span className='animated-border w-full h-0.5 block bg-global-color-two' />
 			</span>
 			<br />
 			<span>
 				Tkachenko.
-				<span className='animated-border w-full h-0.5 block bg-lime-400' />
+				<span className='animated-border w-full h-0.5 block bg-global-color-two' />
 			</span>
 		</Title>
 	)

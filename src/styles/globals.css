@@ -6,10 +6,24 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --global-color-one: #22d3ee;
-  --global-color-two: #a3e635;
-  --global-color-three: #eab308;
-  --global-color-four: #06b6d4;
+
+  /*variant 1*/
+  --global-color-one: 34 211 238;
+  --global-color-two: 163 230 53;
+  --global-color-three: 234 179 8;
+  --global-color-four: 6 182 212;
+
+  /*variant 2*/
+  /*--global-color-one: 192 38 211;*/
+  /*--global-color-two: 129 140 248;*/
+  /*--global-color-three: 251 146 60;*/
+  /*--global-color-four: 236 72 153;*/
+
+  /*variant 2*/
+  /*--global-color-one: 192 38 211;*/
+  /*--global-color-two: 163 230 53;*/
+  /*--global-color-three: 251 146 60;*/
+  /*--global-color-four: 236 72 153;*/
 }
 
 @media (prefers-color-scheme: dark) {

@@ -31,24 +31,36 @@ const RadialGradientCircle: FC<PropsType> = ({ color, className }) => {
 				>
 					<stop
 						offset='0%'
-						style={{ stopColor: `var(${color})`, stopOpacity: 1 }}
+						style={{
+							stopColor: `rgb(var(${color}))`,
+							stopOpacity: 1,
+						}}
 					/>
 					<stop
 						offset='30%'
-						style={{ stopColor: `var(${color})`, stopOpacity: 0.5 }}
+						style={{
+							stopColor: `rgb(var(${color}))`,
+							stopOpacity: 0.5,
+						}}
 					/>
 					<stop
 						offset='40%'
-						style={{ stopColor: `var(${color})`, stopOpacity: 0.3 }}
+						style={{
+							stopColor: `rgb(var(${color}))`,
+							stopOpacity: 0.3,
+						}}
 					/>
 					<stop
 						offset='55%'
-						style={{ stopColor: `var(${color})`, stopOpacity: 0.1 }}
+						style={{
+							stopColor: `rgb(var(${color}))`,
+							stopOpacity: 0.1,
+						}}
 					/>
 					<stop
 						offset='65%'
 						style={{
-							stopColor: `var(${color})`,
+							stopColor: `rgb(var(${color}))`,
 							stopOpacity: 0.02,
 						}}
 					/>

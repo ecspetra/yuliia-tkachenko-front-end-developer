@@ -62,7 +62,7 @@ const BottomBanner = () => {
 					<Title variant='h3'>Resume</Title>
 					<Title className='!text-7xl'>
 						Want to see my{' '}
-						<span className='text-lime-400'>CV?</span>
+						<span className='text-global-color-two'>CV?</span>
 						<br />
 						Download it!
 					</Title>

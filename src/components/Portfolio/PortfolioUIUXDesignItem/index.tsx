@@ -24,9 +24,9 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 				href={fullSizeSrc}
 				target='_blank'
 				rel='noopener noreferrer'
-				className='relative group after:duration-300 after:w-0 after:h-0 after:bg-lime-400/15 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-3xl hover:after:w-full hover:after:h-full'
+				className='relative group after:duration-300 after:w-0 after:h-0 after:bg-global-color-two/15 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-3xl hover:after:w-full hover:after:h-full'
 			>
-				<span className='opacity-0 duration-300 group-hover:opacity-100 flex w-16 h-16 justify-center items-center rounded-full bg-lime-400 text-zinc-950 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10'>
+				<span className='opacity-0 duration-300 group-hover:opacity-100 flex w-16 h-16 justify-center items-center rounded-full bg-global-color-two text-zinc-950 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10'>
 					<FontAwesomeIcon
 						className=''
 						icon={faMagnifyingGlassPlus}

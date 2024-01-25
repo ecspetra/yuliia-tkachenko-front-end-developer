@@ -22,7 +22,7 @@ const TopBanner = () => {
 			<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 				<div className='relative max-w-2xl z-10'>
 					<TitleAnimated />
-					<Title variant='h2' className='!text-lime-400'>
+					<Title variant='h2' className='!text-global-color-two'>
 						Front End Developer
 					</Title>
 					<Button />

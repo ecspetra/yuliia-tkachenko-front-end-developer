@@ -13,11 +13,11 @@ type PropsType = {
 
 const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 	const basicButtonClassNames =
-		'bg-lime-400 text-zinc-950 w-fit flex justify-center items-center px-6 py-4 border border-lime-400 rounded-[32px] hover:text-lime-400 after:duration-300 after:w-0 after:h-0 after:bg-zinc-900 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
+		'bg-global-color-two text-zinc-950 w-fit flex justify-center items-center px-6 py-4 border border-global-color-two rounded-[32px] hover:text-global-color-two after:duration-300 after:w-0 after:h-0 after:bg-zinc-900 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 	const simpleButtonClassNames =
 		'bg-zinc-800 border border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)]'
 	const socialLinkButtonClassNames =
-		'w-16 h-16 bg-zinc-950 !text-2xl text-lime-400 flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-lime-400 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
+		'w-16 h-16 bg-zinc-950 !text-2xl text-global-color-two flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-global-color-two after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 
 	const isBasicButton = context === 'basic'
 	const buttonText = isBasicButton ? 'Download CV' : 'Preview'
