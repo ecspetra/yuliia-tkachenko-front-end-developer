@@ -50,12 +50,16 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				}`}
 			>
 				<RadialGradientCircle
-					color={isEven ? '#a3e635' : '#eab308'}
+					color={
+						isEven ? '--global-color-two' : '--global-color-three'
+					}
 					className='scale-[3] absolute -bottom-[30%] -right-[20%] opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
-						color={isEven ? '#22d3ee' : '#a3e635'}
+						color={
+							isEven ? '--global-color-one' : '--global-color-two'
+						}
 						className='scale-[4] absolute bottom-[10%] right-0 opacity-15'
 					/>
 				)}

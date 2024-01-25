@@ -17,8 +17,8 @@ const BottomBanner = () => {
 
 	return (
 		<div
-			className='relative py-40 w-screen bg-zinc-950 overflow-hidden'
-			id='bottom-banner'
+			className='relative min-h-screen flex justify-center items-center py-40 w-screen bg-zinc-950 overflow-hidden'
+			id='cv'
 		>
 			<div className='container mx-auto px-6 h-full relative z-10 flex justify-between items-center gap-6'>
 				<div className='max-w-xl relative'>
@@ -33,15 +33,15 @@ const BottomBanner = () => {
 						/>
 					</div>
 					<RadialGradientCircle
-						color='#a3e635'
+						color='--global-color-two'
 						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='#eab308'
+						color='--global-color-three'
 						className='scale-[3] absolute top-[10%] left-0 opacity-50'
 					/>
 					<RadialGradientCircle
-						color='#22d3ee'
+						color='--global-color-one'
 						className='scale-[4] absolute -bottom-[10%] -right-[10%] opacity-30'
 					/>
 					<div

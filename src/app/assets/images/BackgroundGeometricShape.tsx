@@ -84,11 +84,17 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 				>
 					<stop
 						offset='30%'
-						style={{ stopColor: '#a3e635', stopOpacity: 1 }}
+						style={{
+							stopColor: 'var(--global-color-two)',
+							stopOpacity: 1,
+						}}
 					/>
 					<stop
 						offset='100%'
-						style={{ stopColor: '#06b6d4', stopOpacity: 1 }}
+						style={{
+							stopColor: 'var(--global-color-four)',
+							stopOpacity: 1,
+						}}
 					/>
 				</linearGradient>
 			</defs>

@@ -6,6 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --global-color-one: #22d3ee;
+  --global-color-two: #a3e635;
+  --global-color-three: #eab308;
+  --global-color-four: #06b6d4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,4 +51,8 @@ body {
 
 .animated-border {
   animation: border-grow 4s linear;
+}
+
+html {
+  scroll-behavior: smooth;
 }

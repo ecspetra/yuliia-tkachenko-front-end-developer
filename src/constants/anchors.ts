@@ -1,10 +1,12 @@
 export enum NavigationLinks {
-	'About me' = '#summary',
+	'Summary' = '#summary',
 	'Skills' = '#skills',
 	'Experience' = '#experience',
 	'Education' = '#education',
 	'Portfolio' = '#portfolio',
-	'My CV' = '#bottom-banner',
+	'CV' = '#cv',
 }
+
+export const LINK_TO_TOP = '#top-banner'
 
 export const HEADER_ANCHORS = Object.entries(NavigationLinks)

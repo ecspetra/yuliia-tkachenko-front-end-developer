@@ -12,11 +12,11 @@ const Summary = () => (
 		<div className='w-full flex justify-between items-center gap-16 mb-12'>
 			<div className='w-full max-w-1/2 relative'>
 				<RadialGradientCircle
-					color='#22d3ee'
+					color='--global-color-one'
 					className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
 				<RadialGradientCircle
-					color='#a3e635'
+					color='--global-color-two'
 					className='scale-[4] absolute -bottom-[40%] -right-[10%] opacity-20'
 				/>
 				<CircleShape className='w-8 absolute top-[70%] -left-[3%] z-20' />

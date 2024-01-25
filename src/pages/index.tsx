@@ -15,24 +15,22 @@ const urbanistFont = Urbanist({
 	variable: '--font-urbanist',
 })
 
-const Home = () => {
-	return (
-		<>
-			<Header className={`${urbanistFont.variable} font-sans`} />
-			<main
-				className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${urbanistFont.variable} font-sans font-normal leading-normal tracking-wide text-xl text-white`}
-			>
-				<TopBanner />
-				<Summary />
-				<Skills />
-				<Experience />
-				<Education />
-				<Projects />
-				<BottomBanner />
-			</main>
-			<Footer className={`${urbanistFont.variable} font-sans`} />
-		</>
-	)
-}
+const Home = () => (
+	<>
+		<Header className={`${urbanistFont.variable} font-sans`} />
+		<main
+			className={`bg-zinc-900 flex min-h-screen flex-col items-center justify-between ${urbanistFont.variable} font-sans font-normal leading-normal tracking-wide text-xl text-white`}
+		>
+			<TopBanner />
+			<Summary />
+			<Skills />
+			<Experience />
+			<Education />
+			<Projects />
+			<BottomBanner />
+		</main>
+		<Footer className={`${urbanistFont.variable} font-sans`} />
+	</>
+)
 
 export default Home

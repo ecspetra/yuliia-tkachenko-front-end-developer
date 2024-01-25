@@ -4,13 +4,13 @@ import { EXPERIENCE_LIST } from '@/constants/experienceList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 
 const Experience = () => (
-	<div className='w-full relative max-w-6xl px-6 py-40' id='experience'>
+	<div className='w-full relative max-w-6xl px-6 pt-40' id='experience'>
 		<RadialGradientCircle
-			color='#22d3ee'
+			color='--global-color-one'
 			className='scale-[4] absolute -bottom-[20%] -left-[10%] opacity-20'
 		/>
 		<RadialGradientCircle
-			color='#a3e635'
+			color='--global-color-two'
 			className='scale-[3] absolute -bottom-[20%] left-0 opacity-20'
 		/>
 		<div className='text-center relative z-40'>

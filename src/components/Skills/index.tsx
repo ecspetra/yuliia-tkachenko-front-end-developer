@@ -25,11 +25,11 @@ const Skills = () => {
 				</div>
 				<div className='relative max-w-6xl'>
 					<RadialGradientCircle
-						color='#22d3ee'
+						color='--global-color-one'
 						className='scale-[5.5] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='#eab308'
+						color='--global-color-three'
 						className='scale-[4] absolute bottom-[10%] right-[30%] opacity-30'
 					/>
 					<div className='w-[30vw] h-[30vw] absolute top-[10%] -left-[15%]'>

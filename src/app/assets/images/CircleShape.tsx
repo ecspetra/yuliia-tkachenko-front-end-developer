@@ -5,7 +5,10 @@ interface PropsType {
 	color?: string
 }
 
-const CircleShape: FC<PropsType> = ({ className, color = '#a3e635' }) => (
+const CircleShape: FC<PropsType> = ({
+	className,
+	color = 'var(--global-color-two)',
+}) => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
 		shapeRendering='geometricPrecision'

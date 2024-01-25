@@ -34,11 +34,11 @@ const Portfolio = () => (
 		</div>
 		<div className='relative grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-2xl mx-auto'>
 			<RadialGradientCircle
-				color='#22d3ee'
+				color='--global-color-one'
 				className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 			/>
 			<RadialGradientCircle
-				color='#eab308'
+				color='--global-color-three'
 				className='scale-[4] absolute -bottom-[40%] -right-[10%] opacity-20'
 			/>
 			<CircleShape className='w-4 absolute bottom-[30%] -right-[10%] z-20' />

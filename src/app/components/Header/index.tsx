@@ -1,15 +1,24 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import Title from '@/app/components/Title'
-import { HEADER_ANCHORS } from '@/constants/anchors'
+import { HEADER_ANCHORS, LINK_TO_TOP } from '@/constants/anchors'
+import useHeaderAnimation from '@/hooks/useHeaderAnimation'
 
 type PropsType = {
 	className: string
 }
 
 const Header: FC<PropsType> = ({ className }) => {
-	const linkClassNames =
-		'relative duration-300 hover:text-lime-400 px-4 py-4 -mb-4 after:duration-300 after:w-0 after:h-0.5 after:bg-lime-400 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 hover:after:w-full'
+	const { activeAnchor, isScrolled } = useHeaderAnimation()
+
+	const linkClassNames = (anchor: string) =>
+		classNames(
+			'relative duration-300 hover:text-lime-400 px-4 py-4 -mb-4 after:duration-300 after:w-0 after:h-0.5 after:bg-lime-400 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 hover:after:w-full',
+			{
+				'after:w-4':
+					anchor.toLowerCase() === activeAnchor && isScrolled,
+			}
+		)
 
 	return (
 		<header
@@ -19,17 +28,26 @@ const Header: FC<PropsType> = ({ className }) => {
 			)}
 		>
 			<div className='container px-6 py-4 mx-auto flex justify-between items-end'>
-				<Title
-					variant='h3-large'
-					className='border-none relative !text-sm pl-4 after:w-[1px] after:h-14 after:bg-lime-400 after:absolute after:bottom-0 after:left-0'
+				<a
+					href={LINK_TO_TOP}
+					className='duration-300 pr-4 pb-4 -mb-4 hover:text-lime-400 group'
 				>
-					Yuliia
-					<br />
-					Tkachenko
-				</Title>
+					<Title
+						variant='h3-large'
+						className='border-none relative !text-sm pl-4 after:w-[1px] after:h-14 after:bg-lime-400 after:absolute after:bottom-0 after:left-0 after:duration-300 group-hover:after:-bottom-5'
+					>
+						Yuliia
+						<br />
+						Tkachenko
+					</Title>
+				</a>
 				<nav className='flex justify-end items-center text-zinc-400'>
 					{HEADER_ANCHORS.map(([key, value]) => (
-						<a key={key} href={value} className={linkClassNames}>
+						<a
+							key={key}
+							href={value}
+							className={linkClassNames(key)}
+						>
 							{key}
 						</a>
 					))}

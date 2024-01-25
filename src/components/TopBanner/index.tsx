@@ -40,15 +40,15 @@ const TopBanner = () => {
 					</div>
 					<SpinningCircleShape className='animate-spin custom-animation-duration w-40 h-40 absolute -top-[5%] left-[10%] z-20 rounded-full' />
 					<RadialGradientCircle
-						color='#22d3ee'
+						color='--global-color-one'
 						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='#a3e635'
+						color='--global-color-two'
 						className='scale-[3] absolute -bottom-[10%] -left-[20%] opacity-20'
 					/>
 					<RadialGradientCircle
-						color='#eab308'
+						color='--global-color-three'
 						className='scale-[3] absolute -top-[10%] -right-[10%] opacity-40'
 					/>
 					<div
