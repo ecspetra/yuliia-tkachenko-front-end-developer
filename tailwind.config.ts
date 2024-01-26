@@ -12,14 +12,32 @@ const config: Config = {
 				sans: ['var(--font-urbanist)'],
 			},
 			colors: {
-				'global-color-one':
-					'rgb(var(--global-color-one) / <alpha-value>)',
-				'global-color-two':
-					'rgb(var(--global-color-two) / <alpha-value>)',
-				'global-color-three':
-					'rgb(var(--global-color-three) / <alpha-value>)',
-				'global-color-four':
-					'rgb(var(--global-color-four) / <alpha-value>)',
+				'background-color':
+					'rgb(var(--background-color) / <alpha-value>)',
+				'global-color-one-scheme-1':
+					'rgb(var(--global-color-one-scheme-1) / <alpha-value>)',
+				'global-color-two-scheme-1':
+					'rgb(var(--global-color-two-scheme-1) / <alpha-value>)',
+				'global-color-three-scheme-1':
+					'rgb(var(--global-color-three-scheme-1) / <alpha-value>)',
+				'global-color-four-scheme-1':
+					'rgb(var(--global-color-four-scheme-1) / <alpha-value>)',
+				'global-color-one-scheme-2':
+					'rgb(var(--global-color-one-scheme-2) / <alpha-value>)',
+				'global-color-two-scheme-2':
+					'rgb(var(--global-color-two-scheme-2) / <alpha-value>)',
+				'global-color-three-scheme-2':
+					'rgb(var(--global-color-three-scheme-2) / <alpha-value>)',
+				'global-color-four-scheme-2':
+					'rgb(var(--global-color-four-scheme-2) / <alpha-value>)',
+				'global-color-one-scheme-3':
+					'rgb(var(--global-color-one-scheme-3) / <alpha-value>)',
+				'global-color-two-scheme-3':
+					'rgb(var(--global-color-two-scheme-3) / <alpha-value>)',
+				'global-color-three-scheme-3':
+					'rgb(var(--global-color-three-scheme-3) / <alpha-value>)',
+				'global-color-four-scheme-3':
+					'rgb(var(--global-color-four-scheme-3) / <alpha-value>)',
 			},
 		},
 	},

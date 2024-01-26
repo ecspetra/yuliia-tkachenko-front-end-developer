@@ -7,6 +7,8 @@ import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import TextSVG from '@/app/components/TextSVG'
 
 const Skills = () => {
 	const animatedGeometricShapeRef = useRef(null)
@@ -25,11 +27,13 @@ const Skills = () => {
 				</div>
 				<div className='relative max-w-6xl'>
 					<RadialGradientCircle
-						color='--global-color-one'
+						id={SVG_IDS.circle6}
+						color='global-color-one-scheme-1'
 						className='scale-[5.5] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='--global-color-three'
+						id={SVG_IDS.circle7}
+						color='global-color-three-scheme-1'
 						className='scale-[4] absolute bottom-[10%] right-[30%] opacity-30'
 					/>
 					<div className='w-[30vw] h-[30vw] absolute top-[10%] -left-[15%]'>
@@ -38,6 +42,7 @@ const Skills = () => {
 							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 						>
 							<BackgroundGeometricShape
+								id={SVG_IDS.backgroundShape3}
 								variant='3'
 								className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 							/>

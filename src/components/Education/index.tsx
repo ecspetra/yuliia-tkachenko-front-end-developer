@@ -5,6 +5,8 @@ import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import TextSVG from '@/app/components/TextSVG'
 
 const Education = () => (
 	<div className='w-full pt-40' id='education'>
@@ -13,15 +15,18 @@ const Education = () => (
 			<div className='py-40 px-6 relative rounded-3xl overflow-hidden'>
 				<BackgroundLinesShape className='w-full absolute -bottom-[35%] -right-[45%] opacity-10 -rotate-120 z-10' />
 				<RadialGradientCircle
-					color='--global-color-one'
+					id={SVG_IDS.circle10}
+					color='global-color-one-scheme-1'
 					className='scale-[4] absolute top-0 -right-[10%] opacity-20'
 				/>
 				<RadialGradientCircle
-					color='--global-color-three'
+					id={SVG_IDS.circle11}
+					color='global-color-three-scheme-1'
 					className='scale-[4] absolute -bottom-[40%] right-0 opacity-20'
 				/>
-				<SpinningCircleShape className='animate-spin custom-animation-duration w-40 h-40 absolute -bottom-20 left-[25%] z-20 rounded-full' />
+				<SpinningCircleShape className='spinner-animation w-40 h-40 absolute -bottom-20 left-[25%] z-20 rounded-full' />
 				<BackgroundGeometricShape
+					id={SVG_IDS.backgroundShape4}
 					variant='4'
 					className='w-[600px] absolute top-[30%] -left-[20%]'
 				/>

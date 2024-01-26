@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
 import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
+import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 type PropsType = {
 	children: ReactNode
@@ -25,13 +27,15 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 					<Title variant='h3-large'>{children}</Title>
 					<span
 						ref={spanRef}
-						className='w-full h-0.5 bg-global-color-two block mt-6 -mb-6'
-					/>
+						className='relative w-full h-0.5 block mt-6 -mb-6'
+					>
+						<BackgroundSvgFill
+							id={SVG_IDS.backgroundFill3}
+							borderRadius={0}
+						/>
+					</span>
 				</div>
-				<FontAwesomeIcon
-					className='text-global-color-two'
-					icon={faCode}
-				/>
+				<FontAwesomeIcon className='text-zinc-500' icon={faCode} />
 			</div>
 		</div>
 	)

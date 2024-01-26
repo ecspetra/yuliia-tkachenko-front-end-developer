@@ -3,45 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-color: 24 24 27;
 
   /*variant 1*/
-  --global-color-one: 34 211 238;
-  --global-color-two: 163 230 53;
-  --global-color-three: 234 179 8;
-  --global-color-four: 6 182 212;
+  --global-color-one-scheme-1: 34 211 238;
+  --global-color-two-scheme-1: 163 230 53;
+  --global-color-three-scheme-1: 234 179 8;
+  --global-color-four-scheme-1: 6 182 212;
 
   /*variant 2*/
-  /*--global-color-one: 192 38 211;*/
-  /*--global-color-two: 129 140 248;*/
-  /*--global-color-three: 251 146 60;*/
-  /*--global-color-four: 236 72 153;*/
+  --global-color-one-scheme-2: 192 38 211;
+  --global-color-two-scheme-2: 129 140 248;
+  --global-color-three-scheme-2: 251 146 60;
+  --global-color-four-scheme-2: 236 72 153;
 
-  /*variant 2*/
-  /*--global-color-one: 192 38 211;*/
-  /*--global-color-two: 163 230 53;*/
-  /*--global-color-three: 251 146 60;*/
-  /*--global-color-four: 236 72 153;*/
+  /*variant 3*/
+  --global-color-one-scheme-3: 192 38 211;
+  --global-color-two-scheme-3: 163 230 53;
+  --global-color-three-scheme-3: 251 146 60;
+  --global-color-four-scheme-3: 236 72 153;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+linearGradient stop:first-child {
+  stop-color: rgb(var(--background-color));
+}
+
+linearGradient stop:last-child {
+  stop-color: rgb(var(--background-color));
+}
+
+stop, circle, text {
+  transition: 4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-color))
 }
 
 @keyframes spin {
@@ -59,14 +59,10 @@ body {
   }
 }
 
-.custom-animation-duration {
+.spinner-animation {
   animation: spin 13s linear infinite;
 }
 
 .animated-border {
   animation: border-grow 4s linear;
-}
-
-html {
-  scroll-behavior: smooth;
 }

@@ -11,6 +11,8 @@ import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import TitleAnimated from '@/app/components/Title/TitleAnimated'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import TextSVG from '@/app/components/TextSVG'
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef(null)
@@ -22,8 +24,11 @@ const TopBanner = () => {
 			<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 				<div className='relative max-w-2xl z-10'>
 					<TitleAnimated />
-					<Title variant='h2' className='!text-global-color-two'>
-						Front End Developer
+					<Title
+						variant='h2'
+						className='!text-global-color-two-scheme-1'
+					>
+						<TextSVG text='Front End Developer' />
 					</Title>
 					<Button />
 				</div>
@@ -34,21 +39,25 @@ const TopBanner = () => {
 						className='w-[15vw] h-[15vw] absolute -top-[10%] left-[calc(50%-250px)] -translate-x-1/2'
 					>
 						<BackgroundGeometricShape
+							id={SVG_IDS.backgroundShape1}
 							variant='1'
 							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 						/>
 					</div>
-					<SpinningCircleShape className='animate-spin custom-animation-duration w-40 h-40 absolute -top-[5%] left-[10%] z-20 rounded-full' />
+					<SpinningCircleShape className='spinner-animation w-40 h-40 absolute -top-[5%] left-[10%] z-20 rounded-full' />
 					<RadialGradientCircle
-						color='--global-color-one'
+						id={SVG_IDS.circle1}
+						color='global-color-one-scheme-1'
 						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='--global-color-two'
+						id={SVG_IDS.circle2}
+						color='global-color-two-scheme-1'
 						className='scale-[3] absolute -bottom-[10%] -left-[20%] opacity-20'
 					/>
 					<RadialGradientCircle
-						color='--global-color-three'
+						id={SVG_IDS.circle3}
+						color='global-color-three-scheme-1'
 						className='scale-[3] absolute -top-[10%] -right-[10%] opacity-40'
 					/>
 					<div

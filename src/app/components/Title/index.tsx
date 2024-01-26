@@ -1,5 +1,6 @@
 import { FC, RefObject, ReactNode } from 'react'
 import classNames from 'classnames'
+import TextSVG from '@/app/components/TextSVG'
 
 type PropsType = {
 	children: ReactNode
@@ -43,11 +44,11 @@ const Title: FC<PropsType> = ({
 				return (
 					<h3
 						className={classNames(
-							'text-base font-bold text-global-color-two mb-4 uppercase tracking-[4px]',
+							'text-base font-bold text-global-color-two-scheme-1 mb-4 uppercase tracking-[4px]',
 							className
 						)}
 					>
-						{children}
+						<TextSVG text={children} />
 					</h3>
 				)
 			case 'h3-large':

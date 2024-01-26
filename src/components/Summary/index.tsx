@@ -6,22 +6,26 @@ import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 const Summary = () => (
 	<div className='max-w-6xl px-6 py-60' id='summary'>
 		<div className='w-full flex justify-between items-center gap-16 mb-12'>
 			<div className='w-full max-w-1/2 relative'>
 				<RadialGradientCircle
-					color='--global-color-one'
+					id={SVG_IDS.circle4}
+					color='global-color-one-scheme-1'
 					className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
 				<RadialGradientCircle
-					color='--global-color-two'
+					id={SVG_IDS.circle5}
+					color='global-color-two-scheme-1'
 					className='scale-[4] absolute -bottom-[40%] -right-[10%] opacity-20'
 				/>
 				<CircleShape className='w-8 absolute top-[70%] -left-[3%] z-20' />
 				<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute top-[20%] -right-[3%] px-5 rounded-xl flex flex-col justify-center items-start z-20'>
 					<BackgroundGeometricShape
+						id={SVG_IDS.backgroundShape2}
 						variant='2'
 						className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 					/>
@@ -80,7 +84,7 @@ const Summary = () => (
 						link={item.link}
 						icon={item.icon}
 					/>
-					<span className='[writing-mode:vertical-lr] text-base text-global-color-two'>
+					<span className='[writing-mode:vertical-lr] text-base text-zinc-400 tracking-[4px]'>
 						{item.title}
 					</span>
 				</div>

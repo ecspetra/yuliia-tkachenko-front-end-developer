@@ -7,6 +7,7 @@ import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 type PortfolioFrontEndItemType = {
 	title: string
@@ -50,15 +51,21 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				}`}
 			>
 				<RadialGradientCircle
+					id={SVG_IDS.circle14}
 					color={
-						isEven ? '--global-color-two' : '--global-color-three'
+						isEven
+							? 'global-color-two-scheme-1'
+							: 'global-color-three-scheme-1'
 					}
 					className='scale-[3] absolute -bottom-[30%] -right-[20%] opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
+						id={SVG_IDS.circle15}
 						color={
-							isEven ? '--global-color-one' : '--global-color-two'
+							isEven
+								? 'global-color-one-scheme-1'
+								: 'global-color-two-scheme-1'
 						}
 						className='scale-[4] absolute bottom-[10%] right-0 opacity-15'
 					/>
@@ -95,7 +102,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				<Title variant='h3-large' className='border-none mb-8 relative'>
 					{title}
 				</Title>
-				<p className='inline-flex flex-wrap mb-8'>
+				<p className='flex justify-start items-start flex-wrap mb-8'>
 					<span className='mr-4'>Created with:</span>
 					{teckStack.map((item, idx) => (
 						<Tag key={idx} tag={item} />

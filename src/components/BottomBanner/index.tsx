@@ -9,6 +9,8 @@ import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricSha
 import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import TextSVG from '@/app/components/TextSVG'
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef(null)
@@ -28,20 +30,24 @@ const BottomBanner = () => {
 						className='w-[27vw] h-[27vw] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'
 					>
 						<BackgroundGeometricShape
+							id={SVG_IDS.backgroundShape5}
 							variant='5'
 							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 						/>
 					</div>
 					<RadialGradientCircle
-						color='--global-color-two'
+						id={SVG_IDS.circle16}
+						color='global-color-two-scheme-1'
 						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
-						color='--global-color-three'
+						id={SVG_IDS.circle17}
+						color='global-color-three-scheme-1'
 						className='scale-[3] absolute top-[10%] left-0 opacity-50'
 					/>
 					<RadialGradientCircle
-						color='--global-color-one'
+						id={SVG_IDS.circle18}
+						color='global-color-one-scheme-1'
 						className='scale-[4] absolute -bottom-[10%] -right-[10%] opacity-30'
 					/>
 					<div
@@ -58,11 +64,10 @@ const BottomBanner = () => {
 						alt='Bottom Banner'
 					/>
 				</div>
-				<div className='relative z-40'>
+				<div className='relative max-w-2xl w-full z-40'>
 					<Title variant='h3'>Resume</Title>
 					<Title className='!text-7xl'>
-						Want to see my{' '}
-						<span className='text-global-color-two'>CV?</span>
+						Want to see my <TextSVG text='CV' />?
 						<br />
 						Download it!
 					</Title>

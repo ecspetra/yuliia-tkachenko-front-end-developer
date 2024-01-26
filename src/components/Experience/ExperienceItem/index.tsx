@@ -3,6 +3,8 @@ import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import Tag from '@/components/Tag'
+import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
+import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 type ExperienceItemType = {
 	company: string
@@ -34,9 +36,13 @@ const ExperienceItem: FC<PropsType> = ({
 	<div className='w-full mb-16 pb-16 border-b border-zinc-700 last:mb-0 last:pb-0 last:border-none relative z-40'>
 		<div className='flex justify-between items-start gap-16'>
 			<div className='w-full max-w-64'>
-				<Title className='!mb-4 border-b border-global-color-two pb-4'>
-					{company}
-				</Title>
+				<Title className='!mb-4'>{company}</Title>
+				<span className='relative w-full h-0.5 block mb-4'>
+					<BackgroundSvgFill
+						id={SVG_IDS.backgroundFill4}
+						borderRadius={0}
+					/>
+				</span>
 				<div className='text-base'>
 					<p>
 						<FontAwesomeIcon
@@ -67,7 +73,7 @@ const ExperienceItem: FC<PropsType> = ({
 						</li>
 					))}
 				</ul>
-				<p>
+				<p className='flex justify-start items-start flex-wrap'>
 					<span className='mr-4'>Teck stack:</span>
 					{teckStack.map((item, idx) => (
 						<Tag key={idx} tag={item} />
