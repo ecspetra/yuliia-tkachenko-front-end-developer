@@ -3,7 +3,6 @@ import ExperienceItem from '@/components/Experience/ExperienceItem'
 import { EXPERIENCE_LIST } from '@/constants/experienceList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
-import TextSVG from '@/app/components/TextSVG'
 
 const Experience = () => (
 	<div className='w-full relative max-w-6xl px-6 pt-40' id='experience'>

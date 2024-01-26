@@ -8,7 +8,6 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
-import TextSVG from '@/app/components/TextSVG'
 
 const Skills = () => {
 	const animatedGeometricShapeRef = useRef(null)

@@ -8,7 +8,6 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import PortfolioFrontEndItem from '@/components/Portfolio/PortfolioFrontEndItem'
 import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignItem'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
-import TextSVG from '@/app/components/TextSVG'
 
 const Portfolio = () => (
 	<div className='container px-6 py-40' id='portfolio'>

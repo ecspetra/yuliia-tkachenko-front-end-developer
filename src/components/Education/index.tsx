@@ -6,7 +6,6 @@ import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricSha
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
-import TextSVG from '@/app/components/TextSVG'
 
 const Education = () => (
 	<div className='w-full pt-40' id='education'>

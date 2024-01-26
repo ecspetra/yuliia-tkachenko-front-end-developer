@@ -8,8 +8,6 @@ interface PropsType {
 }
 
 const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
-	if (!color) return null
-
 	const { colorScheme } = useChangeColorScheme([color])
 
 	const gradientId = `grad-${id}`
