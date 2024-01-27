@@ -70,7 +70,7 @@ const BottomBanner = () => {
 					</div>
 					<div
 						ref={circleRef}
-						className='w-12 h-12 absolute -bottom-6 left-[10%] z-20'
+						className='w-12 h-12 absolute -bottom-6 left-[10%] z-20 invisible'
 					>
 						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>

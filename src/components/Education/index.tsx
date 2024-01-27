@@ -31,14 +31,14 @@ const Education = () => {
 			<div className='container relative mx-auto bg-zinc-950 rounded-3xl text-center'>
 				<div
 					ref={circleRef}
-					className='w-8 h-8 absolute -top-12 left-[25%] z-20'
+					className='w-8 h-8 absolute -top-12 left-[25%] z-20 invisible'
 				>
 					<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 				</div>
 				<div className='py-40 px-6 relative rounded-3xl overflow-hidden'>
 					<div
 						ref={backgroundLinesShapeRef}
-						className='w-[50vw] h-[50vw] absolute bottom-[35%] -right-[30%] z-10'
+						className='w-[50vw] h-[50vw] absolute bottom-[35%] -right-[30%] z-10 invisible'
 					>
 						<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
 					</div>
@@ -55,7 +55,7 @@ const Education = () => {
 					<SpinningCircleShape className='spinner-animation w-40 h-40 absolute -bottom-20 left-[25%] z-20 rounded-full' />
 					<div
 						ref={backgroundGeometricShapeRef}
-						className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%]'
+						className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
 					>
 						<BackgroundGeometricShape
 							id={SVG_IDS.backgroundShape4}

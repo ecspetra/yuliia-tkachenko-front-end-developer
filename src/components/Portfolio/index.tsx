@@ -68,7 +68,7 @@ const Portfolio = () => {
 				/>
 				<div
 					ref={circleRef}
-					className='w-4 h-4 absolute bottom-[60%] -right-[20%] z-20'
+					className='w-4 h-4 absolute bottom-[60%] -right-[20%] z-20 invisible'
 				>
 					<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 				</div>
