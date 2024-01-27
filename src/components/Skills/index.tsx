@@ -10,8 +10,8 @@ import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 const Skills = () => {
-	const animatedGeometricShapeRef = useRef(null)
-	const animatedBlurCircleRef = useRef(null)
+	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
+	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
 
 	return (

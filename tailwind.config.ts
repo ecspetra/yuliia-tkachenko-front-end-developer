@@ -38,6 +38,14 @@ const config: Config = {
 					'rgb(var(--global-color-three-scheme-3) / <alpha-value>)',
 				'global-color-four-scheme-3':
 					'rgb(var(--global-color-four-scheme-3) / <alpha-value>)',
+				'global-color-one-scheme-4':
+					'rgb(var(--global-color-one-scheme-4) / <alpha-value>)',
+				'global-color-two-scheme-4':
+					'rgb(var(--global-color-two-scheme-4) / <alpha-value>)',
+				'global-color-three-scheme-4':
+					'rgb(var(--global-color-three-scheme-4) / <alpha-value>)',
+				'global-color-four-scheme-4':
+					'rgb(var(--global-color-four-scheme-4) / <alpha-value>)',
 			},
 		},
 	},

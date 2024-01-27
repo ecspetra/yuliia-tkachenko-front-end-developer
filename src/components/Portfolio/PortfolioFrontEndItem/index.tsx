@@ -36,8 +36,8 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 	isEven,
 	idx,
 }) => {
-	const bigImageRef = useRef(null)
-	const smallImageRef = useRef(null)
+	const bigImageRef = useRef<HTMLDivElement>(null)
+	const smallImageRef = useRef<HTMLDivElement>(null)
 	usePortfolioImagesAnimation(bigImageRef, 'bigImage')
 	usePortfolioImagesAnimation(smallImageRef, 'smallImage')
 	const isShowLargeRadialGradientCircle = idx !== 2

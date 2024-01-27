@@ -12,8 +12,8 @@ type PropsType = {
 }
 
 const SkillsItem: FC<PropsType> = ({ children, idx }) => {
-	const skillItemRef = useRef(null)
-	const spanRef = useRef(null)
+	const skillItemRef = useRef<HTMLDivElement>(null)
+	const spanRef = useRef<HTMLSpanElement>(null)
 	useSkillsItemAnimation(skillItemRef, spanRef, idx)
 
 	return (

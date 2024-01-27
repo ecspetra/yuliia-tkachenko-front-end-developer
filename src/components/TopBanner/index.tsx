@@ -15,8 +15,8 @@ import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
 
 const TopBanner = () => {
-	const animatedGeometricShapeRef = useRef(null)
-	const animatedBlurCircleRef = useRef(null)
+	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
+	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
 
 	return (

@@ -17,4 +17,10 @@ export const COLOR_SCHEME = [
 		'global-color-three-scheme-3',
 		'global-color-four-scheme-3',
 	],
+	[
+		'global-color-one-scheme-4',
+		'global-color-two-scheme-4',
+		'global-color-three-scheme-4',
+		'global-color-four-scheme-4',
+	],
 ]

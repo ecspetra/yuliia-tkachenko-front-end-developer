@@ -12,7 +12,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 	image: { fullSizeSrc, thumbnailSrc },
 	idx,
 }) => {
-	const fullPageImageRef = useRef(null)
+	const fullPageImageRef = useRef<HTMLDivElement>(null)
 	usePortfolioImagesAnimation(fullPageImageRef, 'fullPageImage', idx)
 
 	return (

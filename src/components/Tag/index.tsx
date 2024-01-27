@@ -14,6 +14,7 @@ const Tag: FC<PropsType> = ({ tag }) => {
 				id={SVG_IDS.backgroundFill5}
 				borderRadius={16}
 				opacity={10}
+				isWithGradient={false}
 			/>
 			<TextSVG text={tag} />
 		</span>

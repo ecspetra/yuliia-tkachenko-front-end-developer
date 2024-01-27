@@ -8,6 +8,7 @@ interface PropsType {
 	borderRadius: number
 	opacity?: number
 	className?: string
+	isWithGradient?: boolean
 }
 
 const BackgroundSvgFill: FC<PropsType> = ({
@@ -15,6 +16,7 @@ const BackgroundSvgFill: FC<PropsType> = ({
 	borderRadius,
 	opacity,
 	className,
+	isWithGradient = true,
 }) => {
 	const { colorScheme } = useChangeColorScheme([
 		COLOR_SCHEME[0][1],
@@ -59,7 +61,11 @@ const BackgroundSvgFill: FC<PropsType> = ({
 			<rect
 				width='100%'
 				height='100%'
-				fill={`url(#${gradientId})`}
+				fill={
+					isWithGradient
+						? `url(#${gradientId})`
+						: `rgb(var(--${colorScheme[0]}))`
+				}
 				rx={borderRadius}
 			/>
 		</svg>
