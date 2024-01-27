@@ -10,15 +10,38 @@ import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
 
 const Education = () => {
-	const imageRef = useRef<HTMLImageElement>(null)
-	useParallax(imageRef, 'education', -250)
+	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)
+	const backgroundLinesShapeRef = useRef<HTMLDivElement>(null)
+	const circleRef = useRef<HTMLDivElement>(null)
+	useParallax(
+		[
+			{ shapeRef: backgroundGeometricShapeRef, shiftYValue: -250 },
+			{
+				shapeRef: backgroundLinesShapeRef,
+				shiftXValue: -100,
+				shiftYValue: 350,
+			},
+			{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: 50 },
+		],
+		'education'
+	)
 
 	return (
 		<div className='w-full pt-40' id='education'>
 			<div className='container relative mx-auto bg-zinc-950 rounded-3xl text-center'>
-				<CircleShape className='w-8 absolute -top-3 left-[25%] z-20' />
+				<div
+					ref={circleRef}
+					className='w-8 h-8 absolute -top-12 left-[25%] z-20'
+				>
+					<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+				</div>
 				<div className='py-40 px-6 relative rounded-3xl overflow-hidden'>
-					<BackgroundLinesShape className='w-full absolute -bottom-[35%] -right-[45%] opacity-10 -rotate-120 z-10' />
+					<div
+						ref={backgroundLinesShapeRef}
+						className='w-[50vw] h-[50vw] absolute bottom-[35%] -right-[30%] z-10'
+					>
+						<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
+					</div>
 					<RadialGradientCircle
 						id={SVG_IDS.circle10}
 						color='global-color-one-scheme-1'
@@ -31,7 +54,7 @@ const Education = () => {
 					/>
 					<SpinningCircleShape className='spinner-animation w-40 h-40 absolute -bottom-20 left-[25%] z-20 rounded-full' />
 					<div
-						ref={imageRef}
+						ref={backgroundGeometricShapeRef}
 						className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%]'
 					>
 						<BackgroundGeometricShape

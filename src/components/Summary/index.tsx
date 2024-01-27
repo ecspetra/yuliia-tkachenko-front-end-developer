@@ -15,7 +15,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {
 	const imageRef = useRef<HTMLImageElement>(null)
-	useParallax(imageRef, 'summary', -150)
+	const circleRef = useRef<HTMLDivElement>(null)
+	useParallax(
+		[
+			{ shapeRef: imageRef, shiftYValue: -150 },
+			{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: 250 },
+		],
+		'summary'
+	)
 
 	return (
 		<div className='max-w-6xl px-6 py-60' id='summary'>
@@ -31,7 +38,12 @@ const Summary = () => {
 						color='global-color-two-scheme-1'
 						className='scale-[4] absolute -bottom-[40%] -right-[10%] opacity-20'
 					/>
-					<CircleShape className='w-8 absolute top-[70%] -left-[3%] z-20' />
+					<div
+						ref={circleRef}
+						className='w-8 h-8 absolute top-[30%] -left-[10%] z-20'
+					>
+						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					</div>
 					<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute top-[20%] -right-[3%] px-5 rounded-xl flex flex-col justify-center items-start z-20'>
 						<BackgroundGeometricShape
 							id={SVG_IDS.backgroundShape2}

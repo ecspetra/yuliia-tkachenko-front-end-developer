@@ -13,8 +13,14 @@ type PropsType = {
 const Header: FC<PropsType> = ({ className }) => {
 	const { activeAnchor, isScrolled } = useHeaderAnimation()
 
-	const linkClassNames =
-		'relative duration-300 hover:text-white px-4 py-4 -mb-4 group'
+	const linkClassNames = (anchor: string) =>
+		classNames(
+			'relative duration-300 hover:text-white px-4 py-4 -mb-4 group',
+			{
+				'text-white':
+					anchor.toLowerCase() === activeAnchor && isScrolled,
+			}
+		)
 
 	const linkBorderClassNames = (anchor: string) =>
 		classNames(
@@ -53,7 +59,11 @@ const Header: FC<PropsType> = ({ className }) => {
 				</a>
 				<nav className='flex justify-end items-center text-zinc-400'>
 					{HEADER_ANCHORS.map(([key, value]) => (
-						<a key={key} href={value} className={linkClassNames}>
+						<a
+							key={key}
+							href={value}
+							className={linkClassNames(key)}
+						>
 							<span className={linkBorderClassNames(key)}>
 								<BackgroundSvgFill
 									id={SVG_IDS.backgroundFill4}

@@ -8,16 +8,22 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import useParallax from '@/hooks/useParallax'
 
 const Skills = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
+	const circleRef = useRef<HTMLDivElement>(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+	useParallax(
+		[{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: -150 }],
+		'skills'
+	)
 
 	return (
 		<div className='relative py-40 w-screen' id='skills'>
 			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-[calc(100%-210px)] overflow-hidden'>
-				<BackgroundLinesShape className='w-[1300px] absolute top-[calc(50%+400px)] left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2 opacity-15 -rotate-90 z-10' />
+				<BackgroundLinesShape className='w-[50vw] absolute top-[calc(50%+400px)] left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2 opacity-15 -rotate-90 z-10' />
 			</div>
 			<div className='container mx-auto px-6 h-full relative z-10 flex justify-between items-start gap-6'>
 				<div className='relative z-40'>
@@ -47,10 +53,15 @@ const Skills = () => {
 							/>
 						</div>
 						<div className='w-60 h-60 absolute top-[30%] -left-[30%]'>
-							<CircleShape className='w-12 absolute bottom-0 right-0 z-20' />
+							<div
+								ref={circleRef}
+								className='w-12 h-12 absolute -bottom-[35%] right-[0%] z-20'
+							>
+								<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+							</div>
 							<CircleShape
 								className='w-24 absolute top-0 left-0 z-20'
-								color='#18181b'
+								color='rgb(var(--background-color))'
 							/>
 						</div>
 					</div>

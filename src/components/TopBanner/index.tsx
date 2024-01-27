@@ -13,11 +13,23 @@ import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import TitleAnimated from '@/app/components/Title/TitleAnimated'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
+import useParallax from '@/hooks/useParallax'
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
+	const circleRef = useRef<HTMLDivElement>(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+	useParallax(
+		[
+			{
+				shapeRef: circleRef,
+				shiftXValue: -100,
+				shiftYValue: -150,
+			},
+		],
+		'top-banner'
+	)
 
 	return (
 		<div className='relative w-screen' id='top-banner'>
@@ -32,8 +44,8 @@ const TopBanner = () => {
 					</Title>
 					<Button />
 				</div>
-				<div className='max-w-xl relative'>
-					<BackgroundLinesShape className='w-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
+				<div className='max-w-[23vw] relative'>
+					<BackgroundLinesShape className='w-[50vw] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
 					<div
 						ref={animatedGeometricShapeRef}
 						className='w-[15vw] h-[15vw] absolute -top-[10%] left-[calc(50%-250px)] -translate-x-1/2'
@@ -66,7 +78,12 @@ const TopBanner = () => {
 					>
 						<BlurCircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
-					<CircleShape className='w-12 absolute -bottom-6 right-[10%] z-20' />
+					<div
+						ref={circleRef}
+						className='w-12 h-12 absolute -bottom-32 -right-[5%] z-20'
+					>
+						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					</div>
 					<LinesShape className='w-24 absolute top-[20%] right-0 z-20' />
 					<img
 						className='relative z-10 rounded-3xl'

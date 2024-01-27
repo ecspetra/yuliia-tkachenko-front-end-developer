@@ -11,11 +11,23 @@ import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
+import useParallax from '@/hooks/useParallax'
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
+	const circleRef = useRef<HTMLDivElement>(null)
 	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+	useParallax(
+		[
+			{
+				shapeRef: circleRef,
+				shiftXValue: -100,
+				shiftYValue: -150,
+			},
+		],
+		'cv'
+	)
 
 	return (
 		<div
@@ -23,8 +35,8 @@ const BottomBanner = () => {
 			id='cv'
 		>
 			<div className='container mx-auto px-6 h-full relative z-10 flex justify-between items-center gap-6'>
-				<div className='max-w-xl relative'>
-					<BackgroundLinesShape className='w-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
+				<div className='max-w-[23vw] relative'>
+					<BackgroundLinesShape className='w-[50vw] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
 					<div
 						ref={animatedGeometricShapeRef}
 						className='w-[27vw] h-[27vw] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'
@@ -56,7 +68,12 @@ const BottomBanner = () => {
 					>
 						<BlurCircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
-					<CircleShape className='w-12 absolute -bottom-6 left-[10%] z-20' />
+					<div
+						ref={circleRef}
+						className='w-12 h-12 absolute -bottom-6 left-[10%] z-20'
+					>
+						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					</div>
 					<LinesShape className='w-24 absolute top-[10%] right-0 z-20' />
 					<img
 						className='relative z-10 rounded-3xl'

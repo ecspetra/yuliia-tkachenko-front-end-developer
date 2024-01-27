@@ -1,25 +1,29 @@
 import { RefObject, useEffect } from 'react'
 import gsap from 'gsap'
 
-const useParallax = (
-	imageRef: RefObject<HTMLElement>,
-	triggerId: string,
-	shiftValue: number
-) => {
-	useEffect(() => {
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: `#${triggerId}`,
-				start: 'top bottom',
-				end: 'bottom top',
-				scrub: 1,
-			},
-		})
+interface ShapeProps {
+	shapeRef: RefObject<HTMLElement>
+	shiftXValue?: number
+	shiftYValue?: number
+}
 
-		tl.to(imageRef.current, {
-			y: shiftValue,
+const useParallax = (shapes: ShapeProps[], triggerId: string) => {
+	useEffect(() => {
+		const tl = gsap.timeline()
+
+		shapes.forEach(({ shapeRef, shiftXValue = 0, shiftYValue = 0 }) => {
+			tl.to(shapeRef.current, {
+				x: shiftXValue,
+				y: shiftYValue,
+				scrollTrigger: {
+					trigger: `#${triggerId}`,
+					start: 'top bottom',
+					end: 'bottom top',
+					scrub: 1,
+				},
+			})
 		})
-	}, [imageRef, triggerId])
+	}, [shapes, triggerId])
 }
 
 export default useParallax

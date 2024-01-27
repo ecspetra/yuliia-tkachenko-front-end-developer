@@ -8,6 +8,7 @@ import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import useParallax from '@/hooks/useParallax'
 
 type PortfolioFrontEndItemType = {
 	title: string
@@ -38,10 +39,15 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 }) => {
 	const bigImageRef = useRef<HTMLDivElement>(null)
 	const smallImageRef = useRef<HTMLDivElement>(null)
+	const circleRef = useRef<HTMLDivElement>(null)
 	usePortfolioImagesAnimation(bigImageRef, 'bigImage')
 	usePortfolioImagesAnimation(smallImageRef, 'smallImage')
 	const isShowLargeRadialGradientCircle = idx !== 2
 	const isShowCircleShape = idx === 1
+	useParallax(
+		[{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: 250 }],
+		'portfolio'
+	)
 
 	return (
 		<div className='flex justify-between items-center gap-16 mb-40'>
@@ -71,7 +77,12 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 					/>
 				)}
 				{isShowCircleShape && (
-					<CircleShape className='w-12 absolute top-[20%] -left-[5%] z-20' />
+					<div
+						ref={circleRef}
+						className='w-12 h-12 absolute top-[20%] -left-[15%] z-20'
+					>
+						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					</div>
 				)}
 				<div
 					ref={bigImageRef}
