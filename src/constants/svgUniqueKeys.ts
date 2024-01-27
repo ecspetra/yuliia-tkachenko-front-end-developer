@@ -27,4 +27,10 @@ export const SVG_IDS = {
 	backgroundFill3: 'backgroundFill-3',
 	backgroundFill4: 'backgroundFill-4',
 	backgroundFill5: 'backgroundFill-5',
+	backgroundFill6: 'backgroundFill-6',
+	backgroundFill7: 'backgroundFill-7',
+	backgroundFill8: 'backgroundFill-8',
+	backgroundFill9: 'backgroundFill-9',
+	backgroundFill10: 'backgroundFill-10',
+	backgroundFill11: 'backgroundFill-11',
 }

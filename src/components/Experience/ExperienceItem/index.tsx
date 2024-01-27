@@ -39,7 +39,7 @@ const ExperienceItem: FC<PropsType> = ({
 				<Title className='!mb-4'>{company}</Title>
 				<span className='relative w-full h-0.5 block mb-4'>
 					<BackgroundSvgFill
-						id={SVG_IDS.backgroundFill4}
+						id={SVG_IDS.backgroundFill9}
 						borderRadius={0}
 					/>
 				</span>

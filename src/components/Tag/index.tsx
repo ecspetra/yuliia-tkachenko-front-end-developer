@@ -11,7 +11,7 @@ const Tag: FC<PropsType> = ({ tag }) => {
 	return (
 		<span className='relative w-fit inline-block h-8 text-base px-3 mr-1 mb-1 break-normal'>
 			<BackgroundSvgFill
-				id={SVG_IDS.backgroundFill5}
+				id={SVG_IDS.backgroundFill10}
 				borderRadius={16}
 				opacity={10}
 				isWithGradient={false}

@@ -42,7 +42,7 @@ const Header: FC<PropsType> = ({ className }) => {
 					>
 						<span className='w-[2px] h-14 absolute bottom-0 left-0 duration-300 group-hover:-bottom-5'>
 							<BackgroundSvgFill
-								id={SVG_IDS.backgroundFill2}
+								id={SVG_IDS.backgroundFill3}
 								borderRadius={0}
 							/>
 						</span>
@@ -56,7 +56,7 @@ const Header: FC<PropsType> = ({ className }) => {
 						<a key={key} href={value} className={linkClassNames}>
 							<span className={linkBorderClassNames(key)}>
 								<BackgroundSvgFill
-									id={SVG_IDS.backgroundFill2}
+									id={SVG_IDS.backgroundFill4}
 									borderRadius={0}
 								/>
 							</span>

@@ -30,7 +30,7 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 						className='relative w-full h-0.5 block mt-6 -mb-6'
 					>
 						<BackgroundSvgFill
-							id={SVG_IDS.backgroundFill3}
+							id={SVG_IDS.backgroundFill8}
 							borderRadius={0}
 						/>
 					</span>

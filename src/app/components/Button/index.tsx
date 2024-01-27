@@ -53,7 +53,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 				basicButtonClassNames
 			)}
 		>
-			<BackgroundSvgFill id={SVG_IDS.backgroundFill2} borderRadius={32} />
+			<BackgroundSvgFill id={SVG_IDS.backgroundFill6} borderRadius={32} />
 			<span className='relative z-20'>{buttonText}</span>
 			<FontAwesomeIcon
 				className='ml-2 relative z-20'
@@ -71,7 +71,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 			)}
 		>
 			<BackgroundSvgFill
-				id={SVG_IDS.backgroundFill2}
+				id={SVG_IDS.backgroundFill5}
 				borderRadius={32}
 				className='scale-0 group-hover:scale-100 duration-300'
 			/>

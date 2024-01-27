@@ -33,7 +33,7 @@ const TitleAnimated = () => {
 				</span>
 				<span className='animated-border w-full h-0.5 block absolute bottom-0 left-0'>
 					<BackgroundSvgFill
-						id={SVG_IDS.backgroundFill1}
+						id={SVG_IDS.backgroundFill2}
 						borderRadius={0}
 					/>
 				</span>
