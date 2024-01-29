@@ -34,12 +34,14 @@ const Skills = () => {
 					<RadialGradientCircle
 						id={SVG_IDS.circle6}
 						color='global-color-one-scheme-1'
-						className='scale-[5.5] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
+						size={1.2}
+						className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle7}
 						color='global-color-three-scheme-1'
-						className='scale-[4] absolute bottom-[10%] right-[30%] opacity-30'
+						size={1.6}
+						className='absolute -top-[20%] -right-[25%] opacity-30'
 					/>
 					<div className='w-[30vw] h-[30vw] absolute top-[10%] -left-[15%]'>
 						<div

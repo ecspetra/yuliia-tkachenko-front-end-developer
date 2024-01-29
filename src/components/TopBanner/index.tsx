@@ -32,7 +32,7 @@ const TopBanner = () => {
 	)
 
 	return (
-		<div className='relative w-screen' id='top-banner'>
+		<div className='relative w-screen overflow-x-hidden' id='top-banner'>
 			<div className='container mx-auto w-full min-h-screen flex justify-between items-center py-60 px-6'>
 				<div className='relative max-w-2xl z-10'>
 					<TitleAnimated />
@@ -48,7 +48,7 @@ const TopBanner = () => {
 					<BackgroundLinesShape className='w-[50vw] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
 					<div
 						ref={animatedGeometricShapeRef}
-						className='w-[15vw] h-[15vw] absolute -top-[10%] left-[calc(50%-250px)] -translate-x-1/2'
+						className='w-[15vw] h-[15vw] absolute -top-[10%] -left-[30%]'
 					>
 						<BackgroundGeometricShape
 							id={SVG_IDS.backgroundShape1}
@@ -60,17 +60,20 @@ const TopBanner = () => {
 					<RadialGradientCircle
 						id={SVG_IDS.circle1}
 						color='global-color-one-scheme-1'
-						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
+						size={1.6}
+						className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle2}
 						color='global-color-two-scheme-1'
-						className='scale-[3] absolute -bottom-[10%] -left-[20%] opacity-20'
+						size={2.3}
+						className='absolute bottom-[5%] -left-[20%] opacity-20'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle3}
 						color='global-color-three-scheme-1'
-						className='scale-[3] absolute -top-[10%] -right-[10%] opacity-40'
+						size={2.3}
+						className='absolute top-[5%] -right-[15%] opacity-40'
 					/>
 					<div
 						ref={animatedBlurCircleRef}

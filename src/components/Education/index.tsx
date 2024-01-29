@@ -45,12 +45,14 @@ const Education = () => {
 					<RadialGradientCircle
 						id={SVG_IDS.circle10}
 						color='global-color-one-scheme-1'
-						className='scale-[4] absolute top-0 -right-[10%] opacity-20'
+						size={1.6}
+						className='absolute -bottom-[80%] -right-[40%] opacity-20'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle11}
 						color='global-color-three-scheme-1'
-						className='scale-[4] absolute -bottom-[40%] right-0 opacity-20'
+						size={1.6}
+						className='absolute -top-[40%] -right-[30%] opacity-20'
 					/>
 					<SpinningCircleShape className='spinner-animation w-40 h-40 absolute -bottom-20 left-[25%] z-20 rounded-full' />
 					<div

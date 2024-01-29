@@ -63,7 +63,8 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 							? 'global-color-two-scheme-1'
 							: 'global-color-three-scheme-1'
 					}
-					className='scale-[3] absolute -bottom-[30%] -right-[20%] opacity-20'
+					size={2.3}
+					className='absolute -top-[50%] -left-[20%] opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
@@ -73,7 +74,8 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 								? 'global-color-one-scheme-1'
 								: 'global-color-two-scheme-1'
 						}
-						className='scale-[4] absolute bottom-[10%] right-0 opacity-15'
+						size={1.6}
+						className='absolute -bottom-[120%] -right-[50%] opacity-15'
 					/>
 				)}
 				{isShowCircleShape && (

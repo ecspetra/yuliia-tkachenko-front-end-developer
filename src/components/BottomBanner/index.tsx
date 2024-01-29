@@ -50,17 +50,20 @@ const BottomBanner = () => {
 					<RadialGradientCircle
 						id={SVG_IDS.circle16}
 						color='global-color-two-scheme-1'
-						className='scale-[4] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
+						size={1.6}
+						className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle17}
 						color='global-color-three-scheme-1'
-						className='scale-[3] absolute top-[10%] left-0 opacity-50'
+						size={2.3}
+						className='absolute top-0 -left-[10%] opacity-50'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle18}
 						color='global-color-one-scheme-1'
-						className='scale-[4] absolute -bottom-[10%] -right-[10%] opacity-30'
+						size={2.3}
+						className='absolute bottom-0 -right-[15%] opacity-30'
 					/>
 					<div
 						ref={animatedBlurCircleRef}

@@ -1,22 +1,49 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import useChangeColorScheme from '@/hooks/useChangeColorScheme'
 
 interface PropsType {
 	id: string
 	color: string
+	size: number
 	className?: string
 }
 
-const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
+const RadialGradientCircle: FC<PropsType> = ({
+	id,
+	color,
+	size,
+	className,
+}) => {
 	const { colorScheme } = useChangeColorScheme([color])
+	const [windowSize, setWindowSize] = useState(0)
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowSize(window.innerWidth)
+		}
+
+		handleResize()
+
+		if (typeof window !== 'undefined') {
+			window.addEventListener('resize', handleResize)
+		}
+
+		return () => {
+			if (typeof window !== 'undefined') {
+				window.removeEventListener('resize', handleResize)
+			}
+		}
+	}, [])
+
+	const calculatedSize = windowSize / size
 
 	const gradientId = `grad-${id}`
 
 	return (
 		<svg
-			width='400'
-			height='400'
-			viewBox={`0 0 400 400`}
+			width={calculatedSize}
+			height={calculatedSize}
+			viewBox={`0 0 ${calculatedSize} ${calculatedSize}`}
 			className={className}
 			xmlns='http://www.w3.org/2000/svg'
 		>

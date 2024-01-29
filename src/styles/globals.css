@@ -47,7 +47,8 @@ html {
 }
 
 body {
-  background: rgb(var(--background-color))
+  background: rgb(var(--background-color));
+  overflow-x: hidden;
 }
 
 @keyframes spin {
