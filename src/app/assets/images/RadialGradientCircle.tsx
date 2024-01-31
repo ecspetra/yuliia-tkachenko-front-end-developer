@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import useChangeColorScheme from '@/hooks/useChangeColorScheme'
 
 interface PropsType {
