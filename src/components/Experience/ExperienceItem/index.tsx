@@ -33,9 +33,9 @@ const ExperienceItem: FC<PropsType> = ({
 	},
 	idx,
 }) => (
-	<div className='w-full mb-16 pb-16 border-b border-zinc-700 last:mb-0 last:pb-0 last:border-none relative z-40'>
-		<div className='flex justify-between items-start gap-16'>
-			<div className='w-full max-w-64'>
+	<div className='w-full mb-8 pb-8 2xl:mb-16 2xl:pb-16 border-b border-zinc-700 last:mb-0 last:pb-0 last:border-none relative z-40'>
+		<div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-start gap-0 lg:gap-16'>
+			<div className='w-full sm:max-w-[80%] lg:max-w-64'>
 				<Title className='!mb-4'>{company}</Title>
 				<span className='relative w-full h-0.5 block mb-4'>
 					<BackgroundSvgFill
@@ -54,10 +54,10 @@ const ExperienceItem: FC<PropsType> = ({
 					<p className='text-zinc-400 pl-6'>{date}</p>
 				</div>
 			</div>
-			<div className='w-full pt-16'>
+			<div className='w-full sm:w-[80%] lg:w-full pt-16'>
 				<Title variant='h3-large' className='border-none mb-8 relative'>
 					{job}
-					<span className='absolute top-1/2 right-0 -translate-y-1/2 text-zinc-800 text-7xl'>
+					<span className='absolute top-1/2 right-0 -translate-y-1/2 text-zinc-800 text-7xl -z-10'>
 						{idx}
 					</span>
 				</Title>

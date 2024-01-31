@@ -24,7 +24,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 	const simpleButtonClassNames =
 		'bg-zinc-800 border-2 border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)]'
 	const socialLinkButtonClassNames =
-		'w-16 h-16 bg-zinc-950 !text-2xl flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-global-color-two after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
+		'w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 !text-2xl flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-global-color-two after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 
 	const isBasicButton = context === 'basic'
 	const buttonText = isBasicButton ? 'Download CV' : 'Preview'
@@ -49,7 +49,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 			rel='noopener noreferrer'
 			download={buttonDownloadLink}
 			className={classNames(
-				'duration-300 text-lg relative font-bold',
+				'duration-300 text-base 2xl:text-lg relative font-bold',
 				basicButtonClassNames
 			)}
 		>
@@ -66,7 +66,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 			target='_blank'
 			rel='noopener noreferrer'
 			className={classNames(
-				'duration-300 text-lg relative z-40 font-bold group',
+				'duration-300 text-base 2xl:text-lg relative z-40 font-bold group',
 				getButtonClassNames()
 			)}
 		>

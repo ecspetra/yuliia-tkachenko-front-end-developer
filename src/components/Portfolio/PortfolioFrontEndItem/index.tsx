@@ -50,10 +50,10 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 	)
 
 	return (
-		<div className='flex justify-between items-center gap-16 mb-40'>
+		<div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16 mb-40 last:mb-0'>
 			<div
-				className={`w-full max-w-1/2 relative ${
-					isEven ? 'order-last' : 'order-first'
+				className={`w-full max-w-[80%] lg:max-w-1/2 relative ${
+					isEven ? 'lg:order-last' : 'lg:order-first'
 				}`}
 			>
 				<RadialGradientCircle
@@ -63,8 +63,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 							? 'global-color-two-scheme-1'
 							: 'global-color-three-scheme-1'
 					}
-					size={2.3}
-					className='absolute -top-[50%] -left-[20%] opacity-20'
+					className='w-[1300px] h-[1300px] absolute top-[40%] left-[25%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
@@ -74,8 +73,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 								? 'global-color-one-scheme-1'
 								: 'global-color-two-scheme-1'
 						}
-						size={1.6}
-						className='absolute -bottom-[120%] -right-[50%] opacity-15'
+						className='w-[800px] h-[800px] absolute top-[80%] left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-15'
 					/>
 				)}
 				{isShowCircleShape && (
@@ -83,7 +81,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 						ref={circleRef}
 						className='w-12 h-12 absolute top-[20%] -left-[15%] z-20 invisible'
 					>
-						<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
 				)}
 				<div
@@ -108,21 +106,21 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				</div>
 			</div>
 			<div
-				className={`w-full relative z-40 max-w-1/2 ${
-					isEven ? 'order-first' : 'order-last'
+				className={`w-full relative z-40 max-w-1/2 text-center lg:text-left ${
+					isEven ? 'lg:order-first' : 'lg:order-last'
 				}`}
 			>
 				<Title variant='h3-large' className='border-none mb-8 relative'>
 					{title}
 				</Title>
-				<p className='flex justify-start items-start flex-wrap mb-8'>
+				<p className='flex justify-center lg:justify-start items-start flex-wrap mb-8'>
 					<span className='mr-4'>Created with:</span>
 					{teckStack.map((item, idx) => (
 						<Tag key={idx} tag={item} />
 					))}
 				</p>
 				<p className='mb-8'>{description}</p>
-				<div className='flex justify-start items-center gap-4'>
+				<div className='flex justify-center lg:justify-start items-center gap-4'>
 					<Button
 						context='preview-link'
 						link={previewLink}

@@ -19,7 +19,7 @@ const SkillsItem: FC<PropsType> = ({ children, idx }) => {
 	return (
 		<div
 			ref={skillItemRef}
-			className='w-[calc((100%-48px)/3)] p-6 bg-zinc-950/85 backdrop-blur-lg rounded-xl border border-zinc-700'
+			className='w-full lg:w-[calc((100%-48px)/3)] p-6 bg-zinc-950/85 backdrop-blur-lg rounded-xl border border-zinc-700'
 		>
 			<span className='block text-sm text-zinc-500 mb-3'>{idx}</span>
 			<div className='flex justify-between items-center'>

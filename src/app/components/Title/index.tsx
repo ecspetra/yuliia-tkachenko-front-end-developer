@@ -21,7 +21,7 @@ const Title: FC<PropsType> = ({
 				return (
 					<h1
 						className={classNames(
-							'text-8xl font-bold mb-12',
+							'text-5xl sm:text-7xl 2xl:text-8xl font-bold mb-8 2xl:mb-12',
 							className
 						)}
 						ref={titleRef}
@@ -33,7 +33,7 @@ const Title: FC<PropsType> = ({
 				return (
 					<h2
 						className={classNames(
-							'text-5xl leading-tight font-semibold mb-12',
+							'text-3xl sm:text-4xl 2xl:text-5xl leading-tight font-semibold mb-8 2xl:mb-12',
 							className
 						)}
 					>
@@ -55,7 +55,7 @@ const Title: FC<PropsType> = ({
 				return (
 					<h3
 						className={classNames(
-							'font-bold uppercase tracking-[4px] text-xl',
+							'font-bold uppercase tracking-[4px] text-lg sm:text-xl',
 							className
 						)}
 					>

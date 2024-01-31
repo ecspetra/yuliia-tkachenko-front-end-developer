@@ -25,58 +25,63 @@ const Portfolio = () => {
 	)
 
 	return (
-		<div className='container px-6 py-40' id='portfolio'>
-			<div className='max-w-2xl mx-auto text-center relative z-40'>
-				<Title variant='h3' className='flex justify-center'>
-					Front End Developer portfolio
-				</Title>
-				<Title className='!mb-40'>
-					A few of my pet projects from Front End Developer portfolio
-				</Title>
-			</div>
-			<div className='w-full max-w-6xl mx-auto flex flex-wrap justify-center items-stretch gap-4'>
-				{FRONT_END_DEVELOPER_PROJECTS_LIST.map((item, idx) => (
-					<PortfolioFrontEndItem
-						key={idx}
-						project={item}
-						isEven={idx % 2 === 0}
-						idx={idx}
-					/>
-				))}
-			</div>
-			<div
-				className='max-w-2xl mx-auto text-center relative z-40'
-				id='portfolio--designer'
-			>
-				<Title variant='h3' className='flex justify-center'>
-					UI/UX designer portfolio
-				</Title>
-				<Title className='!mb-40'>
-					A few of my pet projects from UI/UX designer portfolio
-				</Title>
-			</div>
-			<div className='relative grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-2xl mx-auto'>
-				<RadialGradientCircle
-					id={SVG_IDS.circle12}
-					color='global-color-one-scheme-1'
-					size={1.6}
-					className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
-				/>
-				<RadialGradientCircle
-					id={SVG_IDS.circle13}
-					color='global-color-three-scheme-1'
-					size={1.6}
-					className='absolute -top-[80%] -left-[40%] opacity-20'
-				/>
-				<div
-					ref={circleRef}
-					className='w-4 h-4 absolute bottom-[60%] -right-[20%] z-20 invisible'
-				>
-					<CircleShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+		<div className='w-screen overflow-hidden' id='portfolio'>
+			<div className='container mx-auto px-6 py-20 2xl:py-40'>
+				<div className='max-w-2xl mx-auto text-center relative z-40'>
+					<Title variant='h3' className='flex justify-center'>
+						Front End Developer portfolio
+					</Title>
+					<Title className='!mb-16 lg:!mb-20 2xl:!mb-40'>
+						A few of my pet projects from Front End Developer
+						portfolio
+					</Title>
 				</div>
-				{UI_UX_DESIGNER_PROJECTS_LIST.map((item, idx) => (
-					<PortfolioUIUXDesignItem key={idx} image={item} idx={idx} />
-				))}
+				<div className='w-full max-w-6xl mx-auto flex flex-wrap justify-center items-stretch gap-4 mb-20 lg:mb-40'>
+					{FRONT_END_DEVELOPER_PROJECTS_LIST.map((item, idx) => (
+						<PortfolioFrontEndItem
+							key={idx}
+							project={item}
+							isEven={idx % 2 === 0}
+							idx={idx}
+						/>
+					))}
+				</div>
+				<div
+					className='max-w-2xl mx-auto text-center relative z-40'
+					id='portfolio--designer'
+				>
+					<Title variant='h3' className='flex justify-center'>
+						UI/UX designer portfolio
+					</Title>
+					<Title className='!mb-16 lg:!mb-20 2xl:!mb-40'>
+						A few of my pet projects from UI/UX designer portfolio
+					</Title>
+				</div>
+				<div className='relative grid grid-cols-3 gap-4 max-w-2xl mx-auto'>
+					<RadialGradientCircle
+						id={SVG_IDS.circle12}
+						color='global-color-one-scheme-1'
+						className='w-[1300px] h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
+					/>
+					<RadialGradientCircle
+						id={SVG_IDS.circle13}
+						color='global-color-three-scheme-1'
+						className='w-[1000px] h-[1000px] absolute top-[80%] left-[75%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+					/>
+					<div
+						ref={circleRef}
+						className='w-4 h-4 absolute bottom-[60%] -right-[20%] z-20 invisible'
+					>
+						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+					</div>
+					{UI_UX_DESIGNER_PROJECTS_LIST.map((item, idx) => (
+						<PortfolioUIUXDesignItem
+							key={idx}
+							image={item}
+							idx={idx}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	)

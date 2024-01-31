@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import useChangeColorScheme from '@/hooks/useChangeColorScheme'
 import { COLOR_SCHEME } from '@/constants/colorScheme'
+import classNames from 'classnames'
 
 interface PropsType {
 	className: string
@@ -16,7 +17,7 @@ const CircleShape: FC<PropsType> = ({ className, color }) => {
 			shapeRendering='geometricPrecision'
 			textRendering='geometricPrecision'
 			viewBox='0 0 300 300'
-			className={className}
+			className={classNames(className, 'w-full')}
 		>
 			<circle
 				cx='150'

@@ -12,7 +12,7 @@ const Footer: FC<PropsType> = ({ className }) => (
 			className
 		)}
 	>
-		<p>Created by Yuliia Tkachenko, 2024</p>
+		<p>Designed and developed by Yuliia Tkachenko, 2024</p>
 	</footer>
 )
 
