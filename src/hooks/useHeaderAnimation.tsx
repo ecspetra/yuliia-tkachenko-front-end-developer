@@ -12,18 +12,21 @@ const useHeaderAnimation = () => {
 			})
 
 			sections.forEach((section, index) => {
-				const sectionTop = section?.offsetTop - 200
-				const sectionBottom = sectionTop + (section?.clientHeight || 0)
+				if (section) {
+					const sectionTop = section.offsetTop - 200
+					const sectionBottom =
+						sectionTop + (section.clientHeight || 0)
 
-				if (
-					window.scrollY >= sectionTop &&
-					window.scrollY < sectionBottom
-				) {
-					setActiveAnchor(
-						window.scrollY === 0
-							? null
-							: HEADER_ANCHORS[index][1].slice(1)
-					)
+					if (
+						window.scrollY >= sectionTop &&
+						window.scrollY < sectionBottom
+					) {
+						setActiveAnchor(
+							window.scrollY === 0
+								? null
+								: HEADER_ANCHORS[index][1].slice(1)
+						)
+					}
 				}
 
 				setIsScrolled(window.scrollY !== 0)

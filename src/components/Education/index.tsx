@@ -28,50 +28,52 @@ const Education = () => {
 
 	return (
 		<div className='w-screen overflow-x-hidden' id='education'>
-			<div className='w-full mx-auto pt-20 2xl:pt-40'>
-				<div className='container relative mx-auto bg-zinc-950 rounded-3xl text-center'>
-					<div
-						ref={circleRef}
-						className='w-8 h-8 absolute -top-12 left-[25%] z-20 invisible'
-					>
-						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
-					</div>
-					<div className='py-32 2xl:py-40 px-6 relative rounded-3xl overflow-hidden'>
+			<div className='w-full h-full mx-auto pt-4 sm:pt-20 2xl:pt-40'>
+				<div className='container px-6 mx-auto'>
+					<div className='relative bg-zinc-950 rounded-xl sm:rounded-3xl text-center'>
 						<div
-							ref={backgroundLinesShapeRef}
-							className='w-[100vw] sm:w-[70vw] lg:w-[80vh] 2xl:w-[900px] absolute bottom-[60%] -right-[60%] lg:bottom-[35%] lg:-right-[30%] z-10 invisible'
+							ref={circleRef}
+							className='w-8 h-8 absolute -top-4 left-[25%] lg:-top-12 z-20 invisible'
 						>
-							<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
+							<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 						</div>
-						<RadialGradientCircle
-							id={SVG_IDS.circle10}
-							color='global-color-one-scheme-1'
-							className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
-						/>
-						<RadialGradientCircle
-							id={SVG_IDS.circle11}
-							color='global-color-three-scheme-1'
-							className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-20'
-						/>
-						<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] 2xl:w-40 2xl:h-40 absolute -bottom-14 lg:-bottom-20 left-[25%] z-20 rounded-full' />
-						<div
-							ref={backgroundGeometricShapeRef}
-							className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
-						>
-							<BackgroundGeometricShape
-								id={SVG_IDS.backgroundShape4}
-								variant='4'
-								className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+						<div className='py-20 sm:py-32 2xl:py-40 px-6 relative rounded-xl sm:rounded-3xl overflow-hidden'>
+							<div
+								ref={backgroundLinesShapeRef}
+								className='w-[100vw] sm:w-[70vw] lg:max-w-[65vw] lg:max-h-[65vw] xl:w-[80vh] 2xl:w-[900px] absolute bottom-[60%] -right-[60%] lg:bottom-[35%] xl:-right-[30%] z-10 invisible'
+							>
+								<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
+							</div>
+							<RadialGradientCircle
+								id={SVG_IDS.circle10}
+								color='global-color-one-scheme-1'
+								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 							/>
-						</div>
-						<LinesShape className='w-24 absolute top-[15%] left-[90%] z-20' />
-						<div className='relative z-40'>
-							<Title variant='h3'>Education</Title>
-							<Title>Master of Computer Science</Title>
-							<p>Pryazovskyi State Technical University</p>
-							<p className='text-base text-zinc-400'>
-								Ukraine, 2019
-							</p>
+							<RadialGradientCircle
+								id={SVG_IDS.circle11}
+								color='global-color-three-scheme-1'
+								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+							/>
+							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-14 lg:-bottom-20 left-[20%] z-20 rounded-full' />
+							<div
+								ref={backgroundGeometricShapeRef}
+								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
+							>
+								<BackgroundGeometricShape
+									id={SVG_IDS.backgroundShape4}
+									variant='4'
+									className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+								/>
+							</div>
+							<LinesShape className='w-14 lg:w-24 absolute top-[15%] left-[85%] sm:left-[90%] z-20' />
+							<div className='relative z-40'>
+								<Title variant='h3'>Education</Title>
+								<Title>Master of Computer Science</Title>
+								<p>Pryazovskyi State Technical University</p>
+								<p className='text-base text-zinc-400'>
+									Ukraine, 2019
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from 'react'
+import { RefObject, useEffect, useState } from 'react'
 import gsap from 'gsap'
 
 interface ShapeProps {
@@ -8,13 +8,31 @@ interface ShapeProps {
 }
 
 const useParallax = (shapes: ShapeProps[], triggerId: string) => {
+	const [isWideScreen, setIsWideScreen] = useState(
+		typeof window !== 'undefined' ? window.innerWidth > 1023 : false
+	)
+
 	useEffect(() => {
-		const tl = gsap.timeline()
+		if (typeof window !== 'undefined') {
+			const handleResize = () => {
+				setIsWideScreen(window.innerWidth > 1023)
+			}
+
+			window.addEventListener('resize', handleResize)
+
+			return () => {
+				window.removeEventListener('resize', handleResize)
+			}
+		}
+	}, [])
+
+	useEffect(() => {
+		let animations: TweenMax[] = []
 
 		shapes.forEach(({ shapeRef, shiftXValue = 0, shiftYValue = 0 }) => {
 			gsap.set(shapeRef.current, { autoAlpha: 0 })
 
-			tl.to(shapeRef.current, {
+			const animation = gsap.to(shapeRef.current, {
 				x: shiftXValue,
 				y: shiftYValue,
 				scrollTrigger: {
@@ -29,8 +47,20 @@ const useParallax = (shapes: ShapeProps[], triggerId: string) => {
 					},
 				},
 			})
+
+			animations.push(animation)
+
+			if (!isWideScreen) {
+				gsap.set(shapeRef.current, { autoAlpha: 1 })
+				if (shapeRef.current) shapeRef.current.style.transform = ''
+				animation.kill()
+			}
 		})
-	}, [shapes, triggerId])
+
+		return () => {
+			animations.forEach(animation => animation.kill())
+		}
+	}, [shapes, triggerId, isWideScreen])
 }
 
 export default useParallax

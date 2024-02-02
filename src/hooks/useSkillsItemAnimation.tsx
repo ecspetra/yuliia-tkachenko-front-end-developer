@@ -10,6 +10,10 @@ const useSkillsItemAnimation = (
 		const skillsItem = itemRef.current
 		const spanElement = spanRef.current
 
+		if (!skillsItem || !spanElement) {
+			return
+		}
+
 		const timeline = gsap.timeline({ paused: true })
 		timeline.fromTo(
 			skillsItem,

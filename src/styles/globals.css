@@ -51,6 +51,21 @@ body {
   overflow-x: hidden;
 }
 
+body.scroll-blocked {
+  overflow-y: hidden;
+}
+
+#header-menu.hidden-menu {
+  left: 100%;
+  width: 20vw;
+}
+
+#header-menu {
+  left: 0;
+  width: 100vw;
+  transition: width 2s, left 1s;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

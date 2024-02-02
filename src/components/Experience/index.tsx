@@ -6,7 +6,7 @@ import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
 const Experience = () => (
 	<div
-		className='w-full relative max-w-6xl px-6 py-20 2xl:py-40 overflow-hidden lg:overflow-visible'
+		className='w-full relative container xl:max-w-6xl px-6 py-20 2xl:pt-0 2xl:pb-40 overflow-hidden lg:overflow-visible'
 		id='experience'
 	>
 		<RadialGradientCircle

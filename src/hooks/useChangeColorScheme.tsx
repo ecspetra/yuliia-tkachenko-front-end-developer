@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getNextColorFromColorScheme } from '@/handlers/getNextColorFromColorScheme'
+import { ColorSchemeType } from '@/constants/colorScheme'
 
-const useChangeColorScheme = initialColorsArray => {
+const useChangeColorScheme = (initialColorsArray: ColorSchemeType[]) => {
 	const [colorScheme, setColorScheme] = useState(initialColorsArray)
 
 	useEffect(() => {

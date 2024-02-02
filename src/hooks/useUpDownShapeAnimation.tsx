@@ -1,11 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { RefObject, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
-const upDownShapeAnimation = (elementRef, distance, interval) => {
-	const animationRef = useRef(null)
+type AnimationFunction = () => void
+
+const upDownShapeAnimation = (
+	elementRef: RefObject<HTMLDivElement>,
+	distance: number,
+	interval: number
+) => {
+	const animationRef = useRef<AnimationFunction | null>(null)
 
 	useEffect(() => {
-		const moveShape = () => {
+		const moveShape: AnimationFunction = () => {
 			gsap.to(elementRef.current, {
 				y: distance,
 				duration: interval,
@@ -43,8 +49,8 @@ const upDownShapeAnimation = (elementRef, distance, interval) => {
 }
 
 const useUpDownShapeAnimation = (
-	animatedGeometricShapeRef,
-	animatedBlurCircleRef
+	animatedGeometricShapeRef: RefObject<HTMLDivElement>,
+	animatedBlurCircleRef: RefObject<HTMLDivElement>
 ) => {
 	const distance = 50
 	const geometricShapeInterval = 3

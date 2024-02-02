@@ -20,9 +20,9 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 
 	if (!colorScheme.length) return null
 
-	const basicButtonClassNames = `text-zinc-950 w-fit flex justify-center items-center px-6 py-4 rounded-[32px] hover:text-white after:duration-300 after:w-0 after:h-0 after:bg-zinc-900 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%-4px)] hover:after:h-[calc(100%-4px)]`
+	const basicButtonClassNames = `text-zinc-950 w-full lg:w-fit flex justify-center items-center px-6 py-4 rounded-[32px] hover:text-white after:duration-300 after:w-0 after:h-0 after:bg-zinc-900 after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%-4px)] hover:after:h-[calc(100%-4px)]`
 	const simpleButtonClassNames =
-		'bg-zinc-800 border-2 border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)]'
+		'bg-zinc-800 w-full lg:w-fit border-2 border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)]'
 	const socialLinkButtonClassNames =
 		'w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 !text-2xl flex justify-center items-center rounded-full hover:text-zinc-950 after:duration-300 after:w-0 after:h-0 after:bg-global-color-two after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full hover:after:w-full hover:after:h-full'
 

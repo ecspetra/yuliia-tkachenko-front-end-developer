@@ -15,10 +15,10 @@ const useTextAnimation = (
 				textRefThree.current
 			) {
 				;[textRefOne, textRefTwo, textRefThree].forEach(ref => {
-					ref.current.style.visibility = 'hidden'
+					ref.current!.style.visibility = 'hidden'
 				})
 
-				const createAnimation = chars => {
+				const createAnimation = (chars: HTMLElement[] | null) => {
 					return gsap.fromTo(
 						chars,
 						{
@@ -51,10 +51,10 @@ const useTextAnimation = (
 				const timeline = gsap.timeline()
 
 				timeline.add(createAnimation(animatedTextOne.chars))
-				timeline.add(createAnimation(animatedTextTwo.chars), '-=4') // Adjust the delay offset
-				timeline.add(createAnimation(animatedTextThree.chars), '-=4') // Adjust the delay offset
+				timeline.add(createAnimation(animatedTextTwo.chars), '-=4')
+				timeline.add(createAnimation(animatedTextThree.chars), '-=4')
 				;[textRefOne, textRefTwo, textRefThree].forEach(ref => {
-					ref.current.style.visibility = 'visible'
+					ref.current!.style.visibility = 'visible'
 				})
 			}
 		}

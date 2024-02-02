@@ -45,6 +45,7 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 				dominantBaseline='middle'
 				textAnchor='middle'
 				fill={`rgb(var(--${colorScheme[0]}))`}
+				lengthAdjust='spacingAndGlyphs'
 			>
 				{text}
 			</text>

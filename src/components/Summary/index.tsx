@@ -26,39 +26,39 @@ const Summary = () => {
 
 	return (
 		<div className='w-screen overflow-hidden' id='summary'>
-			<div className='max-w-6xl mx-auto px-6 py-20 2xl:py-60'>
-				<div className='w-full flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mb-12'>
-					<div className='w-full flex items-end flex-grow max-w-[80%] lg:max-w-1/2 relative'>
+			<div className='container xl:max-w-6xl mx-auto px-6 py-20 2xl:py-60'>
+				<div className='w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mb-12'>
+					<div className='w-full flex items-end flex-grow max-w-full lg:max-w-1/2 relative'>
 						<RadialGradientCircle
 							id={SVG_IDS.circle4}
 							color='global-color-one-scheme-1'
-							className='w-[140vw] h-[140vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
+							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<RadialGradientCircle
 							id={SVG_IDS.circle5}
 							color='global-color-two-scheme-1'
-							className='w-[140vw] h-[140vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<div
 							ref={circleRef}
-							className='w-8 h-8 absolute top-[30%] -left-[10%] z-20 invisible'
+							className='w-8 h-8 absolute top-[30%] -left-4 lg:-left-[10%] z-20 invisible'
 						>
 							<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 						</div>
-						<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute top-[20%] -right-[3%] px-5 rounded-xl flex flex-col justify-center items-start z-20'>
+						<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute bottom-24 -right-4 lg:top-[20%] lg:-right-[3%] px-5 flex flex-col justify-center items-start z-20'>
 							<BackgroundGeometricShape
 								id={SVG_IDS.backgroundShape2}
 								variant='2'
 								className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 							/>
 							<span className='text-7xl relative z-30'>6+</span>
-							<p className='relative z-30 leading-none font-extrabold'>
+							<p className='relative z-30 leading-none font-bold'>
 								years of experience in IT
 							</p>
 						</div>
 						<div
 							ref={imageRef}
-							className='relative z-10 aspect-[4/3] h-fit rounded-3xl overflow-hidden'
+							className='relative z-10 aspect-[4/3] h-fit rounded-xl sm:rounded-3xl overflow-hidden'
 						>
 							<img
 								src={summaryImage.src}
@@ -70,21 +70,25 @@ const Summary = () => {
 					<div className='w-full sm:w-[80%] lg:max-w-1/2 relative z-40 text-center lg:text-left'>
 						<Title variant='h3'>Summary</Title>
 						<Title variant='h2'>About me</Title>
-						<div className='mb-12'>
+						<div>
 							<p className='mb-4'>
-								Have 2+ years of experience in Front End
-								Development and 4+ years in UI/UX Design.
+								I have{' '}
+								<span className='underline'>over 2 years</span>{' '}
+								of experience in front-end development and{' '}
+								<span className='underline'>
+									more than 4 years
+								</span>{' '}
+								of experience in UI/UX design.
 							</p>
-							<p>
+							<p className='mb-12'>
 								Since the beginning of my journey as a
 								developer, I have worked on a wide variety of
 								tasks both by myself and in collaboration with
 								talented people. I have experience in
 								development of web applications, landing pages,
-								corporate websites.Nowadays I’m focused on
-								learning ReactJS to continue professional
-								growth.
+								corporate websites.
 							</p>
+							<p className='mb-4'>My contacts:</p>
 						</div>
 						<div className='text-base'>
 							{CONTACTS_LIST.map((item, idx) => (

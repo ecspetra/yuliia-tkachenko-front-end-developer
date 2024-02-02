@@ -11,6 +11,10 @@ const usePortfolioImagesAnimation = (
 	useEffect(() => {
 		const image = imageRef.current
 
+		if (!image) {
+			return
+		}
+
 		const timeline = gsap.timeline({ paused: true })
 
 		const createAnimation = () => {
@@ -65,12 +69,13 @@ const usePortfolioImagesAnimation = (
 					break
 			}
 
-			timeline.scrollTrigger = {
+			ScrollTrigger.create({
 				trigger: image,
 				start: 'top bottom',
 				end: 'bottom center',
 				toggleActions: 'play none none reverse',
-			}
+				animation: timeline,
+			})
 		}
 
 		const handleScroll = () => {

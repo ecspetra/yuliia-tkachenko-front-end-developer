@@ -24,3 +24,5 @@ export const COLOR_SCHEME = [
 		'global-color-four-scheme-4',
 	],
 ]
+
+export type ColorSchemeType = (typeof COLOR_SCHEME)[number][number]

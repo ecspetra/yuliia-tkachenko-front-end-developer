@@ -20,7 +20,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 	return (
 		<div
 			ref={fullPageImageRef}
-			className='bg-zinc-800 relative z-10 rounded-3xl'
+			className='bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl'
 		>
 			<a
 				href={fullSizeSrc}
@@ -52,7 +52,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 					/>
 				</span>
 				<img
-					className='h-full w-full rounded-3xl object-cover mix-blend-luminosity'
+					className='h-full w-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
 					src={thumbnailSrc}
 					alt='portfolio-project'
 				/>

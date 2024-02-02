@@ -33,7 +33,7 @@ const Title: FC<PropsType> = ({
 				return (
 					<h2
 						className={classNames(
-							'text-3xl sm:text-4xl 2xl:text-5xl leading-tight font-semibold mb-8 2xl:mb-12',
+							'text-3xl sm:text-4xl 2xl:text-5xl !leading-tight font-semibold mb-8 2xl:mb-12',
 							className
 						)}
 					>
@@ -44,18 +44,18 @@ const Title: FC<PropsType> = ({
 				return (
 					<h3
 						className={classNames(
-							'text-base font-bold text-global-color-two-scheme-1 mb-4 uppercase tracking-[4px]',
+							'text-base !leading-tight font-bold text-global-color-two-scheme-1 mb-4 uppercase tracking-[4px]',
 							className
 						)}
 					>
-						<TextSVG text={children} />
+						<TextSVG text={children as string} />
 					</h3>
 				)
 			case 'h3-large':
 				return (
 					<h3
 						className={classNames(
-							'font-bold uppercase tracking-[4px] text-lg sm:text-xl',
+							'font-bold !leading-tight uppercase tracking-[4px] text-lg sm:text-xl',
 							className
 						)}
 					>
