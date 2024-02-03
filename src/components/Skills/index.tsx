@@ -31,7 +31,7 @@ const Skills = () => {
 			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap 2xl:flex-nowrap justify-center 2xl:justify-between items-start gap-6'>
 				<div className='relative z-40 text-center 2xl:text-left'>
 					<Title variant='h3'>Skills</Title>
-					<Title className='text-center'>What I do</Title>
+					<Title>My Tech Stack</Title>
 				</div>
 				<div className='relative max-w-full 2xl:max-w-6xl'>
 					<RadialGradientCircle
