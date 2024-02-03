@@ -12,9 +12,10 @@ import useParallax from '@/hooks/useParallax'
 
 const Skills = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
-	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
-	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+	useUpDownShapeAnimation([
+		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
+	])
 	useParallax(
 		[{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: -150 }],
 		'skills'

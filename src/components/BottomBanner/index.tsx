@@ -16,7 +16,10 @@ const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
-	useUpDownShapeAnimation(animatedGeometricShapeRef, animatedBlurCircleRef)
+	useUpDownShapeAnimation([
+		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
+		{ elementRef: animatedBlurCircleRef, distance: 50, interval: 4 },
+	])
 	useParallax(
 		[
 			{
