@@ -4,6 +4,7 @@ export const SKILLS_LIST = [
 	'React',
 	'JavaScript',
 	'Redux',
+	'Redux Toolkit',
 	'Git',
 	'HTML',
 	'CSS',
