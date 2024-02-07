@@ -23,7 +23,7 @@ const Skills = () => {
 
 	return (
 		<div
-			className='relative pt-20 pb-40 2xl:pt-40 2xl:pb-80 w-screen overflow-hidden'
+			className='relative pt-20 pb-40 2xl:pt-40 2xl:pb-20 w-screen overflow-hidden'
 			id='skills'
 		>
 			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-full lg:h-[calc(100%-380px)] overflow-hidden'>
