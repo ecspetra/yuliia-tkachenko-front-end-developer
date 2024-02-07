@@ -1,5 +1,5 @@
 import Title from '@/app/components/Title'
-import topBannerImage from '@/app/assets/images/top-banner-image.jpg'
+import topBannerImage from '../../../public/assets/images/top-banner-image.jpg'
 import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
