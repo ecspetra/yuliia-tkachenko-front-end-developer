@@ -35,11 +35,11 @@ export const EXPERIENCE_LIST = [
 		country: 'Ukraine',
 		job: 'Volunteer',
 		date: '01.2021 — 02.2021',
-		description: 'Worked as a mentor in an IT Academy for children.',
+		description: 'Worked as a mentor in an IT school for children.',
 		responsibilities: [
 			'Developed manuals for teaching children programming and UI/UX design',
 		],
-		teckStack: ['JavaScript', 'HTML', 'CSS', 'Photoshop'],
+		teckStack: ['JavaScript', 'HTML', 'CSS', 'Photoshop', 'Illustrator'],
 	},
 	{
 		company: 'Livelib',

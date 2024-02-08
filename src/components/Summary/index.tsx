@@ -1,5 +1,5 @@
 import Title from '@/app/components/Title'
-import summaryImage from '@/app/assets/images/summary-image.jpg'
+import summaryImage from '../../../public/assets/images/summary-image.jpg'
 import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'

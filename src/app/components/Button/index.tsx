@@ -30,7 +30,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 	const buttonText = isBasicButton ? 'Download CV' : 'Preview'
 	const buttonIcon = isBasicButton ? faCircleArrowDown : icon
 	const yuliiaTkachenkoCVLink =
-		'/cv/CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
+		'/assets/cv/CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
 	const buttonDownloadLink = isBasicButton ? yuliiaTkachenkoCVLink : undefined
 
 	const getButtonClassNames = () => {
