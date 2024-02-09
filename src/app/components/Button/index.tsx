@@ -53,7 +53,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 				basicButtonClassNames
 			)}
 		>
-			<BackgroundSvgFill id={SVG_IDS.backgroundFill6} borderRadius={32} />
+			<BackgroundSvgFill id={SVG_IDS.backgroundFill6} borderRadius={30} />
 			<span className='relative z-20'>{buttonText}</span>
 			<FontAwesomeIcon
 				className='ml-2 relative z-20'
