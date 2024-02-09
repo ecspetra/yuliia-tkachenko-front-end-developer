@@ -91,8 +91,7 @@ const BottomBanner = () => {
 						Download it!
 					</Title>
 					<p className='mb-16'>
-						Looking forward to your collaboration proposal with
-						anticipation{' '}
+						Let’s work together
 						<span className='text-2xl ml-1 align-middle'>
 							&#128522;
 						</span>
