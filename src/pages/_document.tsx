@@ -47,6 +47,10 @@ const Document = () => {
 				<link rel='manifest' href='/favicon/site.webmanifest' />
 				<meta name='msapplication-TileColor' content='#a3e635' />
 				<meta name='theme-color' content='#ffffff' />
+				<meta
+					property='og:image'
+					content='/assets/images/opengraph-image.png'
+				/>
 			</Head>
 			<body>
 				<Main />
