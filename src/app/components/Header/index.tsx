@@ -6,6 +6,7 @@ import useHeaderAnimation from '@/hooks/useHeaderAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import CloseButton from '@/app/components/Button/CloseButton'
+import useToggleHeaderMenu from '@/hooks/useToggleHeaderMenu'
 
 type PropsType = {
 	className: string
@@ -13,6 +14,7 @@ type PropsType = {
 
 const Header: FC<PropsType> = ({ className }) => {
 	const { activeAnchor, isScrolled } = useHeaderAnimation()
+	const { isMenuHidden, toggleIsMenuHidden } = useToggleHeaderMenu()
 
 	const linkClassNames = (anchor: string) =>
 		classNames(
@@ -60,7 +62,10 @@ const Header: FC<PropsType> = ({ className }) => {
 					</Title>
 				</a>
 				<nav className='relative'>
-					<CloseButton />
+					<CloseButton
+						isMenuHidden={isMenuHidden}
+						toggleIsMenuHidden={toggleIsMenuHidden}
+					/>
 					<ul
 						id='header-menu'
 						className='hidden-menu duration-1000 h-screen pt-16 md:w-auto md:h-auto fixed top-0 md:static bg-zinc-950 flex flex-col md:flex-row justify-start md:justify-end items-start md:items-center text-zinc-400 md:p-0 md:bg-transparent'
@@ -70,7 +75,11 @@ const Header: FC<PropsType> = ({ className }) => {
 								key={key}
 								className='w-full flex mb-0 md:-mb-2 xl:-mb-4'
 							>
-								<a href={value} className={linkClassNames(key)}>
+								<a
+									href={value}
+									className={linkClassNames(key)}
+									onClick={toggleIsMenuHidden}
+								>
 									<span className={linkBorderClassNames(key)}>
 										<BackgroundSvgFill
 											id={SVG_IDS.backgroundFill4}

@@ -45,7 +45,7 @@ const Document = () => {
 					type='image/x-icon'
 				/>
 				<link rel='manifest' href='/favicon/site.webmanifest' />
-				<meta name='msapplication-TileColor' content='#da532c' />
+				<meta name='msapplication-TileColor' content='#a3e635' />
 				<meta name='theme-color' content='#ffffff' />
 			</Head>
 			<body>

@@ -26,7 +26,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 				href={fullSizeSrc}
 				target='_blank'
 				rel='noopener noreferrer'
-				className='relative group'
+				className='group'
 			>
 				<BackgroundSvgFill
 					id={SVG_IDS.backgroundFill7}

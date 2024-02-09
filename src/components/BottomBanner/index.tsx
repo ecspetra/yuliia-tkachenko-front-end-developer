@@ -90,9 +90,12 @@ const BottomBanner = () => {
 						<br />
 						Download it!
 					</Title>
-					<p className='mb-16 flex justify-start items-center whitespace-normal'>
-						I eagerly anticipate your proposal for collaboration{' '}
-						<span className='text-2xl ml-2'>&#128522;</span>
+					<p className='mb-16'>
+						Looking forward to your collaboration proposal with
+						anticipation{' '}
+						<span className='text-2xl ml-1 align-middle'>
+							&#128522;
+						</span>
 					</p>
 					<Button />
 				</div>
