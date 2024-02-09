@@ -10,7 +10,11 @@ const Document = () => {
 					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
 				/>
 				<meta name='author' content='Yuliia Tkachenko' />
-				<link rel='shortcut icon' href='/icon.ico' />
+				<link
+					rel='shortcut icon'
+					href='/icon.ico'
+					type='image/x-icon'
+				/>
 			</Head>
 			<body>
 				<Main />

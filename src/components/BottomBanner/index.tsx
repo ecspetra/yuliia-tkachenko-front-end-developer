@@ -90,8 +90,8 @@ const BottomBanner = () => {
 						<br />
 						Download it!
 					</Title>
-					<p className='mb-16 flex justify-start items-center whitespace-nowrap'>
-						I will be glad to work with you{' '}
+					<p className='mb-16 flex justify-start items-center whitespace-normal'>
+						I eagerly anticipate your proposal for collaboration{' '}
 						<span className='text-2xl ml-2'>&#128522;</span>
 					</p>
 					<Button />
