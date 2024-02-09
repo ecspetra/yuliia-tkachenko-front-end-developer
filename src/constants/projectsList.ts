@@ -31,7 +31,7 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'WeatherBox',
 		description:
-			"Weather forecast. The project requests access to the user's geolocation and displays the current weather forecast for his city. It is also possible to select any other city using the search.",
+			"Weather forecast. This project offers weather forecast based on the user's location and lets them easily select any city using a search feature.",
 		repositoryLink: 'https://github.com/ecspetra/weather-box',
 		previewLink: 'https://ecspetra.github.io/weather-box/',
 		teckStack: [

@@ -11,6 +11,8 @@ import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
+import Contacts from '@/components/Contacts'
+import { CONTACTS_LIST } from '@/constants/contactsList'
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -84,19 +86,41 @@ const BottomBanner = () => {
 					/>
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
-					<Title variant='h3'>Resume</Title>
-					<Title className='!text-5xl 2xl:!text-7xl'>
-						Want to see my CV?
-						<br />
-						Download it!
-					</Title>
-					<p className='mb-16'>
-						Let’s work together
-						<span className='text-2xl ml-1 align-middle'>
-							&#128522;
-						</span>
-					</p>
-					<Button />
+					<div className='mb-10 2xl:mb-16'>
+						<Title variant='h3'>Resume</Title>
+						<Title className='!text-5xl 2xl:!text-7xl'>
+							Want to see my CV?
+							<br />
+							Download it!
+						</Title>
+						<p className='mb-10 2xl:mb-14'>
+							Let’s work together
+							<span className='text-2xl ml-1 align-middle'>
+								&#128522;
+							</span>
+						</p>
+						<Button />
+					</div>
+					<Contacts variant='v2' isLeftAligned />
+					<div className='text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-start'>
+						{CONTACTS_LIST.map((item, idx) => {
+							if (
+								item.title === 'Email' ||
+								item.title === 'Phone'
+							) {
+								return (
+									<p key={idx}>
+										{item.value}
+										{idx !== CONTACTS_LIST.length - 1 && (
+											<span className='mx-4 hidden sm:inline-block'>
+												|
+											</span>
+										)}
+									</p>
+								)
+							}
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

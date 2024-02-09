@@ -1,9 +1,8 @@
 import Title from '@/app/components/Title'
 import summaryImage from '../../../public/assets/images/summary-image.jpg'
-import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
-import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
+import { CONTACTS_LIST } from '@/constants/contactsList'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
@@ -11,6 +10,7 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
+import Contacts from '@/components/Contacts'
 gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {
@@ -89,40 +89,24 @@ const Summary = () => {
 								corporate websites.
 							</p>
 							<p className='mb-4'>My contacts:</p>
-						</div>
-						<div className='text-base'>
-							{CONTACTS_LIST.map((item, idx) => (
-								<p key={idx} className='mb-2'>
-									<FontAwesomeIcon
-										icon={item.icon}
-										className='mr-2'
-									/>
-									<span className='mr-2 font-semibold'>
-										{item.title}:
-									</span>
-									{item.value}
-								</p>
-							))}
+							<div className='text-base'>
+								{CONTACTS_LIST.map((item, idx) => (
+									<p key={idx} className='mb-2'>
+										<FontAwesomeIcon
+											icon={item.icon}
+											className='mr-2'
+										/>
+										<span className='mr-2 font-semibold'>
+											{item.title}:
+										</span>
+										{item.value}
+									</p>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className='flex justify-center items-start gap-4'>
-					{SOCIAL_LINKS_LIST.map((item, idx) => (
-						<div
-							key={idx}
-							className='flex flex-col justify-start items-center gap-4'
-						>
-							<Button
-								context='social-link'
-								link={item.link}
-								icon={item.icon}
-							/>
-							<span className='[writing-mode:vertical-lr] text-base text-zinc-400 tracking-[4px]'>
-								{item.title}
-							</span>
-						</div>
-					))}
-				</div>
+				<Contacts isShowTitle />
 			</div>
 		</div>
 	)
