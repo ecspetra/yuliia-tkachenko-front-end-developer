@@ -7,7 +7,10 @@ export const metadata: Metadata = {
 	title: 'Yuliia Tkachenko | Front End Developer',
 	description:
 		'Yuliia Tkachenko - Front End Developer with more than 6 years of experience.',
-	icons: [{ rel: 'icon', url: Favicon.src }],
+	icons: { icon: Favicon.src },
+	openGraph: {
+		images: Favicon.src,
+	},
 }
 
 const App = ({ Component, pageProps }: AppProps) => {
