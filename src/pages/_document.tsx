@@ -48,7 +48,42 @@ const Document = () => {
 				<meta name='msapplication-TileColor' content='#a3e635' />
 				<meta name='theme-color' content='#ffffff' />
 				<meta
+					property='og:url'
+					content='https://www.yuliia-tkachenko.dev/'
+				/>
+				<meta property='og:type' content='website' />
+				<meta
+					property='og:title'
+					content='Yuliia Tkachenko | Front End Developer'
+				/>
+				<meta
+					property='og:description'
+					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
+				/>
+				<meta
 					property='og:image'
+					content='/assets/images/opengraph-image.png'
+				/>
+
+				<meta name='twitter:card' content='summary_large_image' />
+				<meta
+					property='twitter:domain'
+					content='yuliia-tkachenko.dev'
+				/>
+				<meta
+					property='twitter:url'
+					content='https://www.yuliia-tkachenko.dev/'
+				/>
+				<meta
+					name='twitter:title'
+					content='Yuliia Tkachenko | Front End Developer'
+				/>
+				<meta
+					name='twitter:description'
+					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
+				/>
+				<meta
+					name='twitter:image'
 					content='/assets/images/opengraph-image.png'
 				/>
 			</Head>
