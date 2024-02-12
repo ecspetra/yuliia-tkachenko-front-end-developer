@@ -15,7 +15,7 @@ const Contacts: FC<PropsType> = ({
 	isLeftAligned = false,
 }) => {
 	const contactsClassNames = classNames(
-		`flex items-start justify-center gap-4 ${
+		`flex items-start justify-center ${
 			isLeftAligned ? 'lg:justify-start gap-2 mb-4 2xl:mb-8' : 'gap-4'
 		}`
 	)
