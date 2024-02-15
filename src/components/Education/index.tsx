@@ -54,7 +54,7 @@ const Education = () => {
 								color='global-color-three-scheme-1'
 								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 							/>
-							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-14 lg:-bottom-20 left-[20%] z-20 rounded-full' />
+							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-8 lg:-bottom-20 left-[20%] z-20 rounded-full' />
 							<div
 								ref={backgroundGeometricShapeRef}
 								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
