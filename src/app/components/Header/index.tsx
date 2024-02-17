@@ -68,7 +68,7 @@ const Header: FC<PropsType> = ({ className }) => {
 					/>
 					<ul
 						id='header-menu'
-						className='hidden-menu duration-1000 h-screen pt-16 md:w-auto md:h-auto fixed top-0 md:static bg-zinc-950 flex flex-col md:flex-row justify-start md:justify-end items-start md:items-center text-zinc-400 md:p-0 md:bg-transparent'
+						className='hidden-menu duration-1000 h-screen pt-16 md:!w-auto md:h-auto fixed top-0 md:static bg-zinc-950 flex flex-col md:flex-row justify-start md:justify-end items-start md:items-center text-zinc-400 md:p-0 md:bg-transparent'
 					>
 						{HEADER_ANCHORS.map(([key, value]) => (
 							<li
