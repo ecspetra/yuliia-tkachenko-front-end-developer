@@ -4,10 +4,10 @@ import {
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
 import {
-	faEarthAmericas,
 	faPhoneVolume,
 	faEnvelope,
 	faPaperPlane,
+	faHouse,
 } from '@fortawesome/free-solid-svg-icons'
 import {
 	LINK_TO_GITHUB_PROFILE,
@@ -18,7 +18,7 @@ import {
 
 export const CONTACTS_LIST = [
 	{
-		icon: faEarthAmericas,
+		icon: faHouse,
 		title: 'Address',
 		value: 'Vancouver, BC, Canada',
 	},

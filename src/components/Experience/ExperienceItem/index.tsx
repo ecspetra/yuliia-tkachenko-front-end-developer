@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import Tag from '@/components/Tag'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
@@ -45,10 +45,7 @@ const ExperienceItem: FC<PropsType> = ({
 				</span>
 				<div className='text-base'>
 					<p>
-						<FontAwesomeIcon
-							icon={faEarthAmericas}
-							className='mr-2'
-						/>
+						<FontAwesomeIcon icon={faHouse} className='mr-2' />
 						{country}
 					</p>
 					<p className='text-zinc-400 pl-6'>{date}</p>
