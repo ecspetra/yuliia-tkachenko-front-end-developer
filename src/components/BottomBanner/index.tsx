@@ -87,7 +87,6 @@ const BottomBanner = () => {
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
 					<div className='mb-10 2xl:mb-16'>
-						<Title variant='h3'>Resume</Title>
 						<Title className='!text-5xl 2xl:!text-7xl'>
 							Let’s work together
 						</Title>
