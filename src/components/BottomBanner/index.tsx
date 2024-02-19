@@ -89,12 +89,10 @@ const BottomBanner = () => {
 					<div className='mb-10 2xl:mb-16'>
 						<Title variant='h3'>Resume</Title>
 						<Title className='!text-5xl 2xl:!text-7xl'>
-							Want to see my CV?
-							<br />
-							Download it!
+							Let’s work together
 						</Title>
 						<p className='mb-10 2xl:mb-14'>
-							Let’s work together
+							Contact me for collaboration
 							<span className='text-2xl ml-1 align-middle'>
 								&#128522;
 							</span>
