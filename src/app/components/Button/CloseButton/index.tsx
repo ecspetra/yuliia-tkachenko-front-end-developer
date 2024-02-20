@@ -15,14 +15,14 @@ const CloseButton: FC<PropsType> = ({ isMenuHidden, toggleIsMenuHidden }) => {
 		>
 			<FontAwesomeIcon
 				icon={faBars}
-				className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 opacity-${
-					isMenuHidden ? 100 : 0
+				className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 ${
+					isMenuHidden ? 'opacity-100' : 'opacity-0'
 				}`}
 			/>
 			<FontAwesomeIcon
 				icon={faXmark}
-				className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 opacity-${
-					!isMenuHidden ? 100 : 0
+				className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 ${
+					!isMenuHidden ? 'opacity-100' : 'opacity-0'
 				}`}
 			/>
 		</button>

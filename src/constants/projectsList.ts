@@ -1,5 +1,7 @@
 import cinemaStreetImage1 from '../../public/assets/images/cinema-street-image-1.jpg'
 import cinemaStreetImage2 from '../../public/assets/images/cinema-street-image-2.jpg'
+import portfolioValeriiImage1 from '../../public/assets/images/portfolio-valerii-image-1.jpg'
+import portfolioValeriiImage2 from '../../public/assets/images/portfolio-valerii-image-2.jpg'
 import weatherboxImage1 from '../../public/assets/images/weatherbox-image-1.jpg'
 import weatherboxImage2 from '../../public/assets/images/weatherbox-image-2.jpg'
 import trackslynImage1 from '../../public/assets/images/trackslyn-image-1.jpg'
@@ -13,7 +15,7 @@ import designPortfolioImage3Small from '../../public/assets/images/design-portfo
 
 export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
-		title: 'CinemaStreet (latest)',
+		title: 'CinemaStreet',
 		description:
 			'Film library. The user has the opportunity to register on the project, view information about films, TV series, actors, use a quick search and filter, leave reviews, ratings and reactions, add other project participants as friends, and also create their own collection.',
 		repositoryLink: 'https://github.com/ecspetra/cinema-street',
@@ -27,6 +29,22 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 			'TMDB API',
 		],
 		images: [cinemaStreetImage1, cinemaStreetImage2],
+	},
+	{
+		title: 'Portfolio for Valerii',
+		description:
+			"Landing page for Backend developer portfolio. This project combines a unique design, parallax effects implemented using the 'React Scroll Parallax library'. The layout is adapted for all devices.",
+		repositoryLink:
+			'https://github.com/ecspetra/valerii-tkachenko-back-end-developer',
+		previewLink: 'https://www.valerii-tkachenko.dev',
+		teckStack: [
+			'React Scroll Parallax',
+			'Next.js',
+			'React',
+			'TypeScript',
+			'Tailwind',
+		],
+		images: [portfolioValeriiImage1, portfolioValeriiImage2],
 	},
 	{
 		title: 'WeatherBox',
