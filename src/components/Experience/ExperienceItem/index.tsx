@@ -12,13 +12,13 @@ type ExperienceItemType = {
 	job: string
 	date: string
 	description: string
-	responsibilities: string[]
-	teckStack: string[]
+	responsibilities?: string[]
+	teckStack?: string[]
 }
 
 type PropsType = {
 	experience: ExperienceItemType
-	idx: string
+	idx?: string
 }
 
 const ExperienceItem: FC<PropsType> = ({
@@ -62,23 +62,27 @@ const ExperienceItem: FC<PropsType> = ({
 					</span>
 				</Title>
 				<p className='mb-8'>{description}</p>
-				<ul className='mb-8 text-base text-zinc-400'>
-					{responsibilities.map((item, idx) => (
-						<li
-							key={idx}
-							className='mb-1 flex justify-start items-start'
-						>
-							<span className='mr-4'>—</span>
-							{item}
-						</li>
-					))}
-				</ul>
-				<p className='flex justify-start items-start flex-wrap'>
-					<span className='mr-4'>Teck stack:</span>
-					{teckStack.map((item, idx) => (
-						<Tag key={idx} tag={item} />
-					))}
-				</p>
+				{responsibilities && (
+					<ul className='mb-8 text-base text-zinc-400'>
+						{responsibilities.map((item, idx) => (
+							<li
+								key={idx}
+								className='mb-1 flex justify-start items-start'
+							>
+								<span className='mr-4'>—</span>
+								{item}
+							</li>
+						))}
+					</ul>
+				)}
+				{teckStack && (
+					<p className='flex justify-start items-start flex-wrap'>
+						<span className='mr-4'>Teck stack:</span>
+						{teckStack.map((item, idx) => (
+							<Tag key={idx} tag={item} />
+						))}
+					</p>
+				)}
 			</div>
 		</div>
 	</div>

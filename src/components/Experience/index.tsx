@@ -1,6 +1,9 @@
 import Title from '@/app/components/Title'
 import ExperienceItem from '@/components/Experience/ExperienceItem'
-import { EXPERIENCE_LIST } from '@/constants/experienceList'
+import {
+	EXPERIENCE_LIST,
+	VOLUNTEER_EXPERIENCE,
+} from '@/constants/experienceList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 
@@ -25,7 +28,7 @@ const Experience = () => (
 			</Title>
 			<Title className='!mb-16 lg:!mb-20 2xl:!mb-40'>Experience</Title>
 		</div>
-		<div>
+		<div className='mb-40'>
 			{EXPERIENCE_LIST.map((item, idx) => (
 				<ExperienceItem
 					key={idx}
@@ -33,6 +36,14 @@ const Experience = () => (
 					idx={`0${idx + 1}`}
 				/>
 			))}
+		</div>
+		<div>
+			<div className='text-center relative z-40'>
+				<Title className='!mb-16 lg:!mb-20 2xl:!mb-40'>
+					Volunteering
+				</Title>
+			</div>
+			<ExperienceItem experience={VOLUNTEER_EXPERIENCE} />
 		</div>
 	</div>
 )

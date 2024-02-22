@@ -5,53 +5,53 @@ export const EXPERIENCE_LIST = [
 		job: 'Markup Developer',
 		date: '12.2021 — 09.2023',
 		description:
-			'Worked on the development of a productivity tool designed for finding focus and enhancing the optimal learning experience.',
+			'Contributed to developing a productivity tool for improving focus and optimizing the learning experience.',
 		responsibilities: [
-			'Developed project’s interface with React components and SCSS, ensuring seamless functionality, responsive design, and user-friendly interfaces',
-			'Proposed and implemented some solutions to improve the visual component of the project and user experience',
-			'Developed landing pages and maintained WordPress website',
-			'Designed and styled email templates for marketing campaigns',
+			'Implemented 20+ reusable SCSS components that increased the development speed by half and improved code readability',
+			'Developed the project interface with a responsive layout, ensuring 100% accessibility',
+			'Played a proactive role in discussions aimed at improving the project',
+			'Suggested the idea of images and SVG file compression that led to a 20% faster page load',
+			'Developed 3 landing pages using React as a framework',
+			'Created and maintained 10+ WordPress pages to enhance product sales',
+			'Built 4 email templates for marketing campaigns',
 		],
 		teckStack: ['React', 'TypeScript', 'HTML', 'SASS', 'Git', 'WordPress'],
 	},
 	{
 		company: 'Livelib',
-		country: 'Ukraine',
+		country: 'Mariupol, Ukraine',
 		job: 'Front End Developer',
 		date: '08.2021 — 12.2021',
 		description:
-			'Worked on a high-loaded project with over than 3 millions monthly users.',
+			'Worked on a high-loaded project with over 3 million monthly users.',
 		responsibilities: [
-			'Implemented SASS technology for more efficient use of styles on the project',
-			'Refactored all styles on the project to make it perform faster',
-			'Suggested and implemented images and SVG files compression on the project',
-			'Developed commercial advertising projects, landing pages',
-			'Developed corporate websites',
+			'Integrated SASS technology into the project to optimize style usage, resulting in more efficient and manageable markup implementation',
+			'Refactored legacy styles and markup moving them into reusable Pug components, resulting in a significant decrease in code duplication',
+			'Achieved a 30% performance improvement by optimizing complex CSS files, as reported by web-monitoring tools',
+			'Developed 2 commercial advertising projects, 3 landing pages and a corporate wiki',
 		],
 		teckStack: ['JavaScript', 'JQuery', 'HTML', 'CSS', 'SASS', 'Git'],
 	},
 	{
-		company: 'Byte',
-		country: 'Ukraine',
-		job: 'Volunteer',
-		date: '01.2021 — 02.2021',
-		description: 'Worked as a mentor in an IT school for children.',
-		responsibilities: [
-			'Developed manuals for teaching children programming and UI/UX design',
-		],
-		teckStack: ['JavaScript', 'HTML', 'CSS', 'Photoshop', 'Illustrator'],
-	},
-	{
 		company: 'Livelib',
-		country: 'Ukraine',
+		country: 'Mariupol, Ukraine',
 		job: 'UI/UX Designer',
 		date: '07.2017 — 01.2021',
 		description:
-			'Worked as UI/UX designer on social network, created as a platform for famous book writers.',
+			'Worked as UI/UX designer on a social network, created as a platform for famous book writers.',
 		responsibilities: [
-			'Developed design for banners, landing pages, corporate websites, advertisement, mailing lists',
-			'Successfully managed multiple projects simultaneously, meeting deadlines and exceeding client expectations',
+			'Developed design for 600+ banners, 20+ landing pages, 4 corporate websites, 10+ email templates',
+			'Created an advertising project template, speeding up the development process by 80%',
 		],
 		teckStack: ['Photoshop', 'Illustrator', 'Figma'],
 	},
 ]
+
+export const VOLUNTEER_EXPERIENCE = {
+	company: 'Byte',
+	country: 'Mariupol, Ukraine',
+	job: 'Mentor',
+	date: '01.2021 — 02.2021',
+	description:
+		'Provided mentorship at an IT school for children and developed instructional materials for introducing them to programming and UI/UX design.',
+}

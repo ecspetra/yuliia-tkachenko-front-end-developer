@@ -72,21 +72,24 @@ const Summary = () => {
 						<Title variant='h2'>About me</Title>
 						<div>
 							<p className='mb-4'>
-								I have{' '}
-								<span className='underline'>over 2 years</span>{' '}
-								of experience in front-end development and{' '}
+								I offer{' '}
+								<span className='underline'>over 6 years</span>{' '}
+								of commercial work experience in IT:{' '}
 								<span className='underline'>
-									more than 4 years
+									more than 2 years
 								</span>{' '}
-								of experience in UI/UX design.
+								as a Front End Developer and{' '}
+								<span className='underline'>4 years</span> as a
+								UI/UX designer.
 							</p>
 							<p className='mb-12'>
-								Since the beginning of my journey as a
-								developer, I have worked on a wide variety of
-								tasks both by myself and in collaboration with
-								talented people. I have experience in
-								development of web applications, landing pages,
-								corporate websites.
+								During this time, I have contributed to creating
+								and developing{' '}
+								<span className='underline'>20+ projects</span>{' '}
+								of various sizes and complexity. I have
+								established myself as a software developer with
+								a passion for creating efficient and innovative
+								solutions to complex problems.
 							</p>
 							<p className='mb-4'>My contacts:</p>
 							<div className='text-base'>

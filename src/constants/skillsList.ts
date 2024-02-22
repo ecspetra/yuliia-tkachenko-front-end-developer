@@ -1,8 +1,8 @@
 export const SKILLS_LIST = [
 	'React',
+	'JavaScript',
 	'TypeScript',
 	'Next.js',
-	'JavaScript',
 	'Redux',
 	'Redux Toolkit',
 	'Git',
@@ -13,10 +13,10 @@ export const SKILLS_LIST = [
 	'Bootstrap',
 	'JQuery',
 	'WordPress',
-	'BEM',
 	'JIRA',
 	'Photoshop',
 	'Figma',
 	'Illustrator',
 	'Firebase',
+	'Design Patterns',
 ]
