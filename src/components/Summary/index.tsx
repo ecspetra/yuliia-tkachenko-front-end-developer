@@ -11,11 +11,13 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {
 	const imageRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useParallax(
 		[
 			{ shapeRef: imageRef, shiftYValue: -150 },
@@ -31,12 +33,12 @@ const Summary = () => {
 					<div className='w-full flex items-end flex-grow max-w-full lg:max-w-1/2 relative'>
 						<RadialGradientCircle
 							id={SVG_IDS.circle4}
-							color='global-color-one-scheme-1'
+							color={colorScheme[0]}
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<RadialGradientCircle
 							id={SVG_IDS.circle5}
-							color='global-color-two-scheme-1'
+							color={colorScheme[1]}
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<div

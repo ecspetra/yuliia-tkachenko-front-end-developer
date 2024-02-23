@@ -1,7 +1,6 @@
 import { FC } from 'react'
-import { COLOR_SCHEME } from '@/constants/colorScheme'
-import useChangeColorScheme from '@/hooks/useChangeColorScheme'
 import classNames from 'classnames'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	id: string
@@ -18,10 +17,7 @@ const BackgroundSvgFill: FC<PropsType> = ({
 	className,
 	isWithGradient = true,
 }) => {
-	const { colorScheme } = useChangeColorScheme([
-		COLOR_SCHEME[0][1],
-		COLOR_SCHEME[0][3],
-	])
+	const { colorScheme } = useColorScheme()
 	const gradientId = `grad-${id}`
 
 	return (
@@ -45,14 +41,14 @@ const BackgroundSvgFill: FC<PropsType> = ({
 					<stop
 						offset='10%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${colorScheme[1]}))`,
 							stopOpacity: 1,
 						}}
 					/>
 					<stop
 						offset='100%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[1]}))`,
+							stopColor: `rgb(var(--${colorScheme[3]}))`,
 							stopOpacity: 1,
 						}}
 					/>
@@ -64,7 +60,7 @@ const BackgroundSvgFill: FC<PropsType> = ({
 				fill={
 					isWithGradient
 						? `url(#${gradientId})`
-						: `rgb(var(--${colorScheme[0]}))`
+						: `rgb(var(--${colorScheme[1]}))`
 				}
 				rx={borderRadius}
 			/>

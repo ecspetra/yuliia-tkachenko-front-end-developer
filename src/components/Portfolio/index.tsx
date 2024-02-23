@@ -10,9 +10,11 @@ import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignI
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const Portfolio = () => {
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useParallax(
 		[
 			{
@@ -60,12 +62,12 @@ const Portfolio = () => {
 				<div className='relative grid grid-cols-3 gap-4 max-w-2xl mx-auto'>
 					<RadialGradientCircle
 						id={SVG_IDS.circle12}
-						color='global-color-one-scheme-1'
+						color={colorScheme[0]}
 						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle13}
-						color='global-color-three-scheme-1'
+						color={colorScheme[2]}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[1000px] 2xl:h-[1000px] absolute top-[80%] left-[75%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 					/>
 					<div

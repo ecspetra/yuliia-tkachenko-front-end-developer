@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { COLOR_SCHEME } from '@/constants/colorScheme'
-import useChangeColorScheme from '@/hooks/useChangeColorScheme'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	id: string
@@ -13,10 +12,7 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 	className,
 	variant = '1',
 }) => {
-	const { colorScheme } = useChangeColorScheme([
-		COLOR_SCHEME[0][1],
-		COLOR_SCHEME[0][3],
-	])
+	const { colorScheme } = useColorScheme()
 	const gradientId = `grad-${id}`
 
 	const getShape = () => {
@@ -93,14 +89,14 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 					<stop
 						offset='30%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${colorScheme[1]}))`,
 							stopOpacity: 1,
 						}}
 					/>
 					<stop
 						offset='100%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[1]}))`,
+							stopColor: `rgb(var(--${colorScheme[3]}))`,
 							stopOpacity: 1,
 						}}
 					/>

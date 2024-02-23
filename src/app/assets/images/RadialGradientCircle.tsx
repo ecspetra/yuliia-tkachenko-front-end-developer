@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import useChangeColorScheme from '@/hooks/useChangeColorScheme'
 
 interface PropsType {
 	id: string
@@ -8,7 +7,6 @@ interface PropsType {
 }
 
 const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
-	const { colorScheme } = useChangeColorScheme([color])
 	const gradientId = `grad-${id}`
 
 	return (
@@ -31,35 +29,35 @@ const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
 					<stop
 						offset='0%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${color}))`,
 							stopOpacity: 1,
 						}}
 					/>
 					<stop
 						offset='30%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${color}))`,
 							stopOpacity: 0.5,
 						}}
 					/>
 					<stop
 						offset='40%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${color}))`,
 							stopOpacity: 0.3,
 						}}
 					/>
 					<stop
 						offset='55%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${color}))`,
 							stopOpacity: 0.1,
 						}}
 					/>
 					<stop
 						offset='65%'
 						style={{
-							stopColor: `rgb(var(--${colorScheme[0]}))`,
+							stopColor: `rgb(var(--${color}))`,
 							stopOpacity: 0.02,
 						}}
 					/>
