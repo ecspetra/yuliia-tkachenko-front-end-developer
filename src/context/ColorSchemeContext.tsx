@@ -1,4 +1,5 @@
-import React, {
+import {
+	FC,
 	createContext,
 	useContext,
 	ReactNode,
@@ -18,9 +19,7 @@ interface ColorContextValue {
 
 const ColorContext = createContext<ColorContextValue | undefined>(undefined)
 
-export const ColorSchemeProvider: React.FC<ColorContextProps> = ({
-	children,
-}) => {
+export const ColorSchemeProvider: FC<ColorContextProps> = ({ children }) => {
 	const [colorScheme, setColorScheme] = useState(COLOR_SCHEME[0])
 
 	useEffect(() => {
