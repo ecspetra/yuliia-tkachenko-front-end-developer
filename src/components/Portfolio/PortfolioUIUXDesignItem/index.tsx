@@ -20,22 +20,22 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 	return (
 		<div
 			ref={fullPageImageRef}
-			className='bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl'
+			className='bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl overflow-hidden'
 		>
 			<a
 				href={fullSizeSrc}
 				target='_blank'
 				rel='noopener noreferrer'
-				className='relative group'
+				className='group'
 			>
 				<BackgroundSvgFill
 					id={SVG_IDS.backgroundFill7}
 					borderRadius={24}
 					isWithGradient={false}
 					opacity={10}
-					className='scale-0 group-hover:scale-100 duration-300 z-10'
+					className='scale-0 group-hover:scale-125 duration-300 z-10'
 				/>
-				<span className='opacity-0 duration-300 group-hover:opacity-100 flex w-16 h-16 justify-center items-center rounded-full bg-global-color-two-scheme-1 text-zinc-950 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10'>
+				<span className='opacity-0 duration-300 group-hover:opacity-100 flex w-16 h-16 justify-center items-center rounded-full text-zinc-950 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10'>
 					<BackgroundSvgFill
 						id={SVG_IDS.backgroundFill11}
 						borderRadius={32}
@@ -45,7 +45,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 						icon={faMagnifyingGlassPlus}
 					/>
 				</span>
-				<span className='duration-300 w-0 h-0.5 absolute -bottom-6 left-1/2 -translate-x-1/2 group-hover:w-4'>
+				<span className='duration-300 w-0 h-0.5 absolute bottom-0 left-1/2 -translate-x-1/2 group-hover:w-8 z-20'>
 					<BackgroundSvgFill
 						id={SVG_IDS.backgroundFill4}
 						borderRadius={0}

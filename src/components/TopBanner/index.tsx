@@ -14,11 +14,13 @@ import TitleAnimated from '@/app/components/Title/TitleAnimated'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
 import useParallax from '@/hooks/useParallax'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useUpDownShapeAnimation([
 		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
 		{ elementRef: animatedBlurCircleRef, distance: 50, interval: 4 },
@@ -62,17 +64,17 @@ const TopBanner = () => {
 					<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -top-[5%] left-[10%] z-20 rounded-full' />
 					<RadialGradientCircle
 						id={SVG_IDS.circle1}
-						color='global-color-one-scheme-1'
+						color={colorScheme[0]}
 						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle2}
-						color='global-color-two-scheme-1'
+						color={colorScheme[1]}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+10vw)] left-[calc(50%-8vw)] 2xl:top-[85%] 2xl:left-[15%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle3}
-						color='global-color-three-scheme-1'
+						color={colorScheme[2]}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-10vw)] left-[calc(50%+8vw)] 2xl:top-[15%] 2xl:left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-40'
 					/>
 					<div

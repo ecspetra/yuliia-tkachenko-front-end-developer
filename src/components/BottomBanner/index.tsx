@@ -11,8 +11,12 @@ import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
+import Contacts from '@/components/Contacts'
+import { CONTACTS_LIST } from '@/constants/contactsList'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const BottomBanner = () => {
+	const { colorScheme } = useColorScheme()
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
@@ -51,17 +55,17 @@ const BottomBanner = () => {
 					</div>
 					<RadialGradientCircle
 						id={SVG_IDS.circle16}
-						color='global-color-two-scheme-1'
+						color={colorScheme[1]}
 						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle17}
-						color='global-color-three-scheme-1'
+						color={colorScheme[2]}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-5vw)] left-[calc(50%-5vw)] lg:top-[20%] lg:left-[20%] -translate-y-1/2 -translate-x-1/2 opacity-50'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle18}
-						color='global-color-one-scheme-1'
+						color={colorScheme[0]}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+5vw)] left-[calc(50%+5vw)] lg:top-[80%] lg:left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<div
@@ -84,17 +88,38 @@ const BottomBanner = () => {
 					/>
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
-					<Title variant='h3'>Resume</Title>
-					<Title className='!text-5xl 2xl:!text-7xl'>
-						Want to see my CV?
-						<br />
-						Download it!
-					</Title>
-					<p className='mb-16 flex justify-start items-center whitespace-nowrap'>
-						I will be glad to work with you{' '}
-						<span className='text-2xl ml-2'>&#128522;</span>
-					</p>
-					<Button />
+					<div className='mb-10 2xl:mb-16'>
+						<Title className='!text-5xl 2xl:!text-7xl'>
+							Let’s work together
+						</Title>
+						<p className='mb-10 2xl:mb-14'>
+							Contact me for collaboration
+							<span className='text-2xl ml-1 align-middle'>
+								&#128522;
+							</span>
+						</p>
+						<Button />
+					</div>
+					<Contacts variant='v2' isLeftAligned />
+					<div className='text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-start'>
+						{CONTACTS_LIST.map((item, idx) => {
+							if (
+								item.title === 'Email' ||
+								item.title === 'Phone'
+							) {
+								return (
+									<p key={idx}>
+										{item.value}
+										{idx !== CONTACTS_LIST.length - 1 && (
+											<span className='mx-4 hidden sm:inline-block'>
+												|
+											</span>
+										)}
+									</p>
+								)
+							}
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

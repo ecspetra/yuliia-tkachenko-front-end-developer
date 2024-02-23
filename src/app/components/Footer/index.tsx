@@ -8,7 +8,7 @@ type PropsType = {
 const Footer: FC<PropsType> = ({ className }) => (
 	<footer
 		className={classNames(
-			'w-screen bg-zinc-950 p-4 min-h-12 text-center text-sm text-zinc-500',
+			'w-screen bg-zinc-950 p-4 text-center text-sm text-zinc-500',
 			className
 		)}
 	>

@@ -1,13 +1,12 @@
 import { FC, useEffect, useRef, useState } from 'react'
-import useChangeColorScheme from '@/hooks/useChangeColorScheme'
-import { COLOR_SCHEME } from '@/constants/colorScheme'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 type PropsType = {
 	text: string
 }
 
 const TextSVG: FC<PropsType> = ({ text }) => {
-	const { colorScheme } = useChangeColorScheme([COLOR_SCHEME[0][1]])
+	const { colorScheme } = useColorScheme()
 	const textRef = useRef<SVGTextElement | null>(null)
 	const [svgSize, setSvgSize] = useState({ width: 0, height: 0 })
 
@@ -44,7 +43,7 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 				y='55%'
 				dominantBaseline='middle'
 				textAnchor='middle'
-				fill={`rgb(var(--${colorScheme[0]}))`}
+				fill={`rgb(var(--${colorScheme[1]}))`}
 				lengthAdjust='spacingAndGlyphs'
 			>
 				{text}

@@ -1,9 +1,8 @@
 import Title from '@/app/components/Title'
 import summaryImage from '../../../public/assets/images/summary-image.jpg'
-import Button from '@/app/components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
-import { CONTACTS_LIST, SOCIAL_LINKS_LIST } from '@/constants/contactsList'
+import { CONTACTS_LIST } from '@/constants/contactsList'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
@@ -11,11 +10,14 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
+import Contacts from '@/components/Contacts'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {
 	const imageRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useParallax(
 		[
 			{ shapeRef: imageRef, shiftYValue: -150 },
@@ -31,12 +33,12 @@ const Summary = () => {
 					<div className='w-full flex items-end flex-grow max-w-full lg:max-w-1/2 relative'>
 						<RadialGradientCircle
 							id={SVG_IDS.circle4}
-							color='global-color-one-scheme-1'
+							color={colorScheme[0]}
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<RadialGradientCircle
 							id={SVG_IDS.circle5}
-							color='global-color-two-scheme-1'
+							color={colorScheme[1]}
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
 						<div
@@ -72,57 +74,44 @@ const Summary = () => {
 						<Title variant='h2'>About me</Title>
 						<div>
 							<p className='mb-4'>
-								I have{' '}
-								<span className='underline'>over 2 years</span>{' '}
-								of experience in front-end development and{' '}
+								I offer{' '}
+								<span className='underline'>over 6 years</span>{' '}
+								of commercial work experience in IT:{' '}
 								<span className='underline'>
-									more than 4 years
+									more than 2 years
 								</span>{' '}
-								of experience in UI/UX design.
+								as a Front End Developer and{' '}
+								<span className='underline'>4 years</span> as a
+								UI/UX designer.
 							</p>
 							<p className='mb-12'>
-								Since the beginning of my journey as a
-								developer, I have worked on a wide variety of
-								tasks both by myself and in collaboration with
-								talented people. I have experience in
-								development of web applications, landing pages,
-								corporate websites.
+								During this time, I have contributed to creating
+								and developing{' '}
+								<span className='underline'>20+ projects</span>{' '}
+								of various sizes and complexity. I have
+								established myself as a software developer with
+								a passion for creating efficient and innovative
+								solutions to complex problems.
 							</p>
 							<p className='mb-4'>My contacts:</p>
-						</div>
-						<div className='text-base'>
-							{CONTACTS_LIST.map((item, idx) => (
-								<p key={idx} className='mb-2'>
-									<FontAwesomeIcon
-										icon={item.icon}
-										className='mr-2'
-									/>
-									<span className='mr-2 font-semibold'>
-										{item.title}:
-									</span>
-									{item.value}
-								</p>
-							))}
+							<div className='text-base'>
+								{CONTACTS_LIST.map((item, idx) => (
+									<p key={idx} className='mb-2'>
+										<FontAwesomeIcon
+											icon={item.icon}
+											className='mr-2'
+										/>
+										<span className='mr-2 font-semibold'>
+											{item.title}:
+										</span>
+										{item.value}
+									</p>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className='flex justify-center items-start gap-4'>
-					{SOCIAL_LINKS_LIST.map((item, idx) => (
-						<div
-							key={idx}
-							className='flex flex-col justify-start items-center gap-4'
-						>
-							<Button
-								context='social-link'
-								link={item.link}
-								icon={item.icon}
-							/>
-							<span className='[writing-mode:vertical-lr] text-base text-zinc-400 tracking-[4px]'>
-								{item.title}
-							</span>
-						</div>
-					))}
-				</div>
+				<Contacts isShowTitle />
 			</div>
 		</div>
 	)

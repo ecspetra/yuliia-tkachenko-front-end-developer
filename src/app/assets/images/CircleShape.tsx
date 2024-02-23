@@ -1,7 +1,6 @@
 import { FC } from 'react'
-import useChangeColorScheme from '@/hooks/useChangeColorScheme'
-import { COLOR_SCHEME } from '@/constants/colorScheme'
 import classNames from 'classnames'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	className: string
@@ -9,7 +8,7 @@ interface PropsType {
 }
 
 const CircleShape: FC<PropsType> = ({ className, color }) => {
-	const { colorScheme } = useChangeColorScheme([COLOR_SCHEME[0][1]])
+	const { colorScheme } = useColorScheme()
 
 	return (
 		<svg
@@ -23,7 +22,7 @@ const CircleShape: FC<PropsType> = ({ className, color }) => {
 				cx='150'
 				cy='150'
 				r='150'
-				fill={color ? color : `rgb(var(--${colorScheme[0]}))`}
+				fill={color ? color : `rgb(var(--${colorScheme[1]}))`}
 			/>
 		</svg>
 	)

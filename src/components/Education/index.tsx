@@ -8,11 +8,13 @@ import LinesShape from '@/app/assets/images/LinesShape'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const Education = () => {
 	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const backgroundLinesShapeRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useParallax(
 		[
 			{ shapeRef: backgroundGeometricShapeRef, shiftYValue: -250 },
@@ -46,15 +48,15 @@ const Education = () => {
 							</div>
 							<RadialGradientCircle
 								id={SVG_IDS.circle10}
-								color='global-color-one-scheme-1'
+								color={colorScheme[0]}
 								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 							/>
 							<RadialGradientCircle
 								id={SVG_IDS.circle11}
-								color='global-color-three-scheme-1'
+								color={colorScheme[2]}
 								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 							/>
-							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-14 lg:-bottom-20 left-[20%] z-20 rounded-full' />
+							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-8 lg:-bottom-20 left-[20%] z-20 rounded-full' />
 							<div
 								ref={backgroundGeometricShapeRef}
 								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'

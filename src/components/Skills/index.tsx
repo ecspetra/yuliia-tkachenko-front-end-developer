@@ -9,10 +9,12 @@ import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const Skills = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
+	const { colorScheme } = useColorScheme()
 	useUpDownShapeAnimation([
 		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
 	])
@@ -37,12 +39,12 @@ const Skills = () => {
 				<div className='relative max-w-full 2xl:max-w-6xl'>
 					<RadialGradientCircle
 						id={SVG_IDS.circle6}
-						color='global-color-one-scheme-1'
+						color={colorScheme[0]}
 						className='w-[1300px] h-[1300px] 2xl:w-[1600px] 2xl:h-[1600px] absolute top-[40%] left-[20%] lg:top-1/2 lg:left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle7}
-						color='global-color-three-scheme-1'
+						color={colorScheme[2]}
 						className='w-[1000px] h-[1000px] absolute top-[40%] left-[40%] lg:top-[65%] lg:left-[50%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<div className='w-[100vw] h-[100vw] lg:w-[800px] lg:h-[800px] absolute top-[10%] left-[15%] 2xl:-left-[15%]'>

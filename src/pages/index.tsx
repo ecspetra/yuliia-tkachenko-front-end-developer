@@ -8,6 +8,7 @@ import Summary from '../components/Summary'
 import Education from '@/components/Education'
 import BottomBanner from '../components/BottomBanner'
 import Footer from '@/app/components/Footer'
+import { ColorSchemeProvider } from '@/context/ColorSchemeContext'
 
 const urbanistFont = Urbanist({
 	weight: ['400', '600', '700', '800'],
@@ -16,7 +17,7 @@ const urbanistFont = Urbanist({
 })
 
 const Home = () => (
-	<>
+	<ColorSchemeProvider>
 		<Header className={`${urbanistFont.variable} font-sans text-white`} />
 		<main
 			className={`flex min-h-screen flex-col items-center justify-between ${urbanistFont.variable} font-sans font-normal leading-normal tracking-wide text-lg text-white`}
@@ -30,7 +31,7 @@ const Home = () => (
 			<BottomBanner />
 		</main>
 		<Footer className={`${urbanistFont.variable} font-sans`} />
-	</>
+	</ColorSchemeProvider>
 )
 
 export default Home
