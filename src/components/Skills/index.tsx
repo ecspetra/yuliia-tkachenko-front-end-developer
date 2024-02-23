@@ -26,7 +26,7 @@ const Skills = () => {
 			className='relative pt-20 pb-40 2xl:pt-40 2xl:pb-20 w-screen overflow-hidden'
 			id='skills'
 		>
-			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-full lg:h-[calc(100%-380px)] overflow-hidden'>
+			<div className='absolute top-0 left-0 bg-zinc-950 w-full h-full lg:h-[calc(100%-340px)] 2xl:h-[calc(100%-260px)] overflow-hidden'>
 				<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-[95%] left-[15%] lg:top-[calc(50%+400px)] lg:left-[calc(50%-400px)] -translate-y-1/2 -translate-x-1/2 opacity-15 -rotate-90 z-10' />
 			</div>
 			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap 2xl:flex-nowrap justify-center 2xl:justify-between items-start gap-6'>
