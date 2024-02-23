@@ -9,7 +9,6 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
-import { useColorScheme } from '@/context/ColorSchemeContext'
 
 type PortfolioFrontEndItemType = {
 	title: string
@@ -41,7 +40,6 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 	const bigImageRef = useRef<HTMLDivElement>(null)
 	const smallImageRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
-	const { colorScheme } = useColorScheme()
 	usePortfolioImagesAnimation(bigImageRef, 'bigImage')
 	usePortfolioImagesAnimation(smallImageRef, 'smallImage')
 	const isShowLargeRadialGradientCircle = idx !== 2
@@ -60,13 +58,13 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 			>
 				<RadialGradientCircle
 					id={SVG_IDS.circle14}
-					color={isEven ? colorScheme[1] : colorScheme[2]}
+					color={isEven ? 'global-color-two' : 'global-color-three'}
 					className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-[40%] left-[25%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
 						id={SVG_IDS.circle15}
-						color={isEven ? colorScheme[0] : colorScheme[1]}
+						color={isEven ? 'global-color-one' : 'global-color-two'}
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[80%] left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-15'
 					/>
 				)}

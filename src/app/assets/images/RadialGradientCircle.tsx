@@ -1,13 +1,28 @@
 import { FC } from 'react'
+import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	id: string
-	color: string
+	color: 'global-color-one' | 'global-color-two' | 'global-color-three'
 	className?: string
 }
 
 const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
+	const { colorScheme } = useColorScheme()
 	const gradientId = `grad-${id}`
+
+	const getColor = () => {
+		switch (color) {
+			case 'global-color-one':
+				return colorScheme[0]
+			case 'global-color-two':
+				return colorScheme[1]
+			case 'global-color-three':
+				return colorScheme[2]
+			default:
+				return colorScheme[0]
+		}
+	}
 
 	return (
 		<svg
@@ -29,35 +44,35 @@ const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
 					<stop
 						offset='0%'
 						style={{
-							stopColor: `rgb(var(--${color}))`,
+							stopColor: `rgb(var(--${getColor()}))`,
 							stopOpacity: 1,
 						}}
 					/>
 					<stop
 						offset='30%'
 						style={{
-							stopColor: `rgb(var(--${color}))`,
+							stopColor: `rgb(var(--${getColor()}))`,
 							stopOpacity: 0.5,
 						}}
 					/>
 					<stop
 						offset='40%'
 						style={{
-							stopColor: `rgb(var(--${color}))`,
+							stopColor: `rgb(var(--${getColor()}))`,
 							stopOpacity: 0.3,
 						}}
 					/>
 					<stop
 						offset='55%'
 						style={{
-							stopColor: `rgb(var(--${color}))`,
+							stopColor: `rgb(var(--${getColor()}))`,
 							stopOpacity: 0.1,
 						}}
 					/>
 					<stop
 						offset='65%'
 						style={{
-							stopColor: `rgb(var(--${color}))`,
+							stopColor: `rgb(var(--${getColor()}))`,
 							stopOpacity: 0.02,
 						}}
 					/>

@@ -4,10 +4,11 @@ import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	className: string
+	isBlurred?: boolean
 	color?: string
 }
 
-const CircleShape: FC<PropsType> = ({ className, color }) => {
+const CircleShape: FC<PropsType> = ({ className, isBlurred, color }) => {
 	const { colorScheme } = useColorScheme()
 
 	return (
@@ -16,13 +17,24 @@ const CircleShape: FC<PropsType> = ({ className, color }) => {
 			shapeRendering='geometricPrecision'
 			textRendering='geometricPrecision'
 			viewBox='0 0 300 300'
-			className={classNames(className, 'w-full')}
+			className={classNames(
+				'w-full h-full rounded-full',
+				isBlurred && 'backdrop-blur-md',
+				className
+			)}
 		>
 			<circle
 				cx='150'
 				cy='150'
 				r='150'
-				fill={color ? color : `rgb(var(--${colorScheme[1]}))`}
+				fill={
+					color
+						? color
+						: isBlurred
+							? '#ffffff'
+							: `rgb(var(--${colorScheme[1]}))`
+				}
+				opacity={isBlurred ? 0.2 : 1}
 			/>
 		</svg>
 	)

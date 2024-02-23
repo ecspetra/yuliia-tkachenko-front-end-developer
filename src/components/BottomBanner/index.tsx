@@ -6,17 +6,14 @@ import LinesShape from '@/app/assets/images/LinesShape'
 import bottomBannerImage from '../../../public/assets/images/bottom-banner-image.jpg'
 import Button from '@/app/components/Button'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
-import BlurCircleShape from '@/app/assets/images/BlurCircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import { useColorScheme } from '@/context/ColorSchemeContext'
 
 const BottomBanner = () => {
-	const { colorScheme } = useColorScheme()
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
@@ -54,25 +51,28 @@ const BottomBanner = () => {
 						/>
 					</div>
 					<RadialGradientCircle
+						id={SVG_IDS.circle18}
+						color='global-color-one'
+						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+5vw)] left-[calc(50%+5vw)] lg:top-[80%] lg:left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-30'
+					/>
+					<RadialGradientCircle
 						id={SVG_IDS.circle16}
-						color={colorScheme[1]}
+						color='global-color-two'
 						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<RadialGradientCircle
 						id={SVG_IDS.circle17}
-						color={colorScheme[2]}
+						color='global-color-three'
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-5vw)] left-[calc(50%-5vw)] lg:top-[20%] lg:left-[20%] -translate-y-1/2 -translate-x-1/2 opacity-50'
-					/>
-					<RadialGradientCircle
-						id={SVG_IDS.circle18}
-						color={colorScheme[0]}
-						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+5vw)] left-[calc(50%+5vw)] lg:top-[80%] lg:left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<div
 						ref={animatedBlurCircleRef}
 						className='w-16 h-16 lg:w-24 lg:h-24 absolute bottom-[50%] -right-[10%] z-20'
 					>
-						<BlurCircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+						<CircleShape
+							className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+							isBlurred
+						/>
 					</div>
 					<div
 						ref={circleRef}
