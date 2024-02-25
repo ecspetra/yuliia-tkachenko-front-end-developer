@@ -17,7 +17,7 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'CinemaStreet',
 		description:
-			'Film library. The user has the opportunity to register on the project, view information about films, TV series, actors, use a quick search and filter, leave reviews, ratings and reactions, add other project participants as friends, and also create their own collection.',
+			'Film library. Users have the opportunity to register on the platform, explore information about films, TV series, and actors. They can utilize quick search and filtering options, leave reviews, provide ratings and reactions, connect with other project participants as friends, and create their own collections.',
 		repositoryLink: 'https://github.com/ecspetra/cinema-street',
 		previewLink: 'https://cinema-tan.vercel.app/',
 		teckStack: [
@@ -33,7 +33,7 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'Portfolio for Valerii',
 		description:
-			"Landing page for Backend developer portfolio. This project combines a unique design, parallax effects implemented using the 'React Scroll Parallax library'. The layout is adapted for all devices.",
+			"Landing page for Backend Developer portfolio. This project combines a unique design, parallax effects implemented using the 'React Scroll Parallax library'. The page layout is adapted for all devices.",
 		repositoryLink:
 			'https://github.com/ecspetra/valerii-tkachenko-back-end-developer',
 		previewLink: 'https://www.valerii-tkachenko.dev',
@@ -65,7 +65,7 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'Trackslyn',
 		description:
-			"Web audio player. Allows you to access a user's tracks on Spotify through registration. The project implements a custom audio player for playing previews of tracks from the user's library.",
+			"Web audio player that grants access to a user's Spotify tracks upon registration. The project implements a customized audio player designed for playing previews of tracks from the user's library.",
 		repositoryLink: 'https://github.com/ecspetra/trackslyn',
 		previewLink: 'https://ecspetra.github.io/trackslyn/#',
 		teckStack: ['React', 'TypeScript', 'HTML', 'SCSS', 'Spotify API'],
