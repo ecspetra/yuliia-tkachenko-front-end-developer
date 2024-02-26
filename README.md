@@ -1,6 +1,18 @@
-## Portfolio for Yuliia Tkachenko — Front End Developer
+## Yuliia Tkachenko — Front End Developer
 
-This project was designed and developed by Yuliia Tkachenko in 2024, using Next.js, Typescript, and Tailwind. It showcases details about me, my skills, work experience, volunteering, examples of my projects, and contact information. The website features a unique design with GSAP library-based animations and a dynamic color scheme, ensuring a responsive layout across all devices.
+## Preview
+![project-screenshot-1](public/assets/images/screenshot-1.png)
+![project-screenshot-2](public/assets/images/screenshot-2.png)
+![project-screenshot-3](public/assets/images/screenshot-3.png)
+![project-screenshot-4](public/assets/images/screenshot-4.png)
+![project-screenshot-5](public/assets/images/screenshot-5.png)
 
+## Description
+My personal portfolio is designed and developed using Next.js, Typescript, and Tailwind. It showcases information about me, my skills, work experience, volunteering, examples of my projects, and contact information. The website features a unique design with GSAP library-based animations and a dynamic color scheme, ensuring a responsive layout across all devices.
+
+## Created with:
+Next.js, React, TypeScript, Tailwind, GSAP
+
+Designed and developed by Yuliia Tkachenko, 2024
 
 ## Let's work together! &#128522;
