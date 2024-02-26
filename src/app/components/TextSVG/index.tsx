@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { useColorScheme } from '@/context/ColorSchemeContext'
+import {debounce} from "next/dist/server/utils";
 
 type PropsType = {
 	text: string
@@ -23,11 +24,13 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 
 		updateSvgSize()
 
-		window.addEventListener('resize', updateSvgSize)
+		const debouncedUpdateSvgSize = debounce(updateSvgSize, 300);
+
+		window.addEventListener('resize', debouncedUpdateSvgSize);
 
 		return () => {
-			window.removeEventListener('resize', updateSvgSize)
-		}
+			window.removeEventListener('resize', debouncedUpdateSvgSize);
+		};
 	}, [text])
 
 	return (
