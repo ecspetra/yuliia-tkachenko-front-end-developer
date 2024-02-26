@@ -21,13 +21,13 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 	return (
 		<div
 			ref={fullPageImageRef}
-			className='bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl overflow-hidden'
+			className='aspect-[300/647] w-full h-full bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl overflow-hidden'
 		>
 			<a
 				href={fullSizeSrc}
 				target='_blank'
 				rel='noopener noreferrer'
-				className='group'
+				className='group w-full h-full'
 			>
 				<BackgroundSvgFill
 					id={SVG_IDS.backgroundFill7}
@@ -56,7 +56,8 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 					className='h-full w-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
 					src={thumbnailSrc}
 					alt='portfolio-project'
-					priority
+					layout='fill'
+					loading='lazy'
 				/>
 			</a>
 		</div>

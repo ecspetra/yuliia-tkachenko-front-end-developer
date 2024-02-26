@@ -47,7 +47,7 @@ const TopBanner = () => {
 					</Title>
 					<Button />
 				</div>
-				<div className='max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative order-1 lg:order-2 mb-8 lg:mb-0'>
+				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative order-1 lg:order-2 mb-8 lg:mb-0'>
 					<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
 					<div
 						ref={animatedGeometricShapeRef}
@@ -95,7 +95,8 @@ const TopBanner = () => {
 						className='relative z-10 rounded-xl sm:rounded-3xl'
 						src={topBannerImage}
 						alt='Top Banner'
-                        priority
+						layout='fill'
+						loading='lazy'
 					/>
 				</div>
 			</div>

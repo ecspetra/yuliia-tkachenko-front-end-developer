@@ -79,24 +79,26 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				)}
 				<div
 					ref={bigImageRef}
-					className='aspect-[4/3] bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl'
+					className='aspect-[4/3] w-full h-full bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl'
 				>
 					<Image
 						className='w-full h-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
 						src={images[0]}
 						alt='portfolio-project'
-						priority
+						layout='fill'
+						loading='lazy'
 					/>
 				</div>
 				<div
 					ref={smallImageRef}
-					className='aspect-[4/3] max-w-[60%] lg:max-w-80 bg-zinc-800 absolute -bottom-6 -right-6 z-10 rounded-xl sm:rounded-3xl border border-zinc-700'
+					className='aspect-[4/3] w-full h-auto max-w-[60%] lg:max-w-80 bg-zinc-800 absolute -bottom-6 -right-6 z-10 rounded-xl sm:rounded-3xl border border-zinc-700'
 				>
 					<Image
 						className='w-full h-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
 						src={images[1]}
 						alt='portfolio-project'
-						priority
+						layout='fill'
+						loading='lazy'
 					/>
 				</div>
 			</div>

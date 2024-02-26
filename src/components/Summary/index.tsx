@@ -59,13 +59,14 @@ const Summary = () => {
 						</div>
 						<div
 							ref={imageRef}
-							className='relative z-10 aspect-[4/3] h-fit rounded-xl sm:rounded-3xl overflow-hidden'
+							className='relative z-10 aspect-[4/3] w-full h-fit rounded-xl sm:rounded-3xl overflow-hidden'
 						>
 							<Image
 								className='object-cover w-full h-full'
 								src={summaryImage}
 								alt='Summary'
-								priority
+								layout='fill'
+								loading='lazy'
 							/>
 						</div>
 					</div>
