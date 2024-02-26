@@ -76,14 +76,14 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 export const UI_UX_DESIGNER_PROJECTS_LIST = [
 	{
 		fullSizeSrc: designPortfolioImage1.src,
-		thumbnailSrc: designPortfolioImage1Small.src,
+		thumbnailSrc: designPortfolioImage1Small,
 	},
 	{
 		fullSizeSrc: designPortfolioImage2.src,
-		thumbnailSrc: designPortfolioImage2Small.src,
+		thumbnailSrc: designPortfolioImage2Small,
 	},
 	{
 		fullSizeSrc: designPortfolioImage3.src,
-		thumbnailSrc: designPortfolioImage3Small.src,
+		thumbnailSrc: designPortfolioImage3Small,
 	},
 ]

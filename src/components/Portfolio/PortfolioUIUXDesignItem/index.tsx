@@ -4,6 +4,7 @@ import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
+import Image from "next/image";
 
 type PropsType = {
 	image: { fullSizeSrc: string; thumbnailSrc: string }
@@ -51,10 +52,11 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 						borderRadius={0}
 					/>
 				</span>
-				<img
+				<Image
 					className='h-full w-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
 					src={thumbnailSrc}
 					alt='portfolio-project'
+					priority
 				/>
 			</a>
 		</div>

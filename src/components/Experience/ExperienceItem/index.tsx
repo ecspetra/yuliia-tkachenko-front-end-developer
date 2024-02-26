@@ -44,10 +44,10 @@ const ExperienceItem: FC<PropsType> = ({
 					/>
 				</span>
 				<div className='text-base'>
-					<p>
+					<p className='flex justify-start items-center'>
 						<FontAwesomeIcon
 							icon={faLocationDot}
-							className='mr-2'
+							className='mr-2 w-5 h-5'
 						/>
 						{country}
 					</p>

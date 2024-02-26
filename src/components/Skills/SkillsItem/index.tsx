@@ -36,7 +36,7 @@ const SkillsItem: FC<PropsType> = ({ children, counter, idx }) => {
 						/>
 					</span>
 				</div>
-				<FontAwesomeIcon className='text-zinc-500' icon={faCode} />
+				<FontAwesomeIcon className='text-zinc-500 w-6 h-6' icon={faCode} />
 			</div>
 		</div>
 	)

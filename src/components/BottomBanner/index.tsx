@@ -12,6 +12,7 @@ import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
+import Image from "next/image";
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -81,10 +82,11 @@ const BottomBanner = () => {
 						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
 					<LinesShape className='w-14 lg:w-24 absolute top-[10%] right-0 z-20' />
-					<img
+					<Image
 						className='relative z-10 rounded-xl sm:rounded-3xl'
-						src={bottomBannerImage.src}
+						src={bottomBannerImage}
 						alt='Bottom Banner'
+						priority
 					/>
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>

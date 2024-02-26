@@ -13,6 +13,7 @@ import TitleAnimated from '@/app/components/Title/TitleAnimated'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
 import useParallax from '@/hooks/useParallax'
+import Image from "next/image";
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -90,10 +91,11 @@ const TopBanner = () => {
 						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
 					<LinesShape className='w-14 lg:w-24 absolute top-[20%] right-0 z-20' />
-					<img
+					<Image
 						className='relative z-10 rounded-xl sm:rounded-3xl'
-						src={topBannerImage.src}
+						src={topBannerImage}
 						alt='Top Banner'
+                        priority
 					/>
 				</div>
 			</div>

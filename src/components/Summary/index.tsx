@@ -11,6 +11,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {
@@ -60,10 +61,11 @@ const Summary = () => {
 							ref={imageRef}
 							className='relative z-10 aspect-[4/3] h-fit rounded-xl sm:rounded-3xl overflow-hidden'
 						>
-							<img
-								src={summaryImage.src}
+							<Image
 								className='object-cover w-full h-full'
+								src={summaryImage}
 								alt='Summary'
+								priority
 							/>
 						</div>
 					</div>
@@ -94,10 +96,10 @@ const Summary = () => {
 							<p className='mb-4'>My contacts:</p>
 							<div className='text-base'>
 								{CONTACTS_LIST.map((item, idx) => (
-									<p key={idx} className='mb-2'>
+									<p key={idx} className='mb-2 flex justify-center lg:justify-start items-center'>
 										<FontAwesomeIcon
 											icon={item.icon}
-											className='mr-2'
+											className='mr-2 w-4 h-4'
 										/>
 										<span className='mr-2 font-semibold'>
 											{item.title}:

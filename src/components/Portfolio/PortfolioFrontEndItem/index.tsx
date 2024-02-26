@@ -9,6 +9,7 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
+import Image from "next/image";
 
 type PortfolioFrontEndItemType = {
 	title: string
@@ -80,20 +81,22 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 					ref={bigImageRef}
 					className='aspect-[4/3] bg-zinc-800 relative z-10 rounded-xl sm:rounded-3xl'
 				>
-					<img
+					<Image
 						className='w-full h-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
-						src={images[0].src}
+						src={images[0]}
 						alt='portfolio-project'
+						priority
 					/>
 				</div>
 				<div
 					ref={smallImageRef}
 					className='aspect-[4/3] max-w-[60%] lg:max-w-80 bg-zinc-800 absolute -bottom-6 -right-6 z-10 rounded-xl sm:rounded-3xl border border-zinc-700'
 				>
-					<img
+					<Image
 						className='w-full h-full rounded-xl sm:rounded-3xl object-cover mix-blend-luminosity'
-						src={images[1].src}
+						src={images[1]}
 						alt='portfolio-project'
+						priority
 					/>
 				</div>
 			</div>
