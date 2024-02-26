@@ -39,12 +39,12 @@ const TopBanner = () => {
 			<div className='container mx-auto w-full h-full min-h-screen flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center py-32 2xl:py-60 px-6 gap-16'>
 				<div className='relative w-full max-w-md lg:max-w-xl z-10 order-2 lg:order-1 flex flex-col items-center lg:block'>
 					<TitleAnimated />
-					<Title
-						variant='h2'
-						className='!text-global-color-two-scheme-1 !text-3xl'
-					>
-						<TextSVG text='Front End Developer' />
-					</Title>
+					{/*<Title*/}
+					{/*	variant='h2'*/}
+					{/*	className='!text-global-color-two-scheme-1 !text-3xl'*/}
+					{/*>*/}
+					{/*	<TextSVG text='Front End Developer' />*/}
+					{/*</Title>*/}
 					<Button />
 				</div>
 				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative order-1 lg:order-2 mb-8 lg:mb-0'>

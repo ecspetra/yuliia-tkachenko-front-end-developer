@@ -48,7 +48,7 @@ const Title: FC<PropsType> = ({
 							className
 						)}
 					>
-						<TextSVG text={children as string} />
+						{/*<TextSVG text={children as string} />*/}
 					</h3>
 				)
 			case 'h3-large':

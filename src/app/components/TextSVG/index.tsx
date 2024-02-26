@@ -23,6 +23,14 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 		}
 
 		updateSvgSize()
+
+		const debouncedUpdateSvgSize = debounce(updateSvgSize, 300);
+
+		window.addEventListener('resize', debouncedUpdateSvgSize);
+
+		return () => {
+			window.removeEventListener('resize', debouncedUpdateSvgSize);
+		};
 	}, [text])
 
 	return (
