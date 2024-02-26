@@ -9,7 +9,7 @@ import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
-import Image, {StaticImageData} from "next/image";
+import Image, { StaticImageData } from "next/image"
 
 type PortfolioFrontEndItemType = {
 	title: string

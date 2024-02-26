@@ -11,7 +11,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
-import Image from "next/image";
+import Image from "next/image"
 gsap.registerPlugin(ScrollTrigger)
 
 const Summary = () => {

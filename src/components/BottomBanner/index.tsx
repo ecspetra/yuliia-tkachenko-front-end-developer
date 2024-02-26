@@ -12,7 +12,7 @@ import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import Image from "next/image";
+import Image from "next/image"
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)

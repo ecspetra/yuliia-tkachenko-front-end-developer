@@ -13,7 +13,7 @@ import TitleAnimated from '@/app/components/Title/TitleAnimated'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import TextSVG from '@/app/components/TextSVG'
 import useParallax from '@/hooks/useParallax'
-import Image from "next/image";
+import Image from "next/image"
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)

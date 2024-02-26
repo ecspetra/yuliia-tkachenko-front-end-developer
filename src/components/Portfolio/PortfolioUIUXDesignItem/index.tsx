@@ -4,7 +4,7 @@ import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import { SVG_IDS } from '@/constants/svgUniqueKeys'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import Image, {StaticImageData} from "next/image";
+import Image, { StaticImageData } from "next/image"
 
 type PropsType = {
 	image: { fullSizeSrc: string; thumbnailSrc: StaticImageData }
