@@ -17,7 +17,7 @@ type PortfolioFrontEndItemType = {
 	repositoryLink: string
 	previewLink: string
 	teckStack: string[]
-	images: { src: string }[]
+	images: string[]
 }
 
 type PropsType = {
