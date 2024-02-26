@@ -65,7 +65,7 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
 		title: 'Trackslyn',
 		description:
-			"Web audio player that grants access to a user's Spotify tracks upon registration. The project implements a customized audio player designed for playing previews of tracks from the user's library.",
+			"Web audio player that grants access to a user's Spotify tracks upon registration (requires users to be registered on Spotify for Developers for access). The project implements a customized audio player designed for playing previews of tracks from the user's library.",
 		repositoryLink: 'https://github.com/ecspetra/trackslyn',
 		previewLink: 'https://ecspetra.github.io/trackslyn/#',
 		teckStack: ['React', 'TypeScript', 'HTML', 'SCSS', 'Spotify API'],
