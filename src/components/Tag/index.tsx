@@ -16,7 +16,7 @@ const Tag: FC<PropsType> = ({ tag }) => {
 				opacity={10}
 				isWithGradient={false}
 			/>
-			{/*<TextSVG text={tag} />*/}
+			<TextSVG text={tag} />
 		</span>
 	)
 }
