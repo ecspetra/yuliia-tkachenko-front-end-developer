@@ -66,7 +66,7 @@ const Summary = () => {
 								src={summaryImage}
 								alt='Summary'
 								layout='fill'
-								loading='lazy'
+								loading='eager'
 							/>
 						</div>
 					</div>

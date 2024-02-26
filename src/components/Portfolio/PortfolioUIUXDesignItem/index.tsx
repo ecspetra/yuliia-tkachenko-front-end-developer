@@ -57,7 +57,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 					src={thumbnailSrc}
 					alt='portfolio-project'
 					layout='fill'
-					loading='lazy'
+					loading='eager'
 				/>
 			</a>
 		</div>

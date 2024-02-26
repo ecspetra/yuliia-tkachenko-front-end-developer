@@ -87,7 +87,7 @@ const BottomBanner = () => {
 						src={bottomBannerImage}
 						alt='Bottom Banner'
 						layout='fill'
-						loading='lazy'
+						loading='eager'
 					/>
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>

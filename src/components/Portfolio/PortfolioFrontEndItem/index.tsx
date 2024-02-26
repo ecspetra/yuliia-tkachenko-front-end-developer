@@ -86,7 +86,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 						src={images[0]}
 						alt='portfolio-project'
 						layout='fill'
-						loading='lazy'
+						loading='eager'
 					/>
 				</div>
 				<div
@@ -98,7 +98,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 						src={images[1]}
 						alt='portfolio-project'
 						layout='fill'
-						loading='lazy'
+						loading='eager'
 					/>
 				</div>
 			</div>

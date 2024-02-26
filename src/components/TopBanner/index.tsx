@@ -96,7 +96,7 @@ const TopBanner = () => {
 						src={topBannerImage}
 						alt='Top Banner'
 						layout='fill'
-						loading='lazy'
+						loading='eager'
 					/>
 				</div>
 			</div>
