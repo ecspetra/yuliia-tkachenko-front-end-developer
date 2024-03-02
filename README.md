@@ -1,4 +1,4 @@
-## Preview
+## Screenshots
 ![project-screenshot-1](public/assets/images/screenshot-1.png)
 ![project-screenshot-2](public/assets/images/screenshot-2.png)
 ![project-screenshot-3](public/assets/images/screenshot-3.png)
