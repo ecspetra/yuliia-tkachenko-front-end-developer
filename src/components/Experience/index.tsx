@@ -5,7 +5,7 @@ import {
 	VOLUNTEER_EXPERIENCE,
 } from '@/constants/experienceList'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 const Experience = () => (
 	<div
@@ -13,14 +13,14 @@ const Experience = () => (
 		id='experience'
 	>
 		<RadialGradientCircle
-			id={SVG_IDS.circle8}
+			id={generateRandomId('circle', 5)}
 			color='global-color-one'
-			className='w-[1300px] h-[1300px] hidden lg:block absolute top-[110%] left-[5%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+			className='w-[1300px] h-[1300px] hidden lg:block absolute top-[110%] left-[5%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 		/>
 		<RadialGradientCircle
-			id={SVG_IDS.circle9}
+			id={generateRandomId('circle', 5)}
 			color='global-color-two'
-			className='w-[800px] h-[800px] hidden lg:block absolute top-[110%] left-[15%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+			className='w-[800px] h-[800px] hidden lg:block absolute top-[110%] left-[15%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 		/>
 		<div className='text-center relative z-40'>
 			<Title variant='h3' className='flex justify-center'>

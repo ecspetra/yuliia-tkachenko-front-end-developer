@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Title from '@/app/components/Title'
 import { HEADER_ANCHORS, LINK_TO_TOP } from '@/constants/anchors'
 import useHeaderAnimation from '@/hooks/useHeaderAnimation'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import CloseButton from '@/app/components/Button/CloseButton'
 import useToggleHeaderMenu from '@/hooks/useToggleHeaderMenu'
@@ -52,7 +52,7 @@ const Header: FC<PropsType> = ({ className }) => {
 					>
 						<span className='w-[2px] h-10 xl:h-14 absolute bottom-0 left-0 duration-300 group-hover:-bottom-5'>
 							<BackgroundSvgFill
-								id={SVG_IDS.backgroundFill3}
+								id={generateRandomId('backgroundFill', 5)}
 								borderRadius={0}
 							/>
 						</span>
@@ -82,7 +82,10 @@ const Header: FC<PropsType> = ({ className }) => {
 								>
 									<span className={linkBorderClassNames(key)}>
 										<BackgroundSvgFill
-											id={SVG_IDS.backgroundFill4}
+											id={generateRandomId(
+												'backgroundFill',
+												5
+											)}
 											borderRadius={0}
 										/>
 									</span>

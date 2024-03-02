@@ -7,9 +7,9 @@ import Button from '@/app/components/Button'
 import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 import useParallax from '@/hooks/useParallax'
-import Image, { StaticImageData } from "next/image"
+import Image, { StaticImageData } from 'next/image'
 
 type PortfolioFrontEndItemType = {
 	title: string
@@ -58,15 +58,15 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				}`}
 			>
 				<RadialGradientCircle
-					id={SVG_IDS.circle14}
+					id={generateRandomId('circle', 5)}
 					color={isEven ? 'global-color-two' : 'global-color-three'}
-					className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-[40%] left-[25%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+					className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-[40%] left-[25%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 				/>
 				{isShowLargeRadialGradientCircle && (
 					<RadialGradientCircle
-						id={SVG_IDS.circle15}
+						id={generateRandomId('circle', 5)}
 						color={isEven ? 'global-color-one' : 'global-color-two'}
-						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[80%] left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-15'
+						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[80%] left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 				)}
 				{isShowCircleShape && (
@@ -117,7 +117,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 					))}
 				</p>
 				<p className='mb-8'>{description}</p>
-				<div className='max-w-md mx-auto lg:mx-0 lg:max-w-full flex flex-wrap lg:flex-nowrap justify-center lg:justify-start items-center gap-4'>
+				<div className='max-w-md mx-auto lg:mx-0 lg:max-w-full flex flex-wrap lg:flex-nowrap justify-center lg:justify-start items-center gap-6'>
 					<Button
 						context='preview-link'
 						link={previewLink}

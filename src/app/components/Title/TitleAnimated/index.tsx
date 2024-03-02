@@ -2,7 +2,7 @@ import Title from '@/app/components/Title'
 import useTextAnimation from '@/hooks/useTextAnimation'
 import { useRef } from 'react'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 const TitleAnimated = () => {
 	const textRefOne = useRef<HTMLHeadingElement>(null)
@@ -21,7 +21,7 @@ const TitleAnimated = () => {
 				</span>
 				<span className='animated-border w-full h-0.5 block absolute bottom-0 left-0'>
 					<BackgroundSvgFill
-						id={SVG_IDS.backgroundFill1}
+						id={generateRandomId('backgroundFill', 5)}
 						borderRadius={0}
 					/>
 				</span>
@@ -33,7 +33,7 @@ const TitleAnimated = () => {
 				</span>
 				<span className='animated-border w-full h-0.5 block absolute bottom-0 left-0'>
 					<BackgroundSvgFill
-						id={SVG_IDS.backgroundFill2}
+						id={generateRandomId('backgroundFill', 5)}
 						borderRadius={0}
 					/>
 				</span>

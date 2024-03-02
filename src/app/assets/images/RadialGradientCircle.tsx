@@ -3,7 +3,11 @@ import { useColorScheme } from '@/context/ColorSchemeContext'
 
 interface PropsType {
 	id: string
-	color: 'global-color-one' | 'global-color-two' | 'global-color-three'
+	color:
+		| 'global-color-one'
+		| 'global-color-two'
+		| 'global-color-three'
+		| 'global-color-four'
 	className?: string
 }
 
@@ -19,6 +23,8 @@ const RadialGradientCircle: FC<PropsType> = ({ id, color, className }) => {
 				return colorScheme[1]
 			case 'global-color-three':
 				return colorScheme[2]
+			case 'global-color-four':
+				return colorScheme[3]
 			default:
 				return colorScheme[0]
 		}

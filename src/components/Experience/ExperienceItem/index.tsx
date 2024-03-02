@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Tag from '@/components/Tag'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 type ExperienceItemType = {
 	company: string
@@ -39,7 +39,7 @@ const ExperienceItem: FC<PropsType> = ({
 				<Title className='!mb-4'>{company}</Title>
 				<span className='relative w-full h-0.5 block mb-4'>
 					<BackgroundSvgFill
-						id={SVG_IDS.backgroundFill9}
+						id={generateRandomId('backgroundFill', 5)}
 						borderRadius={0}
 					/>
 				</span>
