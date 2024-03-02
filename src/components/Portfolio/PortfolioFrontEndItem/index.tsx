@@ -18,6 +18,7 @@ type PortfolioFrontEndItemType = {
 	previewLink: string
 	teckStack: string[]
 	images: StaticImageData[]
+	notes?: string
 }
 
 type PropsType = {
@@ -34,6 +35,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 		previewLink,
 		teckStack,
 		images,
+		notes,
 	},
 	isEven,
 	idx,
@@ -117,6 +119,9 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 					))}
 				</p>
 				<p className='mb-8'>{description}</p>
+				{notes && (
+					<p className='mb-8 text-sm text-zinc-500'>* {notes}</p>
+				)}
 				<div className='max-w-md mx-auto lg:mx-0 lg:max-w-full flex flex-wrap lg:flex-nowrap justify-center lg:justify-start items-center gap-6'>
 					<Button
 						context='preview-link'
