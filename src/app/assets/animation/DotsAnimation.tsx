@@ -2,19 +2,29 @@ import { FC, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import classNames from 'classnames'
 
+interface DotProps {
+	dot: HTMLDivElement
+	draw: () => void
+	move: () => void
+}
+
 interface PropsType {
 	className?: string
 }
 
-const Dot = (container, size, color) => {
+const Dot = (
+	container: HTMLDivElement,
+	size: number,
+	color: number
+): DotProps => {
 	let rad_x = (2 * Math.random() * container.offsetWidth) / 2 + 1
 	let rad_y = (1.2 * Math.random() * container.offsetHeight) / 2 + 1
 	let alpha = Math.random() * 360 + 1
 	let speed = Math.random() * 100 < 50 ? 1 : -1
 	speed *= 0.03
 
-	const dot = document.createElement('div')
-	dot.className = 'dot' // Добавляем класс .dot
+	const dot: HTMLDivElement = document.createElement('div')
+	dot.className = 'dot'
 	dot.style.width = `${size}px`
 	dot.style.height = `${size}px`
 	dot.style.backgroundColor = `rgb(${color},${color},${color})`
@@ -47,25 +57,22 @@ const Dot = (container, size, color) => {
 }
 
 const DotsAnimation: FC<PropsType> = ({ className }) => {
-	const containerRef = useRef(null)
-	const dots = []
+	const containerRef = useRef<HTMLDivElement>(null)
+	const dots: DotProps[] = []
 
 	useEffect(() => {
 		const container = containerRef.current
+
+		if (!container) return
 
 		const dotCount = 100
 
 		for (let i = 0; i < dotCount; i++) {
 			const size = Math.random() * 5 + 1
 			const color = Math.floor(Math.random() * 256)
-			const {
-				dot,
-				draw,
-				move,
-				size: dotSize,
-			} = Dot(container, size, color)
+			const { dot, draw, move } = Dot(container, size, color)
 			container.appendChild(dot)
-			dots.push({ draw, move, size: dotSize })
+			dots.push({ draw, move, dot })
 		}
 
 		const render = () => {
