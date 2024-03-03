@@ -8,6 +8,7 @@ import LinesShape from '@/app/assets/images/LinesShape'
 import { generateRandomId } from '@/handlers/generateRandomId'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
+import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 
 const Education = () => {
 	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -28,7 +29,8 @@ const Education = () => {
 
 	return (
 		<div className='w-screen overflow-x-hidden' id='education'>
-			<div className='w-full h-full mx-auto pt-4 sm:pt-20 2xl:pt-40'>
+			<div className='relative overflow-hidden w-full h-full mx-auto pt-4 sm:pt-20 2xl:pt-40'>
+				<DotsAnimation className='!size-full' />
 				<div className='container px-6 mx-auto'>
 					<div className='relative bg-zinc-950 rounded-xl sm:rounded-3xl text-center'>
 						<div

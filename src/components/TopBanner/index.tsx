@@ -14,6 +14,7 @@ import { generateRandomId } from '@/handlers/generateRandomId'
 import TextSVG from '@/app/components/TextSVG'
 import useParallax from '@/hooks/useParallax'
 import Image from 'next/image'
+import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 
 const TopBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -98,6 +99,7 @@ const TopBanner = () => {
 						layout='fill'
 						loading='eager'
 					/>
+					<DotsAnimation />
 				</div>
 			</div>
 		</div>

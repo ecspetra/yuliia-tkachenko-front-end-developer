@@ -88,3 +88,9 @@ body.scroll-blocked {
 .animated-border {
   animation: border-grow 4s linear;
 }
+
+.dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}

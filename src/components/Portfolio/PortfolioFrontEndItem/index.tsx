@@ -16,7 +16,7 @@ type PortfolioFrontEndItemType = {
 	description: string
 	repositoryLink: string
 	previewLink: string
-	teckStack: string[]
+	techStack: string[]
 	images: StaticImageData[]
 	notes?: string
 }
@@ -33,7 +33,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 		description,
 		repositoryLink,
 		previewLink,
-		teckStack,
+		techStack,
 		images,
 		notes,
 	},
@@ -114,7 +114,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				</Title>
 				<p className='flex justify-center lg:justify-start items-start flex-wrap mb-8'>
 					<span className='mr-4'>Created with:</span>
-					{teckStack.map((item, idx) => (
+					{techStack.map((item, idx) => (
 						<Tag key={idx} tag={item} />
 					))}
 				</p>

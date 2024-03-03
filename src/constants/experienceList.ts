@@ -15,7 +15,7 @@ export const EXPERIENCE_LIST = [
 			'Created and maintained 10+ WordPress pages to enhance product sales',
 			'Built 4 email templates for marketing campaigns',
 		],
-		teckStack: ['React', 'TypeScript', 'HTML', 'SASS', 'Git', 'WordPress'],
+		techStack: ['React', 'TypeScript', 'HTML', 'SASS', 'Git', 'WordPress'],
 	},
 	{
 		company: 'Livelib',
@@ -30,7 +30,7 @@ export const EXPERIENCE_LIST = [
 			'Achieved a 30% performance improvement by optimizing complex CSS files, as reported by web-monitoring tools',
 			'Developed 2 commercial advertising projects, 3 landing pages and a corporate wiki',
 		],
-		teckStack: ['JavaScript', 'JQuery', 'HTML', 'CSS', 'SASS', 'Git'],
+		techStack: ['JavaScript', 'JQuery', 'HTML', 'CSS', 'SASS', 'Git'],
 	},
 	{
 		company: 'Livelib',
@@ -43,7 +43,7 @@ export const EXPERIENCE_LIST = [
 			'Developed design for 600+ banners, 20+ landing pages, 4 corporate websites, 10+ email templates',
 			'Created an advertising project template, speeding up the development process by 80%',
 		],
-		teckStack: ['Photoshop', 'Illustrator', 'Figma'],
+		techStack: ['Photoshop', 'Illustrator', 'Figma'],
 	},
 ]
 

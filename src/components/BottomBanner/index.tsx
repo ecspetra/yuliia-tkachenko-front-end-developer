@@ -13,6 +13,7 @@ import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
 import Image from 'next/image'
+import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 
 const BottomBanner = () => {
 	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -30,7 +31,7 @@ const BottomBanner = () => {
 				shiftYValue: -150,
 			},
 		],
-		'cv'
+		'resume'
 	)
 
 	return (
@@ -89,6 +90,7 @@ const BottomBanner = () => {
 						layout='fill'
 						loading='eager'
 					/>
+					<DotsAnimation />
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
 					<div className='mb-10 2xl:mb-16'>

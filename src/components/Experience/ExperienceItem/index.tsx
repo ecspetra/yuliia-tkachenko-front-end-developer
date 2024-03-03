@@ -13,7 +13,7 @@ type ExperienceItemType = {
 	date: string
 	description: string
 	responsibilities?: string[]
-	teckStack?: string[]
+	techStack?: string[]
 }
 
 type PropsType = {
@@ -29,7 +29,7 @@ const ExperienceItem: FC<PropsType> = ({
 		date,
 		description,
 		responsibilities,
-		teckStack,
+		techStack,
 	},
 	idx,
 }) => (
@@ -75,10 +75,10 @@ const ExperienceItem: FC<PropsType> = ({
 						))}
 					</ul>
 				)}
-				{teckStack && (
+				{techStack && (
 					<p className='flex justify-start items-start flex-wrap'>
-						<span className='mr-4'>Teck stack:</span>
-						{teckStack.map((item, idx) => (
+						<span className='mr-4'>Tech stack:</span>
+						{techStack.map((item, idx) => (
 							<Tag key={idx} tag={item} />
 						))}
 					</p>

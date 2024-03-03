@@ -30,12 +30,10 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 
 	const isBasicButton = context === 'basic'
 	const isSimpleButton = context === 'simple-button'
-	const buttonText = isBasicButton ? 'Download CV' : 'Preview'
+	const buttonText = isBasicButton ? 'Download Resume' : 'Preview'
 	const buttonIcon = isBasicButton ? faCircleArrowDown : icon
-	const yuliiaTkachenkoCVLink = '/CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
-	const buttonDownloadLink = isBasicButton
-		? 'CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
-		: undefined
+	const resumeFileName = 'Resume_Yuliia_Tkachenko_Front-End-Developer.pdf'
+	const yuliiaTkachenkoResumeLink = `/resume/${resumeFileName}`
 
 	const getButtonClassNames = () => {
 		switch (context) {
@@ -50,10 +48,10 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 
 	return context === 'basic' || context === 'preview-link' ? (
 		<a
-			href={isBasicButton ? yuliiaTkachenkoCVLink : link}
+			href={isBasicButton ? yuliiaTkachenkoResumeLink : link}
 			target='_blank'
 			rel='noopener noreferrer'
-			download={buttonDownloadLink}
+			download={isBasicButton ? resumeFileName : undefined}
 			className='relative block w-full sm:w-fit group'
 		>
 			<RadialGradientCircle
