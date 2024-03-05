@@ -28,9 +28,9 @@ type PropsType = {
 }
 
 const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
-	const basicButtonClassNames = `text-sm sm:text-base overflow-hidden text-zinc-950 w-full lg:w-fit flex justify-center items-center px-6 py-4 rounded-[32px] hover:text-white hover:scale-[1.1] after:pointer-events-none after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-zinc-900 after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:rounded-full hover:after:w-[calc(100%-4px)] hover:after:h-[calc(100%-4px)] hover:after:top-1/2 hover:after:-translate-y-1/2 hover:after:opacity-100`
+	const basicButtonClassNames = `text-sm sm:text-base overflow-hidden text-zinc-950 w-full lg:w-fit flex justify-center items-center px-6 py-4 rounded-[32px] group-hover:text-white group-hover:scale-[1.1] after:pointer-events-none after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-zinc-900 after:absolute after:top-full after:rounded-full group-hover:after:w-[calc(100%-4px)] group-hover:after:h-[calc(100%-4px)] group-hover:after:top-1/2 group-hover:after:-translate-y-1/2 group-hover:after:opacity-100`
 	const simpleButtonClassNames =
-		'text-sm sm:text-base overflow-hidden bg-zinc-800 w-full lg:w-fit flex justify-center items-center border-2 border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white hover:scale-[1.1] after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-white after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 hover:after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)] hover:after:top-1/2 hover:after:opacity-100'
+		'text-sm sm:text-base overflow-hidden bg-zinc-800 w-full lg:w-fit flex justify-center items-center border-2 border-zinc-700 px-6 py-4 rounded-[32px] hover:text-zinc-950 hover:border-white hover:scale-[1.1] after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-white after:absolute after:top-full hover:after:-translate-y-1/2 after:rounded-full hover:after:w-[calc(100%+2px)] hover:after:h-[calc(100%+2px)] hover:after:top-1/2 hover:after:opacity-100'
 	const socialLinkV1ButtonClassNames =
 		'w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 !text-2xl flex justify-center items-center rounded-full hover:text-zinc-950 hover:scale-[1.1]'
 	const socialLinkV2ButtonClassNames =
@@ -64,7 +64,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 		>
 			<RadialGradientCircle
 				color='global-color-two'
-				className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
+				className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] -translate-y-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
 			/>
 			<span
 				className={classNames(
@@ -90,7 +90,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 			{isSimpleButton && (
 				<RadialGradientCircle
 					color='global-color-two'
-					className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
+					className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] -translate-y-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
 				/>
 			)}
 			<span

@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
-import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
@@ -17,6 +16,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const Education = () => {
 	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -37,7 +40,7 @@ const Education = () => {
 
 	return (
 		<div className='w-screen overflow-x-hidden' id='education'>
-			<div className='relative overflow-hidden w-full h-full mx-auto pt-4 sm:pt-20 2xl:pt-40'>
+			<div className='relative overflow-hidden w-full h-full mx-auto py-4 sm:py-20 2xl:py-40'>
 				<DotsAnimation id='dots-animation-2' />
 				<div className='container px-6 mx-auto'>
 					<div className='relative bg-zinc-950 rounded-xl sm:rounded-3xl text-center'>

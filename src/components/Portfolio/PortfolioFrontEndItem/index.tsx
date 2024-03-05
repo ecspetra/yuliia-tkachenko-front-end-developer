@@ -4,7 +4,6 @@ import Tag from '@/components/Tag'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons'
 import Button from '@/app/components/Button'
-import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import useParallax from '@/hooks/useParallax'
 import Image from 'next/image'
@@ -14,6 +13,10 @@ const RadialGradientCircle = dynamic(
 	() => import('@/app/assets/images/RadialGradientCircle'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 type PortfolioFrontEndItemType = {
 	title: string

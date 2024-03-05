@@ -13,7 +13,7 @@ const RadialGradientCircle = dynamic(
 
 const Experience = () => (
 	<div
-		className='w-full relative container xl:max-w-6xl px-6 py-20 2xl:py-40 overflow-hidden lg:overflow-visible'
+		className='w-full relative container xl:max-w-6xl px-4 py-16 2xl:py-36 overflow-hidden lg:overflow-visible'
 		id='experience'
 	>
 		<RadialGradientCircle

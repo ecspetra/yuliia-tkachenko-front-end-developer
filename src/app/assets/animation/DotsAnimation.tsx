@@ -1,5 +1,6 @@
 import { FC, useEffect, useRef } from 'react'
 import classNames from 'classnames'
+import { useInView } from 'react-intersection-observer'
 
 type PropsType = {
 	id: string
@@ -29,59 +30,85 @@ const generateRandomOpacity = () => {
 
 const DotsAnimation: FC<PropsType> = ({ id, className }) => {
 	const svgRef = useRef<SVGSVGElement | null>(null)
+	const [ref, inView] = useInView()
 
-	useEffect(() => {
-		if (svgRef.current && typeof window !== 'undefined') {
-			const circles = Array.from({ length: 50 }).map((_, index) => {
-				const path = generateRandomPath()
-				const size = generateRandomSize()
-				const opacity = generateRandomOpacity()
-				const fillColor =
-					index % 2 === 0 ? `rgb(var(--background-color))` : 'white'
+	const createCircles = () => {
+		const circles = Array.from({ length: 50 }).map((_, index) => {
+			const path = generateRandomPath()
+			const size = generateRandomSize()
+			const opacity = generateRandomOpacity()
+			const fillColor =
+				index % 2 === 0 ? `rgb(var(--background-color))` : 'white'
 
-				const circle = document.createElementNS(
-					'http://www.w3.org/2000/svg',
-					'circle'
-				)
-				circle.setAttribute('key', index.toString())
-				circle.setAttribute('r', size.toString())
-				circle.setAttribute('fill', fillColor)
-				circle.setAttribute('opacity', opacity.toString())
+			const circle = document.createElementNS(
+				'http://www.w3.org/2000/svg',
+				'circle'
+			)
+			circle.setAttribute('key', index.toString())
+			circle.setAttribute('r', size.toString())
+			circle.setAttribute('fill', fillColor)
+			circle.setAttribute('opacity', opacity.toString())
 
-				const animateMotion = document.createElementNS(
-					'http://www.w3.org/2000/svg',
-					'animateMotion'
-				)
-				animateMotion.setAttribute('dur', '30s')
-				animateMotion.setAttribute('repeatCount', 'indefinite')
-				animateMotion.setAttribute('path', path)
+			const animateMotion = document.createElementNS(
+				'http://www.w3.org/2000/svg',
+				'animateMotion'
+			)
+			animateMotion.setAttribute('dur', '30s')
+			animateMotion.setAttribute('repeatCount', 'indefinite')
+			animateMotion.setAttribute('path', path)
 
-				circle.appendChild(animateMotion)
+			circle.appendChild(animateMotion)
 
-				return circle
+			return circle
+		})
+
+		if (svgRef.current && inView) {
+			circles.forEach(circle => {
+				svgRef.current?.appendChild(circle)
 			})
 
-			if (svgRef.current) {
-				circles.forEach(circle => {
-					svgRef.current?.appendChild(circle)
+			setTimeout(() => {
+				circles.forEach(_ => {
+					const animateMoves =
+						svgRef.current!.querySelectorAll('animateMotion')
+
+					if (animateMoves) {
+						animateMoves.forEach(animateMove => {
+							animateMove.beginElement()
+						})
+					}
 				})
-			}
+			}, 100)
 		}
-	}, [])
+	}
+
+	useEffect(() => {
+		if (inView && svgRef.current && typeof window !== 'undefined') {
+			while (svgRef.current.firstChild) {
+				svgRef.current.removeChild(svgRef.current.firstChild)
+			}
+
+			createCircles()
+		}
+	}, [inView])
 
 	return (
-		<svg
-			ref={svgRef}
-			id={id}
-			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 1210 1210'
-			width={1200}
-			height={1200}
+		<div
+			ref={ref}
 			className={classNames(
 				'absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
 				className
 			)}
-		/>
+		>
+			<svg
+				ref={svgRef}
+				id={id}
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 1210 1210'
+				width={1200}
+				height={1200}
+			/>
+		</div>
 	)
 }
 
