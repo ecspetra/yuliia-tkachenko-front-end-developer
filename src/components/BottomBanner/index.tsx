@@ -35,11 +35,13 @@ const BottomBanner = () => {
 			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16'>
 				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative mb-8 lg:mb-0'>
 					<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
-					<BackgroundGeometricShape
-						id={generateRandomId('backgroundShape', 5)}
-						variant='5'
-						className='up-down-animated-shape w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'
-					/>
+					<div className='w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'>
+						<BackgroundGeometricShape
+							id={generateRandomId('backgroundShape', 5)}
+							variant='5'
+							className='up-down-animated-shape w-full h-full'
+						/>
+					</div>
 					<RadialGradientCircle
 						id={generateRandomId('circle', 5)}
 						color='global-color-one'
@@ -73,7 +75,7 @@ const BottomBanner = () => {
 						layout='fill'
 						loading='eager'
 					/>
-					<DotsAnimation />
+					<DotsAnimation id='dots-animation-3' />
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
 					<div className='mb-10 2xl:mb-16'>

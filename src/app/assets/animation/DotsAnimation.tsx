@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { FC, useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
 type PropsType = {
+	id: string
 	className?: string
 }
 
@@ -26,27 +27,52 @@ const generateRandomOpacity = () => {
 	return Math.random()
 }
 
-const DotsAnimation: FC<PropsType> = ({ className }) => {
-	const circles = Array.from({ length: 50 }).map((_, index) => {
-		const path = generateRandomPath()
-		const size = generateRandomSize()
-		const opacity = generateRandomOpacity()
-		const fillColor = index % 5 === 0 ? 'rgb(24, 24, 27)' : 'white' // Set color conditionally
+const DotsAnimation: FC<PropsType> = ({ id, className }) => {
+	const svgRef = useRef<SVGSVGElement | null>(null)
 
-		return (
-			<circle key={index} r={size} fill={fillColor} opacity={opacity}>
-				<animateMotion
-					id={index.toString()}
-					dur='20s'
-					repeatCount='indefinite'
-					path={path}
-				/>
-			</circle>
-		)
-	})
+	useEffect(() => {
+		if (svgRef.current && typeof window !== 'undefined') {
+			const circles = Array.from({ length: 50 }).map((_, index) => {
+				const path = generateRandomPath()
+				const size = generateRandomSize()
+				const opacity = generateRandomOpacity()
+				const fillColor =
+					index % 2 === 0 ? `rgb(var(--background-color))` : 'white'
+
+				const circle = document.createElementNS(
+					'http://www.w3.org/2000/svg',
+					'circle'
+				)
+				circle.setAttribute('key', index.toString())
+				circle.setAttribute('r', size.toString())
+				circle.setAttribute('fill', fillColor)
+				circle.setAttribute('opacity', opacity.toString())
+
+				const animateMotion = document.createElementNS(
+					'http://www.w3.org/2000/svg',
+					'animateMotion'
+				)
+				animateMotion.setAttribute('dur', '30s')
+				animateMotion.setAttribute('repeatCount', 'indefinite')
+				animateMotion.setAttribute('path', path)
+
+				circle.appendChild(animateMotion)
+
+				return circle
+			})
+
+			if (svgRef.current) {
+				circles.forEach(circle => {
+					svgRef.current?.appendChild(circle)
+				})
+			}
+		}
+	}, [])
 
 	return (
 		<svg
+			ref={svgRef}
+			id={id}
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 1010 1010'
 			width={1000}
@@ -55,9 +81,7 @@ const DotsAnimation: FC<PropsType> = ({ className }) => {
 				'absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
 				className
 			)}
-		>
-			{circles}
-		</svg>
+		/>
 	)
 }
 

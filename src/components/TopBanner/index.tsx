@@ -82,7 +82,7 @@ const TopBanner = () => {
 						layout='fill'
 						loading='eager'
 					/>
-					<DotsAnimation />
+					<DotsAnimation id='dots-animation-1' />
 				</div>
 			</div>
 		</div>
