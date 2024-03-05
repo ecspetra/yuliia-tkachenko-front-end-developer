@@ -1,6 +1,6 @@
 import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import summaryImage from '../../../public/assets/images/summary-image.jpg'
+import summaryImage from '../../../public/assets/images/summary-image.png'
 import { CONTACTS_LIST } from '@/constants/contactsList'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
