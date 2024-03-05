@@ -57,39 +57,32 @@ const DotsAnimation: FC<PropsType> = ({ id, className }) => {
 			animateMotion.setAttribute('repeatCount', 'indefinite')
 			animateMotion.setAttribute('path', path)
 
-			const animateMove = document.createElementNS(
-				'http://www.w3.org/2000/svg',
-				'animate'
-			)
-			animateMove.setAttribute('attributeName', 'd')
-			animateMove.setAttribute('dur', '0s')
-			animateMove.setAttribute('values', `M${path.split(' ')[0]}${path}`)
-			animateMove.setAttribute('repeatCount', '0')
-
-			animateMotion.appendChild(animateMove)
 			circle.appendChild(animateMotion)
 
 			return circle
 		})
 
-		if (svgRef.current) {
+		if (svgRef.current && inView) {
 			circles.forEach(circle => {
 				svgRef.current?.appendChild(circle)
 			})
-		}
 
-		setTimeout(() => {
-			circles.forEach(circle => {
-				const animateMove = circle.querySelector('animate')
-				if (animateMove) {
-					animateMove.beginElement()
-				}
-			})
-		}, 100)
+			setTimeout(() => {
+				circles.forEach(_ => {
+					const animateMoves =
+						svgRef.current!.querySelectorAll('animateMotion')
+
+					if (animateMoves) {
+						animateMoves.forEach(animateMove => {
+							animateMove.beginElement()
+						})
+					}
+				})
+			}, 100)
+		}
 	}
 
 	useEffect(() => {
-		console.log(inView)
 		if (inView && svgRef.current && typeof window !== 'undefined') {
 			while (svgRef.current.firstChild) {
 				svgRef.current.removeChild(svgRef.current.firstChild)
