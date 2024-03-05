@@ -1,5 +1,5 @@
 import Title from '@/app/components/Title'
-import summaryImage from '../../../public/assets/images/summary-image.jpg'
+// import summaryImage from '../../../public/assets/images/summary-image.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CONTACTS_LIST } from '@/constants/contactsList'
 import CircleShape from '@/app/assets/images/CircleShape'
@@ -10,6 +10,7 @@ import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import topBannerImage from '../../../public/assets/images/top-banner-image.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 const RadialGradientCircle = dynamic(
@@ -66,10 +67,17 @@ const Summary = () => {
 							ref={imageRef}
 							className='relative z-10 aspect-[4/3] w-full h-fit rounded-xl sm:rounded-3xl overflow-hidden'
 						>
+							{/*<Image*/}
+							{/*	className='object-cover w-full h-full'*/}
+							{/*	src={summaryImage}*/}
+							{/*	alt='Summary'*/}
+							{/*	layout='fill'*/}
+							{/*	loading='eager'*/}
+							{/*/>*/}
 							<Image
-								className='object-cover w-full h-full'
-								src={summaryImage}
-								alt='Summary'
+								className='relative z-10 rounded-xl sm:rounded-3xl'
+								src={topBannerImage}
+								alt='Top Banner'
 								layout='fill'
 								loading='eager'
 							/>
