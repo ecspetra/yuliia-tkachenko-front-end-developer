@@ -7,7 +7,7 @@ import Button from '@/app/components/Button'
 import CircleShape from '@/app/assets/images/CircleShape'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
 import useParallax from '@/hooks/useParallax'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 const RadialGradientCircle = dynamic(
@@ -21,7 +21,7 @@ type PortfolioFrontEndItemType = {
 	repositoryLink: string
 	previewLink: string
 	techStack: string[]
-	images: StaticImageData[]
+	images: string[]
 	notes?: string
 }
 

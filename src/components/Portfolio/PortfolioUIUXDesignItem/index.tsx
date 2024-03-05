@@ -2,7 +2,7 @@ import { FC, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 const BackgroundSvgFill = dynamic(
@@ -11,7 +11,7 @@ const BackgroundSvgFill = dynamic(
 )
 
 type PropsType = {
-	image: { fullSizeSrc: string; thumbnailSrc: StaticImageData }
+	image: { fullSizeSrc: string; thumbnailSrc: string }
 	idx: number
 }
 
