@@ -40,7 +40,7 @@ const Education = () => {
 
 	return (
 		<div className='w-screen overflow-x-hidden' id='education'>
-			<div className='relative overflow-hidden w-full h-full mx-auto pt-4 sm:pt-20 2xl:pt-40'>
+			<div className='relative overflow-hidden w-full h-full mx-auto py-4 sm:py-20 2xl:py-40'>
 				<DotsAnimation id='dots-animation-2' />
 				<div className='container px-6 mx-auto'>
 					<div className='relative bg-zinc-950 rounded-xl sm:rounded-3xl text-center'>
