@@ -84,7 +84,8 @@ const Summary = () => {
 							<p className='mb-4'>
 								I offer{' '}
 								<span className='underline'>over 6 years</span>{' '}
-								of commercial work experience in IT:{' '}
+								of commercial work experience in Web
+								Development:{' '}
 								<span className='underline'>
 									more than 2 years
 								</span>{' '}
