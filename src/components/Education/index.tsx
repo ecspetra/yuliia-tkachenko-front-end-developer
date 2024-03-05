@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
-import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
@@ -17,6 +16,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const Education = () => {
 	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)

@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -20,6 +19,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const Summary = () => {
 	const imageRef = useRef<HTMLDivElement>(null)

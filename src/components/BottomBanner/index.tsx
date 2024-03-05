@@ -1,6 +1,5 @@
 import Title from '@/app/components/Title'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
-import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import Button from '@/app/components/Button'
 import { useRef } from 'react'
@@ -20,6 +19,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const BottomBanner = () => {
 	const circleRef = useRef<HTMLDivElement>(null)
@@ -45,7 +48,7 @@ const BottomBanner = () => {
 					<div className='w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'>
 						<BackgroundGeometricShape
 							variant='5'
-							className='up-down-animated-shape w-full h-full'
+							className='up-down-animated-shape up-down-animated-shape--decreased w-full h-full'
 						/>
 					</div>
 					<RadialGradientCircle

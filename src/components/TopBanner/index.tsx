@@ -2,7 +2,6 @@ import Title from '@/app/components/Title'
 import Button from '@/app/components/Button'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
-import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import { useRef } from 'react'
 import TitleAnimated from '@/app/components/Title/TitleAnimated'
@@ -21,6 +20,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const TopBanner = () => {
 	const circleRef = useRef<HTMLDivElement>(null)

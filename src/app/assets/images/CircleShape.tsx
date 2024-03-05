@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { useColorScheme } from '@/context/ColorSchemeContext'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 interface PropsType {
 	className: string
@@ -10,9 +11,11 @@ interface PropsType {
 
 const CircleShape: FC<PropsType> = ({ className, isBlurred, color }) => {
 	const { colorScheme } = useColorScheme()
+	const id = generateRandomId('circleShape', 5)
 
 	return (
 		<svg
+			id={id}
 			xmlns='http://www.w3.org/2000/svg'
 			shapeRendering='geometricPrecision'
 			textRendering='geometricPrecision'

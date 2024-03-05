@@ -2,7 +2,6 @@ import Title from '@/app/components/Title'
 import SkillsItem from '@/components/Skills/SkillsItem'
 import { SKILLS_LIST } from '@/constants/skillsList'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
-import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
 import dynamic from 'next/dynamic'
@@ -16,6 +15,10 @@ const BackgroundGeometricShape = dynamic(
 	() => import('@/app/assets/images/BackgroundGeometricShape'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const Skills = () => {
 	const circleRef = useRef<HTMLDivElement>(null)

@@ -3,7 +3,6 @@ import {
 	FRONT_END_DEVELOPER_PROJECTS_LIST,
 	UI_UX_DESIGNER_PROJECTS_LIST,
 } from '@/constants/projectsList'
-import CircleShape from '@/app/assets/images/CircleShape'
 import PortfolioFrontEndItem from '@/components/Portfolio/PortfolioFrontEndItem'
 import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignItem'
 import { useRef } from 'react'
@@ -14,6 +13,10 @@ const RadialGradientCircle = dynamic(
 	() => import('@/app/assets/images/RadialGradientCircle'),
 	{ ssr: false }
 )
+
+const CircleShape = dynamic(() => import('@/app/assets/images/CircleShape'), {
+	ssr: false,
+})
 
 const Portfolio = () => {
 	const circleRef = useRef<HTMLDivElement>(null)
