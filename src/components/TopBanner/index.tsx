@@ -1,5 +1,4 @@
 import Title from '@/app/components/Title'
-import topBannerImage from '../../../public/assets/images/top-banner-image.jpg'
 import Button from '@/app/components/Button'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
@@ -81,7 +80,7 @@ const TopBanner = () => {
 					<LinesShape className='w-14 lg:w-24 absolute top-[20%] right-0 z-20' />
 					<Image
 						className='relative z-10 rounded-xl sm:rounded-3xl'
-						src={topBannerImage}
+						src='/assets/images/top-banner-image.jpg'
 						alt='Top Banner'
 						layout='fill'
 						loading='eager'

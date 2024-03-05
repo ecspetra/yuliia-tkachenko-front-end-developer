@@ -2,7 +2,6 @@ import Title from '@/app/components/Title'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
-import bottomBannerImage from '../../../public/assets/images/bottom-banner-image.jpg'
 import Button from '@/app/components/Button'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
@@ -74,7 +73,7 @@ const BottomBanner = () => {
 					<LinesShape className='w-14 lg:w-24 absolute top-[10%] right-0 z-20' />
 					<Image
 						className='relative z-10 rounded-xl sm:rounded-3xl'
-						src={bottomBannerImage}
+						src='/assets/images/bottom-banner-image.jpg'
 						alt='Bottom Banner'
 						layout='fill'
 						loading='eager'

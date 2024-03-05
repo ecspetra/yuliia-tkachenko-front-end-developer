@@ -1,17 +1,6 @@
-import cinemaStreetImage1 from '../../public/assets/images/cinema-street-image-1.jpg'
-import cinemaStreetImage2 from '../../public/assets/images/cinema-street-image-2.jpg'
-import portfolioValeriiImage1 from '../../public/assets/images/portfolio-valerii-image-1.jpg'
-import portfolioValeriiImage2 from '../../public/assets/images/portfolio-valerii-image-2.jpg'
-import weatherboxImage1 from '../../public/assets/images/weatherbox-image-1.jpg'
-import weatherboxImage2 from '../../public/assets/images/weatherbox-image-2.jpg'
-import trackslynImage1 from '../../public/assets/images/trackslyn-image-1.jpg'
-import trackslynImage2 from '../../public/assets/images/trackslyn-image-2.jpg'
 import designPortfolioImage1 from '../../public/assets/images/design-portfolio-image-1.png'
 import designPortfolioImage2 from '../../public/assets/images/design-portfolio-image-2.png'
 import designPortfolioImage3 from '../../public/assets/images/design-portfolio-image-3.png'
-import designPortfolioImage1Small from '../../public/assets/images/design-portfolio-image-1-small.jpg'
-import designPortfolioImage2Small from '../../public/assets/images/design-portfolio-image-2-small.jpg'
-import designPortfolioImage3Small from '../../public/assets/images/design-portfolio-image-3-small.jpg'
 
 export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
@@ -28,7 +17,10 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 			'Firebase',
 			'TMDB API',
 		],
-		images: [cinemaStreetImage1, cinemaStreetImage2],
+		images: [
+			'/assets/images/cinema-street-image-1.jpg',
+			'/assets/images/cinema-street-image-2.jpg',
+		],
 	},
 	{
 		title: 'Portfolio for Valerii',
@@ -44,7 +36,10 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 			'TypeScript',
 			'Tailwind',
 		],
-		images: [portfolioValeriiImage1, portfolioValeriiImage2],
+		images: [
+			'/assets/images/portfolio-valerii-image-1.jpg',
+			'/assets/images/portfolio-valerii-image-2.jpg',
+		],
 	},
 	{
 		title: 'WeatherBox',
@@ -60,7 +55,10 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 			'OpenWeather API',
 			'Unsplash Image API',
 		],
-		images: [weatherboxImage1, weatherboxImage2],
+		images: [
+			'/assets/images/weatherbox-image-1.jpg',
+			'/assets/images/weatherbox-image-2.jpg',
+		],
 	},
 	{
 		title: 'Trackslyn',
@@ -69,7 +67,10 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 		repositoryLink: 'https://github.com/ecspetra/trackslyn',
 		previewLink: 'https://trackslyn.yuliia-tkachenko.dev/',
 		techStack: ['React', 'TypeScript', 'HTML', 'SCSS', 'Spotify API'],
-		images: [trackslynImage1, trackslynImage2],
+		images: [
+			'/assets/images/trackslyn-image-1.jpg',
+			'/assets/images/trackslyn-image-2.jpg',
+		],
 		notes: "To access the project preview, users must be included in the project's allowlist on Spotify for Developers.",
 	},
 ]
@@ -77,14 +78,14 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 export const UI_UX_DESIGNER_PROJECTS_LIST = [
 	{
 		fullSizeSrc: designPortfolioImage1.src,
-		thumbnailSrc: designPortfolioImage1Small,
+		thumbnailSrc: '/assets/images/design-portfolio-image-1-small.jpg',
 	},
 	{
 		fullSizeSrc: designPortfolioImage2.src,
-		thumbnailSrc: designPortfolioImage2Small,
+		thumbnailSrc: '/assets/images/design-portfolio-image-2-small.jpg',
 	},
 	{
 		fullSizeSrc: designPortfolioImage3.src,
-		thumbnailSrc: designPortfolioImage3Small,
+		thumbnailSrc: '/assets/images/design-portfolio-image-3-small.jpg',
 	},
 ]
