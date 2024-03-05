@@ -78,7 +78,7 @@ const TopBanner = () => {
 						ref={circleRef}
 						className='w-8 h-8 lg:w-12 lg:h-12 absolute -bottom-4 right-[15%] lg:-bottom-32 lg:-right-[5%] z-20 invisible'
 					>
-						<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+						<CircleShape className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
 					</div>
 					<LinesShape className='w-14 lg:w-24 absolute top-[20%] right-0 z-20' />
 					<Image
