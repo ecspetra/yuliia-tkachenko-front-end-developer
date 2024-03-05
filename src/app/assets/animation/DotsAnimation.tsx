@@ -1,100 +1,63 @@
-import { FC, useEffect, useRef } from 'react'
-import gsap from 'gsap'
+import { FC } from 'react'
 import classNames from 'classnames'
 
-interface DotProps {
-	dot: HTMLDivElement
-	draw: () => void
-	move: () => void
-}
-
-interface PropsType {
+type PropsType = {
 	className?: string
 }
 
-const Dot = (
-	container: HTMLDivElement,
-	size: number,
-	color: number
-): DotProps => {
-	let rad_x = (2 * Math.random() * container.offsetWidth) / 2 + 1
-	let rad_y = (1.2 * Math.random() * container.offsetHeight) / 2 + 1
-	let alpha = Math.random() * 360 + 1
-	let speed = Math.random() * 100 < 50 ? 1 : -1
-	speed *= 0.03
+const generateRandomPath = () => {
+	const x1 = Math.random() * 1000
+	const y1 = Math.random() * 1000
+	const x2 = Math.random() * 1000
+	const y2 = Math.random() * 1000
+	const x3 = Math.random() * 1000
+	const y3 = Math.random() * 1000
 
-	const dot: HTMLDivElement = document.createElement('div')
-	dot.className = 'dot'
-	dot.style.width = `${size}px`
-	dot.style.height = `${size}px`
-	dot.style.backgroundColor = `rgb(${color},${color},${color})`
+	return `M${x1},${y1} C${x1 - 50},${y1 + 50} ${x2 + 50},${
+		y2 - 50
+	} ${x2},${y2} C${x2 - 50},${y2 + 50} ${x3 + 50},${y3 - 50} ${x3},${y3} z`
+}
 
-	const draw = () => {
-		const dx =
-			container.offsetWidth / 2 +
-			rad_x * Math.cos((alpha / 180) * Math.PI)
-		const dy =
-			container.offsetHeight / 2 +
-			rad_y * Math.sin((alpha / 180) * Math.PI)
+const generateRandomSize = () => {
+	return Math.random() + 1
+}
 
-		gsap.set(dot, {
-			x: dx,
-			y: dy,
-		})
-	}
-
-	const move = () => {
-		alpha += speed
-
-		if (Math.random() * 100 < 50) {
-			color += 1
-		} else {
-			color -= 1
-		}
-	}
-
-	return { dot, draw, move }
+const generateRandomOpacity = () => {
+	return Math.random()
 }
 
 const DotsAnimation: FC<PropsType> = ({ className }) => {
-	const containerRef = useRef<HTMLDivElement>(null)
-	const dots: DotProps[] = []
+	const circles = Array.from({ length: 50 }).map((_, index) => {
+		const path = generateRandomPath()
+		const size = generateRandomSize()
+		const opacity = generateRandomOpacity()
+		const fillColor = index % 5 === 0 ? 'rgb(24, 24, 27)' : 'white' // Set color conditionally
 
-	useEffect(() => {
-		const container = containerRef.current
-
-		if (!container) return
-
-		const dotCount = 100
-
-		for (let i = 0; i < dotCount; i++) {
-			const size = Math.random() * 5 + 1
-			const color = Math.floor(Math.random() * 256)
-			const { dot, draw, move } = Dot(container, size, color)
-			container.appendChild(dot)
-			dots.push({ draw, move, dot })
-		}
-
-		const render = () => {
-			dots.forEach(dot => {
-				dot.draw()
-				dot.move()
-			})
-
-			requestAnimationFrame(render)
-		}
-
-		render()
-	}, [dots])
+		return (
+			<circle key={index} r={size} fill={fillColor} opacity={opacity}>
+				<animateMotion
+					id={index.toString()}
+					dur='20s'
+					repeatCount='indefinite'
+					path={path}
+				/>
+			</circle>
+		)
+	})
 
 	return (
-		<div
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 1010 1010'
+			width={1000}
+			height={1000}
 			className={classNames(
-				'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[100vh] sm:size-[50vh] lg:size-[60vh] 2xl:size-[70vh] opacity-30',
+				'absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
 				className
 			)}
-			ref={containerRef}
-		/>
+		>
+			{circles}
+		</svg>
 	)
 }
 

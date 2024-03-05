@@ -6,16 +6,11 @@ import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricSha
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
-import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { generateRandomId } from '@/handlers/generateRandomId'
 import useParallax from '@/hooks/useParallax'
 
 const Skills = () => {
-	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
-	useUpDownShapeAnimation([
-		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
-	])
 	useParallax(
 		[{ shapeRef: circleRef, shiftXValue: 100, shiftYValue: -150 }],
 		'skills'
@@ -46,14 +41,11 @@ const Skills = () => {
 						className='w-[1000px] h-[1000px] absolute top-[40%] left-[40%] lg:top-[65%] lg:left-[50%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
 					<div className='w-[100vw] h-[100vw] lg:w-[800px] lg:h-[800px] absolute top-[10%] left-[15%] 2xl:-left-[15%]'>
-						<div
-							ref={animatedGeometricShapeRef}
-							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
-						>
+						<div className='up-down-animated-shape up-down-animated-shape--decreased'>
 							<BackgroundGeometricShape
 								id={generateRandomId('backgroundShape', 5)}
 								variant='3'
-								className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+								className='w-[800px] h-[800px]'
 							/>
 						</div>
 						<div className='w-60 h-60 absolute top-[30%] -left-[30%] hidden 2xl:block'>

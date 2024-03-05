@@ -89,8 +89,32 @@ body.scroll-blocked {
   animation: border-grow 4s linear;
 }
 
-.dot {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+.up-down-animated-shape {
+  animation: upDownAnimation 6s ease-in-out infinite;
+}
+
+.up-down-animated-shape.up-down-animated-shape--slow {
+  animation-duration: 4s;
+}
+
+.up-down-animated-shape.up-down-animated-shape--decreased {
+  animation-name: upDownAnimationDecreased;
+}
+
+@keyframes upDownAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes upDownAnimationDecreased {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
 }

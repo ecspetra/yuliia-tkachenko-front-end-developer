@@ -7,7 +7,6 @@ import bottomBannerImage from '../../../public/assets/images/bottom-banner-image
 import Button from '@/app/components/Button'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import { useRef } from 'react'
-import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
 import { generateRandomId } from '@/handlers/generateRandomId'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
@@ -16,13 +15,7 @@ import Image from 'next/image'
 import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 
 const BottomBanner = () => {
-	const animatedGeometricShapeRef = useRef<HTMLDivElement>(null)
-	const animatedBlurCircleRef = useRef<HTMLDivElement>(null)
 	const circleRef = useRef<HTMLDivElement>(null)
-	useUpDownShapeAnimation([
-		{ elementRef: animatedGeometricShapeRef, distance: 50, interval: 3 },
-		{ elementRef: animatedBlurCircleRef, distance: 50, interval: 4 },
-	])
 	useParallax(
 		[
 			{
@@ -42,16 +35,11 @@ const BottomBanner = () => {
 			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16'>
 				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative mb-8 lg:mb-0'>
 					<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
-					<div
-						ref={animatedGeometricShapeRef}
-						className='w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'
-					>
-						<BackgroundGeometricShape
-							id={generateRandomId('backgroundShape', 5)}
-							variant='5'
-							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
-						/>
-					</div>
+					<BackgroundGeometricShape
+						id={generateRandomId('backgroundShape', 5)}
+						variant='5'
+						className='up-down-animated-shape w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'
+					/>
 					<RadialGradientCircle
 						id={generateRandomId('circle', 5)}
 						color='global-color-one'
@@ -67,15 +55,10 @@ const BottomBanner = () => {
 						color='global-color-three'
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-5vw)] left-[calc(50%-5vw)] lg:top-[20%] lg:left-[20%] -translate-y-1/2 -translate-x-1/2 opacity-50'
 					/>
-					<div
-						ref={animatedBlurCircleRef}
-						className='w-16 h-16 lg:w-24 lg:h-24 absolute bottom-[50%] -right-[10%] z-20'
-					>
-						<CircleShape
-							className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
-							isBlurred
-						/>
-					</div>
+					<CircleShape
+						className='up-down-animated-shape up-down-animated-shape--slow w-16 h-16 lg:w-24 lg:h-24 absolute bottom-[50%] -right-[10%] z-20'
+						isBlurred
+					/>
 					<div
 						ref={circleRef}
 						className='w-8 h-8 lg:w-12 lg:h-12 absolute -bottom-4 left-[15%] lg:-bottom-6 lg:left-[10%] z-20 invisible'
