@@ -4,7 +4,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
 import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
 import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 type PropsType = {
 	children: ReactNode
@@ -31,12 +31,15 @@ const SkillsItem: FC<PropsType> = ({ children, counter, idx }) => {
 						className='relative w-full h-0.5 block mt-6 -mb-6'
 					>
 						<BackgroundSvgFill
-							id={SVG_IDS.backgroundFill8}
+							id={generateRandomId('backgroundFill', 5)}
 							borderRadius={0}
 						/>
 					</span>
 				</div>
-				<FontAwesomeIcon className='text-zinc-500' icon={faCode} />
+				<FontAwesomeIcon
+					className='text-zinc-500 w-6 h-6'
+					icon={faCode}
+				/>
 			</div>
 		</div>
 	)

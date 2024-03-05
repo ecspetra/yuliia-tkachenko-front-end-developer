@@ -12,7 +12,14 @@ const Footer: FC<PropsType> = ({ className }) => (
 			className
 		)}
 	>
-		<p>Designed and developed by Yuliia Tkachenko, 2024</p>
+		<p className='mb-2'>Designed and developed by Yuliia Tkachenko, 2024</p>
+		<a
+			href='https://github.com/ecspetra/yuliia-tkachenko-front-end-developer'
+			target='_blank'
+			className='border-b border-b-zinc-500'
+		>
+			Link to repository
+		</a>
 	</footer>
 )
 

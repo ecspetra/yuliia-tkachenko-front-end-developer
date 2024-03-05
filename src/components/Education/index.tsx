@@ -5,7 +5,7 @@ import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
 import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
 
@@ -45,14 +45,14 @@ const Education = () => {
 								<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
 							</div>
 							<RadialGradientCircle
-								id={SVG_IDS.circle10}
+								id={generateRandomId('circle', 5)}
 								color='global-color-one'
-								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 							/>
 							<RadialGradientCircle
-								id={SVG_IDS.circle11}
+								id={generateRandomId('circle', 5)}
 								color='global-color-three'
-								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 							/>
 							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-8 lg:-bottom-20 left-[20%] z-20 rounded-full' />
 							<div
@@ -60,7 +60,7 @@ const Education = () => {
 								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
 							>
 								<BackgroundGeometricShape
-									id={SVG_IDS.backgroundShape4}
+									id={generateRandomId('backgroundShape', 5)}
 									variant='4'
 									className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 								/>

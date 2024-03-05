@@ -7,7 +7,7 @@ import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
 import useUpDownShapeAnimation from '@/hooks/useUpDownShapeAnimation'
-import { SVG_IDS } from '@/constants/svgUniqueKeys'
+import { generateRandomId } from '@/handlers/generateRandomId'
 import useParallax from '@/hooks/useParallax'
 
 const Skills = () => {
@@ -36,12 +36,12 @@ const Skills = () => {
 				</div>
 				<div className='relative max-w-full 2xl:max-w-6xl'>
 					<RadialGradientCircle
-						id={SVG_IDS.circle6}
+						id={generateRandomId('circle', 5)}
 						color='global-color-one'
-						className='w-[1300px] h-[1300px] 2xl:w-[1600px] 2xl:h-[1600px] absolute top-[40%] left-[20%] lg:top-1/2 lg:left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-30'
+						className='w-[1300px] h-[1300px] 2xl:w-[1600px] 2xl:h-[1600px] absolute top-[40%] left-[20%] lg:top-1/2 lg:left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-50'
 					/>
 					<RadialGradientCircle
-						id={SVG_IDS.circle7}
+						id={generateRandomId('circle', 5)}
 						color='global-color-three'
 						className='w-[1000px] h-[1000px] absolute top-[40%] left-[40%] lg:top-[65%] lg:left-[50%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 					/>
@@ -51,7 +51,7 @@ const Skills = () => {
 							className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 						>
 							<BackgroundGeometricShape
-								id={SVG_IDS.backgroundShape3}
+								id={generateRandomId('backgroundShape', 5)}
 								variant='3'
 								className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 							/>
