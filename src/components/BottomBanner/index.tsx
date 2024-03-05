@@ -40,7 +40,7 @@ const BottomBanner = () => {
 	return (
 		<div
 			className='relative min-h-screen flex justify-center items-center py-20 2xl:py-40 w-screen bg-zinc-950 overflow-hidden'
-			id='cv'
+			id='resume'
 		>
 			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16'>
 				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative mb-8 lg:mb-0'>
