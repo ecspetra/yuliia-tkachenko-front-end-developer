@@ -1,18 +1,26 @@
 import Title from '@/app/components/Title'
-import summaryImage from '../../../public/assets/images/summary-image.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
+import summaryImage from '../../../public/assets/images/summary-image.jpg'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import useParallax from '@/hooks/useParallax'
 import Contacts from '@/components/Contacts'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 gsap.registerPlugin(ScrollTrigger)
+
+const RadialGradientCircle = dynamic(
+	() => import('@/app/assets/images/RadialGradientCircle'),
+	{ ssr: false }
+)
+
+const BackgroundGeometricShape = dynamic(
+	() => import('@/app/assets/images/BackgroundGeometricShape'),
+	{ ssr: false }
+)
 
 const Summary = () => {
 	const imageRef = useRef<HTMLDivElement>(null)
@@ -31,12 +39,10 @@ const Summary = () => {
 				<div className='w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mb-12'>
 					<div className='w-full flex items-end flex-grow max-w-full lg:max-w-1/2 relative'>
 						<RadialGradientCircle
-							id={generateRandomId('circle', 5)}
 							color='global-color-one'
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-40'
 						/>
 						<RadialGradientCircle
-							id={generateRandomId('circle', 5)}
 							color='global-color-two'
 							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 						/>
@@ -48,7 +54,6 @@ const Summary = () => {
 						</div>
 						<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute bottom-24 -right-4 lg:top-[20%] lg:-right-[3%] px-5 flex flex-col justify-center items-start z-20'>
 							<BackgroundGeometricShape
-								id={generateRandomId('backgroundShape', 5)}
 								variant='2'
 								className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 							/>

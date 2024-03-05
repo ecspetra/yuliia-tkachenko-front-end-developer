@@ -3,10 +3,14 @@ import classNames from 'classnames'
 import Title from '@/app/components/Title'
 import { HEADER_ANCHORS, LINK_TO_TOP } from '@/constants/anchors'
 import useHeaderAnimation from '@/hooks/useHeaderAnimation'
-import { generateRandomId } from '@/handlers/generateRandomId'
-import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import CloseButton from '@/app/components/Button/CloseButton'
 import useToggleHeaderMenu from '@/hooks/useToggleHeaderMenu'
+import dynamic from 'next/dynamic'
+
+const BackgroundSvgFill = dynamic(
+	() => import('@/app/assets/images/BackgroundSvgFill'),
+	{ ssr: false }
+)
 
 type PropsType = {
 	className: string
@@ -51,10 +55,7 @@ const Header: FC<PropsType> = ({ className }) => {
 						className='border-none relative !text-xs xl:!text-sm pl-4'
 					>
 						<span className='w-[2px] h-10 xl:h-14 absolute bottom-0 left-0 duration-300 group-hover:-bottom-5'>
-							<BackgroundSvgFill
-								id={generateRandomId('backgroundFill', 5)}
-								borderRadius={0}
-							/>
+							<BackgroundSvgFill borderRadius={0} />
 						</span>
 						Yuliia
 						<br />
@@ -81,13 +82,7 @@ const Header: FC<PropsType> = ({ className }) => {
 									onClick={toggleIsMenuHidden}
 								>
 									<span className={linkBorderClassNames(key)}>
-										<BackgroundSvgFill
-											id={generateRandomId(
-												'backgroundFill',
-												5
-											)}
-											borderRadius={0}
-										/>
+										<BackgroundSvgFill borderRadius={0} />
 									</span>
 									{key}
 								</a>

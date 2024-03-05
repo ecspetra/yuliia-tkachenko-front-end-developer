@@ -18,7 +18,7 @@ const CircleShape: FC<PropsType> = ({ className, isBlurred, color }) => {
 			textRendering='geometricPrecision'
 			viewBox='0 0 300 300'
 			className={classNames(
-				'w-full h-full rounded-full',
+				'rounded-full',
 				isBlurred && 'backdrop-blur-md',
 				className
 			)}

@@ -3,9 +3,17 @@ import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
-import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import { generateRandomId } from '@/handlers/generateRandomId'
-import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
+import dynamic from 'next/dynamic'
+
+const RadialGradientCircle = dynamic(
+	() => import('@/app/assets/images/RadialGradientCircle'),
+	{ ssr: false }
+)
+
+const BackgroundSvgFill = dynamic(
+	() => import('@/app/assets/images/BackgroundSvgFill'),
+	{ ssr: false }
+)
 
 type PropsType = {
 	link?: string
@@ -30,12 +38,10 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 
 	const isBasicButton = context === 'basic'
 	const isSimpleButton = context === 'simple-button'
-	const buttonText = isBasicButton ? 'Download CV' : 'Preview'
+	const buttonText = isBasicButton ? 'Download Resume' : 'Preview'
 	const buttonIcon = isBasicButton ? faCircleArrowDown : icon
-	const yuliiaTkachenkoCVLink = '/CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
-	const buttonDownloadLink = isBasicButton
-		? 'CV_Yuliia_Tkachenko_Front-End-Developer.pdf'
-		: undefined
+	const resumeFileName = 'Resume_Yuliia_Tkachenko_Front-End-Developer.pdf'
+	const yuliiaTkachenkoResumeLink = `/resume/${resumeFileName}`
 
 	const getButtonClassNames = () => {
 		switch (context) {
@@ -50,14 +56,13 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 
 	return context === 'basic' || context === 'preview-link' ? (
 		<a
-			href={isBasicButton ? yuliiaTkachenkoCVLink : link}
+			href={isBasicButton ? yuliiaTkachenkoResumeLink : link}
 			target='_blank'
 			rel='noopener noreferrer'
-			download={buttonDownloadLink}
+			download={isBasicButton ? resumeFileName : undefined}
 			className='relative block w-full sm:w-fit group'
 		>
 			<RadialGradientCircle
-				id={generateRandomId('circle', 5)}
 				color='global-color-two'
 				className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
 			/>
@@ -67,10 +72,7 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 					basicButtonClassNames
 				)}
 			>
-				<BackgroundSvgFill
-					id={generateRandomId('backgroundFill', 5)}
-					borderRadius={30}
-				/>
+				<BackgroundSvgFill borderRadius={30} />
 				<span className='relative z-20 duration-300'>{buttonText}</span>
 				<FontAwesomeIcon
 					className='relative z-20 w-5 h-5 ml-2 group-hover:w-7 group-hover:h-7 group-hover:ml-7 duration-300'
@@ -87,7 +89,6 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 		>
 			{isSimpleButton && (
 				<RadialGradientCircle
-					id={generateRandomId('circle', 5)}
 					color='global-color-two'
 					className='w-[100%] h-[100%] scale-x-[6] scale-y-[4] absolute top-[calc(50%+10px)] left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-20 group-hover:scale-x-[7] group-hover:scale-y-[5] group-hover:top-[calc(50%+40px)] pointer-events-none duration-700'
 				/>
@@ -100,7 +101,6 @@ const Button: FC<PropsType> = ({ link, icon, children, context = 'basic' }) => {
 			>
 				{context !== 'social-link-v2' && !isSimpleButton && (
 					<BackgroundSvgFill
-						id={generateRandomId('backgroundFill', 5)}
 						borderRadius={32}
 						className='scale-0 group-hover:scale-100 duration-300'
 					/>

@@ -3,8 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
 import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
-import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
-import { generateRandomId } from '@/handlers/generateRandomId'
+import dynamic from 'next/dynamic'
+
+const BackgroundSvgFill = dynamic(
+	() => import('@/app/assets/images/BackgroundSvgFill'),
+	{ ssr: false }
+)
 
 type PropsType = {
 	children: ReactNode
@@ -30,10 +34,7 @@ const SkillsItem: FC<PropsType> = ({ children, counter, idx }) => {
 						ref={spanRef}
 						className='relative w-full h-0.5 block mt-6 -mb-6'
 					>
-						<BackgroundSvgFill
-							id={generateRandomId('backgroundFill', 5)}
-							borderRadius={0}
-						/>
+						<BackgroundSvgFill borderRadius={0} />
 					</span>
 				</div>
 				<FontAwesomeIcon

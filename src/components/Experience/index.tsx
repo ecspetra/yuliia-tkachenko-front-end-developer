@@ -4,8 +4,12 @@ import {
 	EXPERIENCE_LIST,
 	VOLUNTEER_EXPERIENCE,
 } from '@/constants/experienceList'
-import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
-import { generateRandomId } from '@/handlers/generateRandomId'
+import dynamic from 'next/dynamic'
+
+const RadialGradientCircle = dynamic(
+	() => import('@/app/assets/images/RadialGradientCircle'),
+	{ ssr: false }
+)
 
 const Experience = () => (
 	<div
@@ -13,12 +17,10 @@ const Experience = () => (
 		id='experience'
 	>
 		<RadialGradientCircle
-			id={generateRandomId('circle', 5)}
 			color='global-color-one'
 			className='w-[1300px] h-[1300px] hidden lg:block absolute top-[110%] left-[5%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 		/>
 		<RadialGradientCircle
-			id={generateRandomId('circle', 5)}
 			color='global-color-two'
 			className='w-[800px] h-[800px] hidden lg:block absolute top-[110%] left-[15%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 		/>
