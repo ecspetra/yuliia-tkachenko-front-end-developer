@@ -79,7 +79,7 @@ const Education = () => {
 							<div className='relative z-40'>
 								<Title variant='h3'>Education</Title>
 								<Title>Master of Computer Science</Title>
-								<p>Pryazovskyi State Technical University</p>
+								<p>Pre-Azov State Technical University</p>
 								<p className='text-base text-zinc-400'>
 									Ukraine, 2019
 								</p>
