@@ -1,5 +1,5 @@
 import Title from '@/app/components/Title'
-import aboutImage from '../../../public/assets/images/about-image.jpg'
+import summaryImage from '../../../public/assets/images/summary-image.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CONTACTS_LIST } from '@/constants/contactsList'
 import CircleShape from '@/app/assets/images/CircleShape'
@@ -68,7 +68,7 @@ const Summary = () => {
 						>
 							<Image
 								className='object-cover w-full h-full'
-								src={aboutImage}
+								src={summaryImage}
 								alt='Summary'
 								layout='fill'
 								loading='eager'
