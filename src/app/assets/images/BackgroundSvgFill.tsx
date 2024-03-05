@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import { useColorScheme } from '@/context/ColorSchemeContext'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 interface PropsType {
-	id: string
 	borderRadius: number
 	opacity?: number
 	className?: string
@@ -11,13 +11,13 @@ interface PropsType {
 }
 
 const BackgroundSvgFill: FC<PropsType> = ({
-	id,
 	borderRadius,
 	opacity,
 	className,
 	isWithGradient = true,
 }) => {
 	const { colorScheme } = useColorScheme()
+	const id = generateRandomId('backgroundFill', 5)
 	const gradientId = `grad-${id}`
 
 	return (

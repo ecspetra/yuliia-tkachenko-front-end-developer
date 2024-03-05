@@ -3,8 +3,13 @@ import Title from '@/app/components/Title'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Tag from '@/components/Tag'
-import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import { generateRandomId } from '@/handlers/generateRandomId'
+import dynamic from 'next/dynamic'
+
+const BackgroundSvgFill = dynamic(
+	() => import('@/app/assets/images/BackgroundSvgFill'),
+	{ ssr: false }
+)
 
 type ExperienceItemType = {
 	company: string
@@ -38,10 +43,7 @@ const ExperienceItem: FC<PropsType> = ({
 			<div className='w-full lg:max-w-64'>
 				<Title className='!mb-4'>{company}</Title>
 				<span className='relative w-full h-0.5 block mb-4'>
-					<BackgroundSvgFill
-						id={generateRandomId('backgroundFill', 5)}
-						borderRadius={0}
-					/>
+					<BackgroundSvgFill borderRadius={0} />
 				</span>
 				<div className='text-base'>
 					<p className='flex justify-start items-center'>

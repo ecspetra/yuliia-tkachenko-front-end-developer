@@ -1,9 +1,7 @@
 import Title from '@/app/components/Title'
 import topBannerImage from '../../../public/assets/images/top-banner-image.jpg'
 import Button from '@/app/components/Button'
-import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
-import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
@@ -14,6 +12,17 @@ import TextSVG from '@/app/components/TextSVG'
 import useParallax from '@/hooks/useParallax'
 import Image from 'next/image'
 import DotsAnimation from '@/app/assets/animation/DotsAnimation'
+import dynamic from 'next/dynamic'
+
+const RadialGradientCircle = dynamic(
+	() => import('@/app/assets/images/RadialGradientCircle'),
+	{ ssr: false }
+)
+
+const BackgroundGeometricShape = dynamic(
+	() => import('@/app/assets/images/BackgroundGeometricShape'),
+	{ ssr: false }
+)
 
 const TopBanner = () => {
 	const circleRef = useRef<HTMLDivElement>(null)
@@ -44,23 +53,19 @@ const TopBanner = () => {
 				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative order-1 lg:order-2 mb-8 lg:mb-0'>
 					<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15' />
 					<BackgroundGeometricShape
-						id={generateRandomId('backgroundShape', 5)}
 						variant='1'
 						className='up-down-animated-shape w-[45vw] h-[45vw] sm:w-[30vw] sm:h-[30vw] xl:w-[35vh] xl:h-[35vh] 2xl:w-[400px] 2xl:h-[400px] absolute -top-[10%] -left-[30%]'
 					/>
 					<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -top-[5%] left-[10%] z-20 rounded-full' />
 					<RadialGradientCircle
-						id={generateRandomId('circle', 5)}
 						color='global-color-one'
 						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-80'
 					/>
 					<RadialGradientCircle
-						id={generateRandomId('circle', 5)}
 						color='global-color-two'
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+10vw)] left-[calc(50%-8vw)] 2xl:top-[85%] 2xl:left-[15%] -translate-y-1/2 -translate-x-1/2 opacity-20'
 					/>
 					<RadialGradientCircle
-						id={generateRandomId('circle', 5)}
 						color='global-color-three'
 						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-10vw)] left-[calc(50%+8vw)] 2xl:top-[15%] 2xl:left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-40'
 					/>

@@ -1,14 +1,23 @@
 import Title from '@/app/components/Title'
-import RadialGradientCircle from '@/app/assets/images/RadialGradientCircle'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
-import BackgroundGeometricShape from '@/app/assets/images/BackgroundGeometricShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import { generateRandomId } from '@/handlers/generateRandomId'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
 import DotsAnimation from '@/app/assets/animation/DotsAnimation'
+import dynamic from 'next/dynamic'
+
+const RadialGradientCircle = dynamic(
+	() => import('@/app/assets/images/RadialGradientCircle'),
+	{ ssr: false }
+)
+
+const BackgroundGeometricShape = dynamic(
+	() => import('@/app/assets/images/BackgroundGeometricShape'),
+	{ ssr: false }
+)
 
 const Education = () => {
 	const backgroundGeometricShapeRef = useRef<HTMLDivElement>(null)
@@ -47,12 +56,10 @@ const Education = () => {
 								<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
 							</div>
 							<RadialGradientCircle
-								id={generateRandomId('circle', 5)}
 								color='global-color-one'
 								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 							/>
 							<RadialGradientCircle
-								id={generateRandomId('circle', 5)}
 								color='global-color-three'
 								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-30'
 							/>
@@ -62,7 +69,6 @@ const Education = () => {
 								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
 							>
 								<BackgroundGeometricShape
-									id={generateRandomId('backgroundShape', 5)}
 									variant='4'
 									className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
 								/>

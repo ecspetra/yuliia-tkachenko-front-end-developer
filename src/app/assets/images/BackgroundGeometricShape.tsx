@@ -1,18 +1,18 @@
 import { FC } from 'react'
 import { useColorScheme } from '@/context/ColorSchemeContext'
+import { generateRandomId } from '@/handlers/generateRandomId'
 
 interface PropsType {
-	id: string
 	className: string
 	variant?: '1' | '2' | '3' | '4' | '5' | '6' | '7'
 }
 
 const BackgroundGeometricShape: FC<PropsType> = ({
-	id,
 	className,
 	variant = '1',
 }) => {
 	const { colorScheme } = useColorScheme()
+	const id = generateRandomId('backgroundShape', 5)
 	const gradientId = `grad-${id}`
 
 	const getShape = () => {

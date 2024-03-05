@@ -1,8 +1,13 @@
 import Title from '@/app/components/Title'
 import useTextAnimation from '@/hooks/useTextAnimation'
 import { useRef } from 'react'
-import BackgroundSvgFill from '@/app/assets/images/BackgroundSvgFill'
 import { generateRandomId } from '@/handlers/generateRandomId'
+import dynamic from 'next/dynamic'
+
+const BackgroundSvgFill = dynamic(
+	() => import('@/app/assets/images/BackgroundSvgFill'),
+	{ ssr: false }
+)
 
 const TitleAnimated = () => {
 	const textRefOne = useRef<HTMLHeadingElement>(null)
@@ -20,10 +25,7 @@ const TitleAnimated = () => {
 					Yuliia
 				</span>
 				<span className='animated-border w-full h-0.5 block absolute bottom-0 left-0'>
-					<BackgroundSvgFill
-						id={generateRandomId('backgroundFill', 5)}
-						borderRadius={0}
-					/>
+					<BackgroundSvgFill borderRadius={0} />
 				</span>
 			</span>
 			<br />
@@ -32,10 +34,7 @@ const TitleAnimated = () => {
 					Tkachenko.
 				</span>
 				<span className='animated-border w-full h-0.5 block absolute bottom-0 left-0'>
-					<BackgroundSvgFill
-						id={generateRandomId('backgroundFill', 5)}
-						borderRadius={0}
-					/>
+					<BackgroundSvgFill borderRadius={0} />
 				</span>
 			</span>
 		</Title>
