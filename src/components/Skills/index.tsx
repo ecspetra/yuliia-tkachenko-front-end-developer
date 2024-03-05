@@ -4,7 +4,6 @@ import { SKILLS_LIST } from '@/constants/skillsList'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import CircleShape from '@/app/assets/images/CircleShape'
 import { useRef } from 'react'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import useParallax from '@/hooks/useParallax'
 import dynamic from 'next/dynamic'
 

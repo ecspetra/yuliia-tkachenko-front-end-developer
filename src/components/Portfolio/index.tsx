@@ -6,7 +6,6 @@ import {
 import CircleShape from '@/app/assets/images/CircleShape'
 import PortfolioFrontEndItem from '@/components/Portfolio/PortfolioFrontEndItem'
 import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignItem'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
 import dynamic from 'next/dynamic'

@@ -4,7 +4,6 @@ import {
 	EXPERIENCE_LIST,
 	VOLUNTEER_EXPERIENCE,
 } from '@/constants/experienceList'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import dynamic from 'next/dynamic'
 
 const RadialGradientCircle = dynamic(

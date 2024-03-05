@@ -1,7 +1,6 @@
 import Title from '@/app/components/Title'
 import useTextAnimation from '@/hooks/useTextAnimation'
 import { useRef } from 'react'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import dynamic from 'next/dynamic'
 
 const BackgroundSvgFill = dynamic(

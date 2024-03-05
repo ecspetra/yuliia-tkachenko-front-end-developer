@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
 import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import dynamic from 'next/dynamic'
 
 const BackgroundSvgFill = dynamic(

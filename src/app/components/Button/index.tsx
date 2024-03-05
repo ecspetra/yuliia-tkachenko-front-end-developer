@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import dynamic from 'next/dynamic'
 
 const RadialGradientCircle = dynamic(

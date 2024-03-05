@@ -2,7 +2,6 @@ import { FC, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
-import { generateRandomId } from '@/handlers/generateRandomId'
 import Image, { StaticImageData } from 'next/image'
 import dynamic from 'next/dynamic'
 
