@@ -7,12 +7,12 @@ type PropsType = {
 }
 
 const generateRandomPath = () => {
-	const x1 = Math.random() * 1000
-	const y1 = Math.random() * 1000
-	const x2 = Math.random() * 1000
-	const y2 = Math.random() * 1000
-	const x3 = Math.random() * 1000
-	const y3 = Math.random() * 1000
+	const x1 = Math.random() * 1200
+	const y1 = Math.random() * 1200
+	const x2 = Math.random() * 1200
+	const y2 = Math.random() * 1200
+	const x3 = Math.random() * 1200
+	const y3 = Math.random() * 1200
 
 	return `M${x1},${y1} C${x1 - 50},${y1 + 50} ${x2 + 50},${
 		y2 - 50
@@ -74,9 +74,9 @@ const DotsAnimation: FC<PropsType> = ({ id, className }) => {
 			ref={svgRef}
 			id={id}
 			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 1010 1010'
-			width={1000}
-			height={1000}
+			viewBox='0 0 1210 1210'
+			width={1200}
+			height={1200}
 			className={classNames(
 				'absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
 				className
