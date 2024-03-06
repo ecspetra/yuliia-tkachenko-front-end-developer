@@ -83,13 +83,12 @@ const DotsAnimation: FC<PropsType> = ({ id, className }) => {
 	}
 
 	useEffect(() => {
-		if (inView && svgRef.current && typeof window !== 'undefined') {
+		if (!inView && svgRef.current && typeof window !== 'undefined') {
 			while (svgRef.current.firstChild) {
 				svgRef.current.removeChild(svgRef.current.firstChild)
 			}
-
+		} else if (inView && svgRef.current && typeof window !== 'undefined')
 			createCircles()
-		}
 	}, [inView])
 
 	return (
