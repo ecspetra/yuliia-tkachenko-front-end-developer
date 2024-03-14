@@ -61,7 +61,7 @@ const Summary = () => {
 							/>
 							<span className='text-7xl relative z-30'>6+</span>
 							<p className='relative z-30 leading-none font-bold'>
-								years of experience in IT
+								years of experience
 							</p>
 						</div>
 						<div
