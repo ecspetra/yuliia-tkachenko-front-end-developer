@@ -2,7 +2,7 @@ export const EXPERIENCE_LIST = [
 	{
 		company: 'Swivl',
 		country: 'Menlo Park, USA',
-		job: 'Markup Developer',
+		job: 'Markup (Front End) Developer',
 		date: '12.2021 — 09.2023',
 		description:
 			'Contributed to developing a productivity tool for improving focus and optimizing the learning experience.',
