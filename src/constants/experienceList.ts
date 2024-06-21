@@ -1,5 +1,20 @@
 export const EXPERIENCE_LIST = [
 	{
+		company: 'D3 Security',
+		country: 'Vancouver, Canada',
+		job: 'Software Engineer',
+		date: '05.2024 — Present',
+		techStack: [
+			'React',
+			'JavaScript',
+			'JQuery Kendo UI',
+			'SQL',
+			'HTML',
+			'SASS',
+			'CSS',
+		],
+	},
+	{
 		company: 'Swivl',
 		country: 'Menlo Park, USA',
 		job: 'Markup (Front End) Developer',

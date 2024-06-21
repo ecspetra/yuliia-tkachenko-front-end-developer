@@ -9,6 +9,8 @@ import { CONTACTS_LIST } from '@/constants/contactsList'
 import Image from 'next/image'
 import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 import dynamic from 'next/dynamic'
+import TitleAnimated from '@/app/components/Title/TitleAnimated'
+import TextSVG from '@/app/components/TextSVG'
 
 const RadialGradientCircle = dynamic(
 	() => import('@/app/assets/images/RadialGradientCircle'),
@@ -85,16 +87,29 @@ const BottomBanner = () => {
 				</div>
 				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
 					<div className='mb-10 2xl:mb-16'>
-						<Title className='!text-5xl 2xl:!text-7xl'>
-							Let’s work together
-						</Title>
-						<p className='mb-10 2xl:mb-14'>
-							Contact me for collaboration
-							<span className='text-2xl ml-1 align-middle'>
-								&#128522;
-							</span>
-						</p>
-						<Button />
+						<div className='relative w-full max-w-md lg:max-w-xl z-10 order-2 lg:order-1 flex flex-col items-center lg:block'>
+							<Title variant='h1'>
+								Yuliia <br />
+								Tkachenko
+							</Title>
+							<Title
+								variant='h2'
+								className='!text-global-color-two-scheme-1 !text-3xl'
+							>
+								<TextSVG text='Software Engineer' />
+							</Title>
+							<Button />
+						</div>
+						{/*<Title className='!text-5xl 2xl:!text-7xl'>*/}
+						{/*	Let’s work together*/}
+						{/*</Title>*/}
+						{/*<p className='mb-10 2xl:mb-14'>*/}
+						{/*	Contact me for collaboration*/}
+						{/*	<span className='text-2xl ml-1 align-middle'>*/}
+						{/*		&#128522;*/}
+						{/*	</span>*/}
+						{/*</p>*/}
+						{/*<Button />*/}
 					</div>
 					<Contacts variant='v2' isLeftAligned />
 					<div className='text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-start'>

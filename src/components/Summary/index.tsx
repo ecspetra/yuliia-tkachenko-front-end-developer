@@ -89,7 +89,7 @@ const Summary = () => {
 								<span className='underline'>
 									more than 2 years
 								</span>{' '}
-								as a Front End Developer and{' '}
+								as a Software Engineer and{' '}
 								<span className='underline'>4 years</span> as a
 								UI/UX designer.
 							</p>
@@ -98,8 +98,8 @@ const Summary = () => {
 								and developing{' '}
 								<span className='underline'>20+ projects</span>{' '}
 								of various sizes and complexity. I have
-								established myself as a software developer with
-								a passion for creating efficient and innovative
+								established myself as a software engineer with a
+								passion for creating efficient and innovative
 								solutions to complex problems.
 							</p>
 							<p className='mb-4'>My contacts:</p>

@@ -15,7 +15,7 @@ type ExperienceItemType = {
 	country: string
 	job: string
 	date: string
-	description: string
+	description?: string
 	responsibilities?: string[]
 	techStack?: string[]
 }

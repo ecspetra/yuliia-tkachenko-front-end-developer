@@ -4,10 +4,10 @@ const Document = () => {
 	return (
 		<Html lang='en'>
 			<Head>
-				<title>Yuliia Tkachenko | Front End Developer</title>
+				<title>Yuliia Tkachenko | Software Engineer</title>
 				<meta
 					name='description'
-					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
+					content='Yuliia Tkachenko - Software Engineer with more than 6 years of experience.'
 				/>
 				<meta name='author' content='Yuliia Tkachenko' />
 				<link
@@ -54,11 +54,11 @@ const Document = () => {
 				<meta property='og:type' content='website' />
 				<meta
 					property='og:title'
-					content='Yuliia Tkachenko | Front End Developer'
+					content='Yuliia Tkachenko | Software Engineer'
 				/>
 				<meta
 					property='og:description'
-					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
+					content='Yuliia Tkachenko - Software Engineer with more than 6 years of experience.'
 				/>
 				<meta
 					property='og:image'
@@ -75,11 +75,11 @@ const Document = () => {
 				/>
 				<meta
 					name='twitter:title'
-					content='Yuliia Tkachenko | Front End Developer'
+					content='Yuliia Tkachenko | Software Engineer'
 				/>
 				<meta
 					name='twitter:description'
-					content='Yuliia Tkachenko - Front End Developer with more than 6 years of experience.'
+					content='Yuliia Tkachenko - Software Engineer with more than 6 years of experience.'
 				/>
 				<meta
 					name='twitter:image'
