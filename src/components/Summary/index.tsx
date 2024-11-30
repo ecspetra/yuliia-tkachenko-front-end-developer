@@ -87,7 +87,7 @@ const Summary = () => {
 								of commercial work experience in Web
 								Development:{' '}
 								<span className='underline'>
-									more than 2 years
+									2,5 years
 								</span>{' '}
 								as a Software Engineer and{' '}
 								<span className='underline'>4 years</span> as a
