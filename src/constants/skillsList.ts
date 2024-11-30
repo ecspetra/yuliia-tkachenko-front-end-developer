@@ -5,6 +5,7 @@ export const SKILLS_LIST = [
 	'Next.js',
 	'Redux',
 	'Redux Toolkit',
+	'С#',
 	'Git',
 	'HTML',
 	'CSS',
