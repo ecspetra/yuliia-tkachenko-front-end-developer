@@ -30,7 +30,7 @@ export const EXPERIENCE_LIST = [
 		company: 'Swivl',
 		country: 'Menlo Park, USA',
 		job: 'Markup (Front End) Developer',
-		date: '12.2021 — 09.2023',
+		date: '12.2021 — 08.2023',
 		description:
 			'Contributed to developing a productivity tool for improving focus and optimizing the learning experience.',
 		responsibilities: [
@@ -63,7 +63,7 @@ export const EXPERIENCE_LIST = [
 		company: 'Livelib',
 		country: 'Mariupol, Ukraine',
 		job: 'UI/UX Designer',
-		date: '07.2017 — 01.2021',
+		date: '07.2017 — 02.2021',
 		description:
 			'Worked as UI/UX designer on a social network, created as a platform for famous book writers.',
 		responsibilities: [
