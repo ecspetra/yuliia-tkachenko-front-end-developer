@@ -81,7 +81,7 @@ const Education = () => {
 								<Title>Master of Computer Science</Title>
 								<p>Pryazovskyi State Technical University</p>
 								<p className='text-base text-zinc-400'>
-									Ukraine, 2019
+									Ukraine, 2018
 								</p>
 							</div>
 						</div>
