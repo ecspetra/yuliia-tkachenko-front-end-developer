@@ -39,7 +39,7 @@ const Portfolio = () => {
 						Portfolio
 					</Title>
 					<Title className='!mb-16 lg:!mb-20 2xl:!mb-40'>
-						A few of my pet projects from Software Engineer
+						A few of my pet projects from Software Developer
 						portfolio
 					</Title>
 				</div>

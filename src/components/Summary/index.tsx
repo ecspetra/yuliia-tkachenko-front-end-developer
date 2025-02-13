@@ -89,7 +89,7 @@ const Summary = () => {
 								<span className='underline'>
 									2,5 years
 								</span>{' '}
-								as a Software Engineer and{' '}
+								as a Software Developer and{' '}
 								<span className='underline'>4 years</span> as a
 								UI/UX designer.
 							</p>
@@ -98,7 +98,7 @@ const Summary = () => {
 								and developing{' '}
 								<span className='underline'>20+ projects</span>{' '}
 								of various sizes and complexity. I have
-								established myself as a software engineer with a
+								established myself as a software developer with a
 								passion for creating efficient and innovative
 								solutions to complex problems.
 							</p>

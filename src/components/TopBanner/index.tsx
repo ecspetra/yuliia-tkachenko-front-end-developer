@@ -47,7 +47,7 @@ const TopBanner = () => {
 						variant='h2'
 						className='!text-global-color-two-scheme-1 !text-3xl'
 					>
-						<TextSVG text='Software Engineer' />
+						<TextSVG text='Software Developer' />
 					</Title>
 					<Button />
 				</div>
