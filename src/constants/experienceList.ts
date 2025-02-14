@@ -28,7 +28,7 @@ export const EXPERIENCE_LIST = [
 	},
 	{
 		company: 'Swivl',
-		country: 'Menlo Park, USA',
+		country: 'Kyiv, Ukraine',
 		job: 'Markup (Front End) Developer',
 		date: '12.2021 — 08.2023',
 		description:
