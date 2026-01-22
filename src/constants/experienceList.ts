@@ -46,7 +46,7 @@ export const EXPERIENCE_LIST = [
 	},
 	{
 		company: 'Kvadrosoft',
-		country: 'Mariupol, Ukraine',
+		country: 'Kiev, Ukraine',
 		job: 'Front End Developer',
 		date: '08.2021 — 12.2021',
 		description:
