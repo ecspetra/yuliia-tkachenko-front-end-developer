@@ -45,7 +45,7 @@ export const EXPERIENCE_LIST = [
 		techStack: ['React', 'TypeScript', 'HTML', 'SASS', 'Git', 'WordPress'],
 	},
 	{
-		company: 'Livelib',
+		company: 'Kvadrosoft',
 		country: 'Mariupol, Ukraine',
 		job: 'Front End Developer',
 		date: '08.2021 — 12.2021',
@@ -60,7 +60,7 @@ export const EXPERIENCE_LIST = [
 		techStack: ['JavaScript', 'JQuery', 'HTML', 'CSS', 'SASS', 'Git'],
 	},
 	{
-		company: 'Livelib',
+		company: 'Kvadrosoft',
 		country: 'Mariupol, Ukraine',
 		job: 'UI/UX Designer',
 		date: '07.2017 — 02.2021',
