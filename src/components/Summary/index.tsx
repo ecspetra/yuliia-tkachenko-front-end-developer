@@ -86,10 +86,8 @@ const Summary = () => {
 								<span className='underline'>over 6 years</span>{' '}
 								of commercial work experience in Web
 								Development:{' '}
-								<span className='underline'>
-									2,5 years
-								</span>{' '}
-								as a Software Developer and{' '}
+								<span className='underline'>2.5 years</span> as
+								a Software Developer and{' '}
 								<span className='underline'>4 years</span> as a
 								UI/UX designer.
 							</p>
@@ -98,8 +96,8 @@ const Summary = () => {
 								and developing{' '}
 								<span className='underline'>20+ projects</span>{' '}
 								of various sizes and complexity. I have
-								established myself as a software developer with a
-								passion for creating efficient and innovative
+								established myself as a software developer with
+								a passion for creating efficient and innovative
 								solutions to complex problems.
 							</p>
 							<p className='mb-4'>My contacts:</p>
