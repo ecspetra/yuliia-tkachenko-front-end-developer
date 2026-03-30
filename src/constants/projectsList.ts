@@ -4,9 +4,9 @@ import designPortfolioImage3 from '../../public/assets/images/design-portfolio-i
 
 export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
-		title: 'CinemaStreet',
+		title: 'Interactive Movie & TV Platform',
 		description:
-			'Film library. Users have the opportunity to register on the platform, explore information about films, TV series, and actors. They can utilize quick search and filtering options, leave reviews, provide ratings and reactions, connect with other project participants as friends, and create their own collections.',
+			'This web platform allows users to register and discover information about movies, TV shows, and actors. They can search and filter easily, leave reviews and ratings, react to content, connect with friends, and create their own collections.',
 		repositoryLink: 'https://github.com/ecspetra/cinema-street',
 		previewLink: 'https://cinema-street.yuliia-tkachenko.dev/',
 		techStack: [
@@ -23,9 +23,9 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 		],
 	},
 	{
-		title: 'Portfolio for Valerii',
+		title: 'Backend Developer Portfolio Website',
 		description:
-			"Landing page for Backend Developer portfolio. This project combines a unique design, parallax effects implemented using the 'React Scroll Parallax library'. The page layout is adapted for all devices.",
+			'A modern landing page for a Backend Developer portfolio with clean design, smooth parallax effects, and full responsiveness across all devices.',
 		repositoryLink:
 			'https://github.com/ecspetra/valerii-tkachenko-back-end-developer',
 		previewLink: 'https://www.valeriitkachenko.dev',
@@ -42,9 +42,9 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 		],
 	},
 	{
-		title: 'WeatherBox',
+		title: 'Weather App',
 		description:
-			"Weather forecast. This project offers weather forecast based on the user's location and lets them easily select any city using a search feature.",
+			'A responsive weather forecast application that displays real-time weather data based on geolocation. Users can also search and switch between cities to view up-to-date weather conditions anywhere in the world.',
 		repositoryLink: 'https://github.com/ecspetra/weather-box',
 		previewLink: 'https://weather-box.yuliia-tkachenko.dev/',
 		techStack: [
@@ -61,9 +61,9 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 		],
 	},
 	{
-		title: 'Trackslyn',
+		title: 'Music Preview Web Player',
 		description:
-			"Web audio player that grants access to a user's Spotify tracks. The project implements a customized audio player designed for playing previews of tracks from the user's library.",
+			'A web audio player that connects to a user’s Spotify account and allows playback of track previews through a custom-built player interface.',
 		repositoryLink: 'https://github.com/ecspetra/trackslyn',
 		previewLink: 'https://trackslyn.yuliia-tkachenko.dev/',
 		techStack: ['React', 'TypeScript', 'HTML', 'SCSS', 'Spotify API'],
