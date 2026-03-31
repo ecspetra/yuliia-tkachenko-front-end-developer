@@ -23,9 +23,9 @@ export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 		],
 	},
 	{
-		title: 'Backend Developer Portfolio Website',
+		title: 'Software Developer Portfolio Website',
 		description:
-			'A modern landing page for a Backend Developer portfolio with clean design, smooth parallax effects, and full responsiveness across all devices.',
+			'A modern landing page for a Backend Developer portfolio with a clean design, smooth parallax effects, and full responsiveness across all devices.',
 		repositoryLink:
 			'https://github.com/ecspetra/valerii-tkachenko-back-end-developer',
 		previewLink: 'https://www.valeriitkachenko.dev',
