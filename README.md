@@ -1,5 +1,5 @@
 ## Description
-My portfolio, built with Next.js, TypeScript, and Tailwind, showcases my skills, work experience, volunteering, and project examples. It features a unique design, smooth animations, and a responsive layout that works seamlessly on all devices.
+A modern landing page for a Backend Developer portfolio with a clean design, smooth parallax effects, and full responsiveness across all devices.
 
 ## Link
 https://www.yuliia-tkachenko.dev
