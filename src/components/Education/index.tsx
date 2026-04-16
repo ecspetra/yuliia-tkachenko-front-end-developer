@@ -1,11 +1,11 @@
-import Title from '@/app/components/Title'
-import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
-import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
-import LinesShape from '@/app/assets/images/LinesShape'
-import { useRef } from 'react'
-import useParallax from '@/hooks/useParallax'
 import DotsAnimation from '@/app/assets/animation/DotsAnimation'
+import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
+import LinesShape from '@/app/assets/images/LinesShape'
+import SpinningCircleShape from '@/app/assets/images/SpinningCircleShape'
+import Title from '@/app/components/Title'
+import useParallax from '@/hooks/useParallax'
 import dynamic from 'next/dynamic'
+import { useRef } from 'react'
 
 const RadialGradientCircle = dynamic(
 	() => import('@/app/assets/images/RadialGradientCircle'),
@@ -40,47 +40,49 @@ const Education = () => {
 
 	return (
 		<div className='w-screen overflow-x-hidden' id='education'>
-			<div className='relative overflow-hidden w-full h-full mx-auto py-4 sm:py-20 2xl:py-40'>
+			<div className='relative mx-auto py-4 sm:py-20 2xl:py-40 w-full h-full overflow-hidden'>
 				<DotsAnimation id='dots-animation-2' />
-				<div className='container px-6 mx-auto'>
+				<div className='mx-auto px-6 container'>
 					<div className='relative bg-zinc-950 rounded-xl sm:rounded-3xl text-center'>
 						<div
 							ref={circleRef}
-							className='w-8 h-8 absolute -top-4 left-[25%] lg:-top-12 z-20 invisible'
+							className='invisible -top-4 lg:-top-12 left-[25%] z-20 absolute w-8 h-8'
 						>
-							<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+							<CircleShape className='top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2' />
 						</div>
-						<div className='py-20 sm:py-32 2xl:py-40 px-6 relative rounded-xl sm:rounded-3xl overflow-hidden'>
+						<div className='relative px-6 py-20 sm:py-32 2xl:py-40 rounded-xl sm:rounded-3xl overflow-hidden'>
 							<div
 								ref={backgroundLinesShapeRef}
-								className='w-[100vw] sm:w-[70vw] lg:max-w-[65vw] lg:max-h-[65vw] xl:w-[80vh] 2xl:w-[900px] absolute bottom-[60%] -right-[60%] lg:bottom-[35%] xl:-right-[30%] z-10 invisible'
+								className='invisible -right-[60%] xl:-right-[30%] bottom-[60%] lg:bottom-[35%] z-10 absolute w-[100vw] sm:w-[70vw] 2xl:w-[900px] xl:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw]'
 							>
-								<BackgroundLinesShape className='w-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-10 -rotate-120' />
+								<BackgroundLinesShape className='top-1/2 left-1/2 absolute opacity-10 w-full -rotate-120 -translate-x-1/2 -translate-y-1/2' />
 							</div>
 							<RadialGradientCircle
 								color='global-color-one'
-								className='w-[1300px] h-[1300px] absolute top-[35%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-30'
+								className='top-[35%] left-[95%] absolute opacity-30 w-[1300px] h-[1300px] -translate-x-1/2 -translate-y-1/2'
 							/>
 							<RadialGradientCircle
 								color='global-color-three'
-								className='w-[1000px] h-[1000px] absolute top-[100%] left-[85%] -translate-y-1/2 -translate-x-1/2 opacity-30'
+								className='top-[100%] left-[85%] absolute opacity-30 w-[1000px] h-[1000px] -translate-x-1/2 -translate-y-1/2'
 							/>
-							<SpinningCircleShape className='spinner-animation w-[15vw] h-[15vw] lg:w-[20vh] lg:h-[20vh] lg:max-w-[15vw] lg:max-h-[15vw] 2xl:w-40 2xl:h-40 absolute -bottom-8 lg:-bottom-20 left-[20%] z-20 rounded-full' />
+							<SpinningCircleShape className='-bottom-8 lg:-bottom-20 left-[20%] z-20 absolute rounded-full w-[15vw] lg:w-[20vh] 2xl:w-40 lg:max-w-[15vw] h-[15vw] lg:h-[20vh] 2xl:h-40 lg:max-h-[15vw] spinner-animation' />
 							<div
 								ref={backgroundGeometricShapeRef}
-								className='w-[25vw] h-[25vw] absolute top-[60%] -left-[20%] invisible'
+								className='invisible top-[60%] -left-[20%] absolute w-[25vw] h-[25vw]'
 							>
 								<BackgroundGeometricShape
 									variant='4'
-									className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+									className='top-1/2 left-1/2 absolute w-full h-full -translate-x-1/2 -translate-y-1/2'
 								/>
 							</div>
-							<LinesShape className='w-14 lg:w-24 absolute top-[15%] left-[85%] sm:left-[90%] z-20' />
-							<div className='relative z-40'>
+							<LinesShape className='top-[15%] left-[85%] sm:left-[90%] z-20 absolute w-14 lg:w-24' />
+							<div className='z-40 relative'>
 								<Title variant='h3'>Education</Title>
-								<Title>Master of Computer Science</Title>
+								<Title>
+									Master’s Degree in Computer Science
+								</Title>
 								<p>Pryazovskyi State Technical University</p>
-								<p className='text-base text-zinc-400'>
+								<p className='text-zinc-400 text-base'>
 									Ukraine, 2018
 								</p>
 							</div>
