@@ -1,16 +1,15 @@
-import Title from '@/app/components/Title'
+import DotsAnimation from '@/app/assets/animation/DotsAnimation'
 import BackgroundLinesShape from '@/app/assets/images/BackgroundLinesShape'
 import LinesShape from '@/app/assets/images/LinesShape'
 import Button from '@/app/components/Button'
-import { useRef } from 'react'
-import useParallax from '@/hooks/useParallax'
+import Title from '@/app/components/Title'
 import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import Image from 'next/image'
-import DotsAnimation from '@/app/assets/animation/DotsAnimation'
+import useParallax from '@/hooks/useParallax'
+import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons'
 import dynamic from 'next/dynamic'
-import TitleAnimated from '@/app/components/Title/TitleAnimated'
-import TextSVG from '@/app/components/TextSVG'
+import Image from 'next/image'
+import { useRef } from 'react'
 
 const RadialGradientCircle = dynamic(
 	() => import('@/app/assets/images/RadialGradientCircle'),
@@ -41,43 +40,43 @@ const BottomBanner = () => {
 
 	return (
 		<div
-			className='relative min-h-screen flex justify-center items-center py-20 2xl:py-40 w-screen bg-zinc-950 overflow-hidden'
+			className='relative flex justify-center items-center bg-zinc-950 py-20 2xl:py-40 w-screen min-h-screen overflow-hidden'
 			id='resume'
 		>
-			<div className='container mx-auto px-6 h-full relative z-10 flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16'>
-				<div className='aspect-[400/481] w-full h-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl relative mb-8 lg:mb-0'>
-					<BackgroundLinesShape className='w-[100vw] sm:w-[70vw] lg:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw] 2xl:w-[900px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-15 -scale-x-100 rotate-180' />
-					<div className='w-[80vw] h-[80vw] sm:w-[50vw] sm:h-[50vw] lg:w-[65vh] lg:h-[65vh] lg:max-w-[45vw] lg:max-h-[45vw] 2xl:w-[680px] 2xl:h-[680px] absolute top-[10%] left-1/2 -translate-x-1/2 z-10'>
+			<div className='z-10 relative flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16 mx-auto px-6 h-full container'>
+				<div className='relative mb-8 lg:mb-0 w-full max-w-[70vw] sm:max-w-[45vw] lg:max-w-[55vh] 2xl:max-w-xl h-full aspect-[400/481]'>
+					<BackgroundLinesShape className='top-1/2 left-1/2 absolute opacity-15 w-[100vw] sm:w-[70vw] lg:w-[80vh] 2xl:w-[900px] lg:max-w-[65vw] lg:max-h-[65vw] rotate-180 -scale-x-100 -translate-x-1/2 -translate-y-1/2' />
+					<div className='top-[10%] left-1/2 z-10 absolute w-[80vw] sm:w-[50vw] lg:w-[65vh] 2xl:w-[680px] lg:max-w-[45vw] h-[80vw] sm:h-[50vw] lg:h-[65vh] 2xl:h-[680px] lg:max-h-[45vw] -translate-x-1/2'>
 						<BackgroundGeometricShape
 							variant='5'
-							className='up-down-animated-shape up-down-animated-shape--decreased w-full h-full'
+							className='w-full h-full up-down-animated-shape up-down-animated-shape--decreased'
 						/>
 					</div>
 					<RadialGradientCircle
 						color='global-color-one'
-						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%+5vw)] left-[calc(50%+5vw)] lg:top-[80%] lg:left-[80%] -translate-y-1/2 -translate-x-1/2 opacity-30'
+						className='top-[calc(50%+5vw)] lg:top-[80%] left-[calc(50%+5vw)] lg:left-[80%] absolute opacity-30 w-[160vw] sm:w-[100vw] lg:w-[100vh] 2xl:w-[800px] h-[160vw] sm:h-[100vw] lg:h-[100vh] 2xl:h-[800px] -translate-x-1/2 -translate-y-1/2'
 					/>
 					<RadialGradientCircle
 						color='global-color-two'
-						className='w-[180vw] h-[180vw] sm:w-[120vw] sm:h-[120vw] lg:w-[120vh] lg:h-[120vh] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-80'
+						className='top-1/2 left-1/2 absolute opacity-80 w-[180vw] sm:w-[120vw] lg:w-[120vh] 2xl:w-[1300px] h-[180vw] sm:h-[120vw] lg:h-[120vh] 2xl:h-[1300px] -translate-x-1/2 -translate-y-1/2'
 					/>
 					<RadialGradientCircle
 						color='global-color-three'
-						className='w-[160vw] h-[160vw] sm:w-[100vw] sm:h-[100vw] lg:w-[100vh] lg:h-[100vh] 2xl:w-[800px] 2xl:h-[800px] absolute top-[calc(50%-5vw)] left-[calc(50%-5vw)] lg:top-[20%] lg:left-[20%] -translate-y-1/2 -translate-x-1/2 opacity-50'
+						className='top-[calc(50%-5vw)] lg:top-[20%] left-[calc(50%-5vw)] lg:left-[20%] absolute opacity-50 w-[160vw] sm:w-[100vw] lg:w-[100vh] 2xl:w-[800px] h-[160vw] sm:h-[100vw] lg:h-[100vh] 2xl:h-[800px] -translate-x-1/2 -translate-y-1/2'
 					/>
 					<CircleShape
-						className='up-down-animated-shape up-down-animated-shape--slow w-16 h-16 lg:w-24 lg:h-24 absolute bottom-[50%] -right-[10%] z-20'
+						className='-right-[10%] bottom-[50%] z-20 absolute w-16 lg:w-24 h-16 lg:h-24 up-down-animated-shape up-down-animated-shape--slow'
 						isBlurred
 					/>
 					<div
 						ref={circleRef}
-						className='w-8 h-8 lg:w-12 lg:h-12 absolute -bottom-4 left-[15%] lg:-bottom-6 lg:left-[10%] z-20 invisible'
+						className='invisible -bottom-4 lg:-bottom-6 left-[15%] lg:left-[10%] z-20 absolute w-8 lg:w-12 h-8 lg:h-12'
 					>
-						<CircleShape className='w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+						<CircleShape className='top-1/2 left-1/2 absolute w-full h-full -translate-x-1/2 -translate-y-1/2' />
 					</div>
-					<LinesShape className='w-14 lg:w-24 absolute top-[10%] right-0 z-20' />
+					<LinesShape className='top-[10%] right-0 z-20 absolute w-14 lg:w-24' />
 					<Image
-						className='relative z-10 rounded-xl sm:rounded-3xl'
+						className='z-10 relative rounded-xl sm:rounded-3xl'
 						src='/assets/images/bottom-banner-image.jpg'
 						alt='Bottom Banner'
 						layout='fill'
@@ -85,34 +84,36 @@ const BottomBanner = () => {
 					/>
 					<DotsAnimation id='dots-animation-3' />
 				</div>
-				<div className='relative max-w-md lg:max-w-2xl w-full z-40 flex flex-col items-center lg:block text-center lg:text-left'>
+				<div className='lg:block z-40 relative flex flex-col items-center w-full max-w-md lg:max-w-2xl lg:text-left text-center'>
 					<div className='mb-10 2xl:mb-16'>
-						<div className='relative w-full max-w-md lg:max-w-xl z-10 order-2 lg:order-1 flex flex-col items-center lg:block'>
+						<div className='lg:block z-10 relative flex flex-col items-center order-2 lg:order-1 w-full max-w-md lg:max-w-xl'>
 							{/* <Title variant='h1'>
 								Yuliia <br />
 								Tkachenko
 							</Title>
 							<Title
 								variant='h2'
-								className='!text-global-color-two-scheme-1 !text-3xl'
+								className='!text-3xl !text-global-color-two-scheme-1'
 							>
 								<TextSVG text='Software Developer' />
 							</Title>
-							<Button /> */}
+							<Button icon={faCircleArrowDown}>Download Resume</Button> */}
 							<Title className='!text-5xl 2xl:!text-7xl'>
 								Let’s work together
 							</Title>
 							<p className='mb-10 2xl:mb-14'>
 								Contact me for collaboration
-								<span className='text-2xl ml-1 align-middle'>
+								<span className='ml-1 text-2xl align-middle'>
 									&#128522;
 								</span>
 							</p>
-							<Button />
+							<Button icon={faCircleArrowDown} isDownloadLink>
+								Download Resume
+							</Button>
 						</div>
 					</div>
-					<Contacts variant='v2' isLeftAligned />
-					<div className='text-base text-zinc-400 flex flex-col sm:flex-row items-center justify-start'>
+					<Contacts variant='icon-v2' isLeftAligned />
+					<div className='flex sm:flex-row flex-col justify-start items-center text-zinc-400 text-base'>
 						{CONTACTS_LIST.map((item, idx) => {
 							if (
 								item.title === 'Email' ||
@@ -122,7 +123,7 @@ const BottomBanner = () => {
 									<p key={idx}>
 										{item.value}
 										{idx !== CONTACTS_LIST.length - 1 && (
-											<span className='mx-4 hidden sm:inline-block'>
+											<span className='hidden sm:inline-block mx-4'>
 												|
 											</span>
 										)}

@@ -4,6 +4,7 @@ import {
 	UI_UX_DESIGNER_PROJECTS_LIST,
 } from '@/constants/projectsList'
 import PortfolioFrontEndItem from '@/components/Portfolio/PortfolioFrontEndItem'
+import PortfolioFeaturedItem from '@/components/Portfolio/PortfolioFeaturedItem'
 import PortfolioUIUXDesignItem from '@/components/Portfolio/PortfolioUIUXDesignItem'
 import { useRef } from 'react'
 import useParallax from '@/hooks/useParallax'
@@ -44,14 +45,18 @@ const Portfolio = () => {
 					</Title>
 				</div>
 				<div className='w-full flex flex-wrap justify-center items-stretch gap-4 mb-20 lg:mb-40'>
-					{FRONT_END_DEVELOPER_PROJECTS_LIST.map((item, idx) => (
-						<PortfolioFrontEndItem
-							key={idx}
-							project={item}
-							isEven={idx % 2 === 0}
-							idx={idx}
-						/>
-					))}
+					{FRONT_END_DEVELOPER_PROJECTS_LIST.map((item, idx) =>
+						item.variant === 'featured' ? (
+							<PortfolioFeaturedItem key={idx} project={item} />
+						) : (
+							<PortfolioFrontEndItem
+								key={idx}
+								project={item}
+								isEven={idx % 2 === 0}
+								idx={idx}
+							/>
+						)
+					)}
 				</div>
 				<div
 					className='max-w-2xl mx-auto text-center relative z-40'

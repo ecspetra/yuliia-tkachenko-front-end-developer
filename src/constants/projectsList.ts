@@ -4,6 +4,33 @@ import designPortfolioImage3 from '../../public/assets/images/design-portfolio-i
 
 export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{
+		title: 'GradedReaders',
+		variant: 'featured' as const,
+		description:
+			'A web app for reading public-domain classics adapted to your exact English level. Upload an EPUB or pick from a library of classics, choose a CEFR level from A1 to C2, and read directly in the browser — tapping any word to save it with full sentence context for later review.',
+		techStack: [
+			'React',
+			'TypeScript',
+			'TanStack Query',
+			'Zustand',
+			'Radix UI',
+			'SCSS',
+		],
+		images: [
+			'/assets/images/gradedreaders-image-1.png',
+			'/assets/images/gradedreaders-image-2.png',
+			'/assets/images/gradedreaders-image-3.png',
+			'/assets/images/gradedreaders-image-4.png',
+			'/assets/images/gradedreaders-image-5.png',
+			'/assets/images/gradedreaders-image-6.png',
+			'/assets/images/gradedreaders-image-7.png',
+			'/assets/images/gradedreaders-image-8.png',
+			'/assets/images/gradedreaders-image-9.png',
+			'/assets/images/gradedreaders-image-10.png',
+		],
+		notes: 'Still in active development',
+	},
+	{
 		title: 'Interactive Movie & TV Platform',
 		description:
 			'This web platform allows users to register and discover information about movies, TV shows, and actors. They can search and filter easily, leave reviews and ratings, react to content, connect with friends, and create their own collections.',

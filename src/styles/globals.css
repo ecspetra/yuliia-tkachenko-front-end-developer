@@ -89,6 +89,15 @@ body.scroll-blocked {
   animation: border-grow 4s linear;
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .up-down-animated-shape {
   animation: upDownAnimation 6s ease-in-out infinite;
 }

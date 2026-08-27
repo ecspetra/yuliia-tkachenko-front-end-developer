@@ -1,16 +1,16 @@
-import { FC } from 'react'
-import { SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import Button from '@/app/components/Button'
+import { SOCIAL_LINKS_LIST } from '@/constants/contactsList'
 import classNames from 'classnames'
+import { FC } from 'react'
 
 type PropsType = {
-	variant?: 'v1' | 'v2'
+	variant?: 'icon-v1' | 'icon-v2'
 	isShowTitle?: boolean
 	isLeftAligned?: boolean
 }
 
 const Contacts: FC<PropsType> = ({
-	variant = 'v1',
+	variant = 'icon-v1',
 	isShowTitle = false,
 	isLeftAligned = false,
 }) => {
@@ -28,16 +28,12 @@ const Contacts: FC<PropsType> = ({
 					className='flex flex-col justify-start items-center gap-4'
 				>
 					<Button
-						context={
-							variant === 'v1'
-								? 'social-link-v1'
-								: 'social-link-v2'
-						}
+						context={variant}
 						link={item.link}
 						icon={item.icon}
 					/>
 					{isShowTitle && (
-						<span className='[writing-mode:vertical-lr] text-base text-zinc-400 tracking-[4px]'>
+						<span className='text-zinc-400 text-base tracking-[4px] [writing-mode:vertical-lr]'>
 							{item.title}
 						</span>
 					)}
