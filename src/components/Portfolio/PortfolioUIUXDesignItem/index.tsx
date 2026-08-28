@@ -31,7 +31,7 @@ const PortfolioUIUXDesignItem: FC<PropsType> = ({
 				href={fullSizeSrc}
 				target='_blank'
 				rel='noopener noreferrer'
-				className='group w-full h-full'
+				className='group block relative w-full h-full rounded-xl sm:rounded-3xl outline-none focus-visible:border-[6px] focus-visible:border-white'
 			>
 				<BackgroundSvgFill
 					borderRadius={24}

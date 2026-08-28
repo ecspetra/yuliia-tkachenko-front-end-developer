@@ -98,7 +98,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 			</Title>
 			<div
 				ref={heroImageRef}
-				className='relative bg-zinc-800 mb-6 rounded-xl sm:rounded-3xl w-full aspect-[320/169] overflow-hidden'
+				className='relative bg-zinc-800 mb-[6px] sm:mb-6 rounded-xl sm:rounded-3xl w-full aspect-[320/169] overflow-hidden'
 			>
 				<a
 					href={mainImage}
@@ -135,7 +135,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 				<div className='relative mb-10'>
 					<div
 						ref={sliderRef}
-						className='flex gap-4 pb-2 overflow-x-auto scroll-smooth snap-mandatory snap-x no-scrollbar'
+						className='flex gap-1 sm:gap-4 pb-2 overflow-x-auto scroll-smooth snap-mandatory snap-x no-scrollbar'
 					>
 						{images.map((image, idx) => (
 							<button
@@ -144,7 +144,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 								onClick={() => setSelectedIndex(idx)}
 								aria-label={`Show screenshot ${idx + 1}`}
 								aria-pressed={idx === selectedIndex}
-								className={`relative rounded-xl sm:rounded-2xl w-[75%] sm:w-[45%] lg:w-[30%] aspect-[16/10] overflow-hidden duration-300 snap-center shrink-0 border-2 ${
+								className={`relative rounded-xl sm:rounded-3xl w-[25%] sm:w-[35%] lg:w-[30%] aspect-[16/10] overflow-hidden duration-300 snap-center shrink-0 border-2 ${
 									idx === selectedIndex
 										? 'border-white'
 										: 'border-zinc-700 hover:border-zinc-500'
@@ -162,7 +162,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 					</div>
 					<div
 						aria-hidden
-						className={`top-0 bottom-2 left-0 flex justify-start items-center z-10 absolute w-16 sm:w-24 bg-gradient-to-r from-background-color to-transparent duration-300 ${
+						className={`top-0 bottom-2 left-0 flex justify-start items-center z-10 absolute w-8 sm:w-16 bg-gradient-to-r from-background-color to-transparent duration-300 ${
 							canScrollLeft ? 'opacity-100' : 'opacity-0'
 						}`}
 					>
@@ -176,11 +176,12 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 									? 'opacity-100'
 									: 'opacity-0 pointer-events-none'
 							}`}
+							isSmallButton
 						/>
 					</div>
 					<div
 						aria-hidden
-						className={`top-0 right-0 bottom-2 flex justify-end items-center z-10 absolute w-16 sm:w-24 bg-gradient-to-l from-background-color to-transparent duration-300 ${
+						className={`top-0 right-0 bottom-2 flex justify-end items-center z-10 absolute w-8 sm:w-16 bg-gradient-to-l from-background-color to-transparent duration-300 ${
 							canScrollRight ? 'opacity-100' : 'opacity-0'
 						}`}
 					>
@@ -194,6 +195,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 									? 'opacity-100'
 									: 'opacity-0 pointer-events-none'
 							}`}
+							isSmallButton
 						/>
 					</div>
 				</div>

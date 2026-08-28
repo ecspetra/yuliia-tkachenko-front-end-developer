@@ -121,7 +121,16 @@ const BottomBanner = () => {
 							) {
 								return (
 									<p key={idx}>
-										{item.value}
+										{item.title === 'Email' ? (
+											<a
+												href={`mailto:${item.value}`}
+												className='outline-none hover:text-white hover:underline focus-visible:text-white focus-visible:underline focus-visible:ring-1 focus-visible:ring-white rounded-sm'
+											>
+												{item.value}
+											</a>
+										) : (
+											item.value
+										)}
 										{idx !== CONTACTS_LIST.length - 1 && (
 											<span className='hidden sm:inline-block mx-4'>
 												|

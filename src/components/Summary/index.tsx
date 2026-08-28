@@ -114,7 +114,16 @@ const Summary = () => {
 										<span className='mr-2 font-semibold'>
 											{item.title}:
 										</span>
-										{item.value}
+										{item.title === 'Email' ? (
+											<a
+												href={`mailto:${item.value}`}
+												className='outline-none hover:underline focus-visible:underline focus-visible:ring-1 focus-visible:ring-white rounded-sm'
+											>
+												{item.value}
+											</a>
+										) : (
+											item.value
+										)}
 									</p>
 								))}
 							</div>
