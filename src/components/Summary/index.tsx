@@ -70,7 +70,7 @@ const Summary = () => {
 						>
 							<Image
 								className='w-full h-full object-cover'
-								src='/assets/images/summary-image.jpg'
+								src='/assets/images/summary-image.webp'
 								alt='Summary'
 								fill
 								sizes='(min-width: 1024px) 500px, 100vw'

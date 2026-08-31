@@ -77,7 +77,7 @@ const BottomBanner = () => {
 					<LinesShape className='top-[10%] right-0 z-20 absolute w-14 lg:w-24' />
 					<Image
 						className='z-10 relative rounded-xl sm:rounded-3xl'
-						src='/assets/images/bottom-banner-image.jpg'
+						src='/assets/images/bottom-banner-image.webp'
 						alt='Bottom Banner'
 						fill
 						sizes='(min-width: 1536px) 576px, (min-width: 640px) 45vw, 70vw'
