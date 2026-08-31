@@ -119,7 +119,7 @@ const Button: FC<PropsType> = ({
 				{icon && (
 					<FontAwesomeIcon
 						icon={icon}
-						className={classNames('relative z-20 w-5 h-5', {
+						className={classNames('relative z-20 size-5', {
 							'ml-2 group-hover:ml-7':
 								isPrimary || Boolean(children),
 							'group-hover:w-7 group-hover:h-7 duration-300':

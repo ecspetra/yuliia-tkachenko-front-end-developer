@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FC } from 'react'
 
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
 const CloseButton: FC<PropsType> = ({ isMenuHidden, toggleIsMenuHidden }) => {
 	return (
 		<button
-			className='w-8 h-8 md:hidden !text-2xl duration-300 relative z-40'
+			className='md:hidden z-40 relative w-8 h-8 !text-2xl duration-300'
 			onClick={toggleIsMenuHidden}
 		>
 			<FontAwesomeIcon

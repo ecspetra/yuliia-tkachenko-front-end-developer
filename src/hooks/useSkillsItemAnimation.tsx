@@ -1,5 +1,7 @@
 import { RefObject, useEffect } from 'react'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const useSkillsItemAnimation = (
 	itemRef: RefObject<HTMLDivElement>,
@@ -42,23 +44,17 @@ const useSkillsItemAnimation = (
 			0
 		)
 
-		const handleScroll = () => {
-			const rect = skillsItem.getBoundingClientRect()
-			const isVisible = rect.top < window.innerHeight && rect.bottom >= 0
-
-			if (isVisible) {
-				timeline.play()
-			} else {
-				timeline.reverse()
-			}
-		}
-
-		handleScroll()
-
-		window.addEventListener('scroll', handleScroll)
+		const scrollTrigger = ScrollTrigger.create({
+			trigger: skillsItem,
+			start: 'top bottom',
+			end: 'bottom top',
+			toggleActions: 'play none none reverse',
+			animation: timeline,
+		})
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
+			scrollTrigger.kill()
+			timeline.kill()
 		}
 	}, [itemRef, spanRef, idx])
 }

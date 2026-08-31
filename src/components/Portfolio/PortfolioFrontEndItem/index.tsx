@@ -99,8 +99,9 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 							className='rounded-xl sm:rounded-3xl w-full h-full object-cover mix-blend-luminosity'
 							src={images[0]}
 							alt='portfolio-project'
-							layout='fill'
-							loading='eager'
+							fill
+							sizes='(min-width: 1024px) 50vw, 80vw'
+							loading='lazy'
 						/>
 					</a>
 				</div>
@@ -118,8 +119,9 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 							className='rounded-xl sm:rounded-3xl w-full h-full object-cover mix-blend-luminosity'
 							src={images[1]}
 							alt='portfolio-project'
-							layout='fill'
-							loading='eager'
+							fill
+							sizes='(min-width: 1024px) 320px, 60vw'
+							loading='lazy'
 						/>
 					</a>
 				</div>
@@ -162,7 +164,8 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 										alt={`${title} screenshot ${
 											imageIdx + 3
 										}`}
-										layout='fill'
+										fill
+										sizes='64px'
 										loading='lazy'
 									/>
 								</a>

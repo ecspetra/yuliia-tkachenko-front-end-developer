@@ -1,13 +1,9 @@
 import Button from '@/app/components/Button'
 import Title from '@/app/components/Title'
+import ZoomIndicator from '@/app/components/ZoomIndicator'
 import Tag from '@/components/Tag'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
-import {
-	faChevronLeft,
-	faChevronRight,
-	faMagnifyingGlassPlus,
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
@@ -112,13 +108,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 						opacity={10}
 						className='z-10 scale-0 group-hover:scale-125 duration-300'
 					/>
-					<span className='top-1/2 left-1/2 z-10 absolute flex justify-center items-center opacity-0 group-hover:opacity-100 rounded-full w-16 h-16 text-zinc-950 -translate-x-1/2 -translate-y-1/2 duration-300'>
-						<BackgroundSvgFill borderRadius={32} />
-						<FontAwesomeIcon
-							className='z-20 relative'
-							icon={faMagnifyingGlassPlus}
-						/>
-					</span>
+					<ZoomIndicator />
 					<span className='bottom-0 left-1/2 z-20 absolute w-0 group-hover:w-8 h-0.5 -translate-x-1/2 duration-300'>
 						<BackgroundSvgFill borderRadius={0} />
 					</span>
@@ -126,8 +116,9 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 						className='rounded-xl sm:rounded-3xl w-full h-full object-cover'
 						src={mainImage}
 						alt={`${title} main screenshot`}
-						layout='fill'
-						loading='eager'
+						fill
+						sizes='(min-width: 1152px) 1104px, 90vw'
+						loading='lazy'
 					/>
 				</a>
 			</div>
@@ -154,7 +145,8 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 									className='w-full h-full object-cover'
 									src={image}
 									alt={`${title} screenshot ${idx + 1}`}
-									layout='fill'
+									fill
+									sizes='(min-width: 1024px) 30vw, (min-width: 640px) 35vw, 25vw'
 									loading='lazy'
 								/>
 							</button>

@@ -1,6 +1,6 @@
-import designPortfolioImage1 from '../../public/assets/images/design-portfolio-image-1.png'
-import designPortfolioImage2 from '../../public/assets/images/design-portfolio-image-2.png'
-import designPortfolioImage3 from '../../public/assets/images/design-portfolio-image-3.png'
+import designPortfolioImage1 from '../../public/assets/images/design-portfolio-image-1.webp'
+import designPortfolioImage2 from '../../public/assets/images/design-portfolio-image-2.webp'
+import designPortfolioImage3 from '../../public/assets/images/design-portfolio-image-3.webp'
 
 export const FRONT_END_DEVELOPER_PROJECTS_LIST = [
 	{

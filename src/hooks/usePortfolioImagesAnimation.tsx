@@ -17,6 +17,8 @@ const usePortfolioImagesAnimation = (
 
 		const timeline = gsap.timeline({ paused: true })
 
+		let scrollTrigger: ScrollTrigger | undefined
+
 		const createAnimation = () => {
 			switch (refName) {
 				case 'bigImage':
@@ -69,7 +71,7 @@ const usePortfolioImagesAnimation = (
 					break
 			}
 
-			ScrollTrigger.create({
+			scrollTrigger = ScrollTrigger.create({
 				trigger: image,
 				start: 'top bottom',
 				end: 'bottom center',
@@ -78,24 +80,11 @@ const usePortfolioImagesAnimation = (
 			})
 		}
 
-		const handleScroll = () => {
-			const rect = image.getBoundingClientRect()
-			const isVisible = rect.top < window.innerHeight && rect.bottom >= 0
-
-			if (isVisible) {
-				timeline.play()
-			} else {
-				timeline.reverse()
-			}
-		}
-
 		createAnimation()
-		handleScroll()
-
-		window.addEventListener('scroll', handleScroll)
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
+			scrollTrigger?.kill()
+			timeline.kill()
 		}
 	}, [imageRef, refName, idx])
 }

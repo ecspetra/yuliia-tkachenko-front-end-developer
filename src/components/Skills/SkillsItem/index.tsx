@@ -1,9 +1,9 @@
-import { FC, ReactNode, useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode } from '@fortawesome/free-solid-svg-icons'
 import Title from '@/app/components/Title'
 import useSkillsItemAnimation from '@/hooks/useSkillsItemAnimation'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import dynamic from 'next/dynamic'
+import { FC, ReactNode, useRef } from 'react'
 
 const BackgroundSvgFill = dynamic(
 	() => import('@/app/assets/images/BackgroundSvgFill'),
@@ -24,21 +24,21 @@ const SkillsItem: FC<PropsType> = ({ children, counter, idx }) => {
 	return (
 		<div
 			ref={skillItemRef}
-			className='w-full lg:w-[calc((100%-48px)/3)] p-6 bg-zinc-950/85 backdrop-blur-lg rounded-xl border border-zinc-700'
+			className='bg-zinc-950/85 backdrop-blur-lg p-6 border border-zinc-700 rounded-xl w-full lg:w-[calc((100%-48px)/3)]'
 		>
-			<span className='block text-sm text-zinc-500 mb-3'>{counter}</span>
+			<span className='block mb-3 text-zinc-500 text-sm'>{counter}</span>
 			<div className='flex justify-between items-center'>
 				<div>
 					<Title variant='h3-large'>{children}</Title>
 					<span
 						ref={spanRef}
-						className='relative w-full h-0.5 block mt-6 -mb-6'
+						className='block relative mt-6 -mb-6 w-full h-0.5'
 					>
 						<BackgroundSvgFill borderRadius={0} />
 					</span>
 				</div>
 				<FontAwesomeIcon
-					className='text-zinc-500 w-6 h-6'
+					className='size-6 text-zinc-500'
 					icon={faCode}
 				/>
 			</div>

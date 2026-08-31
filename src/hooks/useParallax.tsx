@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState } from 'react'
-import gsap, { TweenMax } from 'gsap'
+import gsap from 'gsap'
 
 interface ShapeProps {
 	shapeRef: RefObject<HTMLElement>
@@ -25,7 +25,7 @@ const useParallax = (shapes: ShapeProps[], triggerId: string) => {
 	}, [])
 
 	useEffect(() => {
-		let animations: TweenMax[] = []
+		let animations: gsap.core.Tween[] = []
 
 		const setupAnimations = () => {
 			shapes.forEach(({ shapeRef, shiftXValue = 0, shiftYValue = 0 }) => {

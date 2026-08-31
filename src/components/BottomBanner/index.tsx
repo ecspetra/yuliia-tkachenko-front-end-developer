@@ -79,8 +79,9 @@ const BottomBanner = () => {
 						className='z-10 relative rounded-xl sm:rounded-3xl'
 						src='/assets/images/bottom-banner-image.jpg'
 						alt='Bottom Banner'
-						layout='fill'
-						loading='eager'
+						fill
+						sizes='(min-width: 1536px) 576px, (min-width: 640px) 45vw, 70vw'
+						loading='lazy'
 					/>
 					<DotsAnimation id='dots-animation-3' />
 				</div>
@@ -124,7 +125,7 @@ const BottomBanner = () => {
 										{item.title === 'Email' ? (
 											<a
 												href={`mailto:${item.value}`}
-												className='outline-none hover:text-white hover:underline focus-visible:text-white focus-visible:underline focus-visible:ring-1 focus-visible:ring-white rounded-sm'
+												className='rounded-sm outline-none underline decoration-transparent hover:text-white focus-visible:text-white hover:decoration-current focus-visible:decoration-current focus-visible:ring-1 focus-visible:ring-white duration-300'
 											>
 												{item.value}
 											</a>

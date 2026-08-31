@@ -88,8 +88,9 @@ const TopBanner = () => {
 						className='z-10 relative rounded-xl sm:rounded-3xl'
 						src='/assets/images/top-banner-image.jpg'
 						alt='Top Banner'
-						layout='fill'
-						loading='eager'
+						fill
+						sizes='(min-width: 1536px) 576px, (min-width: 640px) 45vw, 70vw'
+						priority
 					/>
 					<DotsAnimation id='dots-animation-1' />
 				</div>

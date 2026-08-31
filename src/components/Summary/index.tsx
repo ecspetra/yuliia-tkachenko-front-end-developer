@@ -1,13 +1,13 @@
 import Title from '@/app/components/Title'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Contacts from '@/components/Contacts'
 import { CONTACTS_LIST } from '@/constants/contactsList'
-import { useRef } from 'react'
+import useParallax from '@/hooks/useParallax'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-import useParallax from '@/hooks/useParallax'
-import Contacts from '@/components/Contacts'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import { useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger)
 
 const RadialGradientCircle = dynamic(
@@ -37,47 +37,48 @@ const Summary = () => {
 
 	return (
 		<div className='w-screen overflow-hidden' id='summary'>
-			<div className='container xl:max-w-6xl mx-auto px-6 py-20 2xl:py-60'>
-				<div className='w-full mx-auto flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mb-12'>
-					<div className='w-full flex items-end flex-grow max-w-full lg:max-w-1/2 relative'>
+			<div className='mx-auto px-6 py-20 2xl:py-60 xl:max-w-6xl container'>
+				<div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mx-auto mb-12 w-full'>
+					<div className='relative flex flex-grow items-end w-full max-w-full lg:max-w-1/2'>
 						<RadialGradientCircle
 							color='global-color-one'
-							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] 2xl:w-[1300px] 2xl:h-[1300px] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-40'
+							className='top-1/2 left-1/2 absolute opacity-40 w-[110vw] lg:w-[800px] 2xl:w-[1300px] h-[110vw] lg:h-[800px] 2xl:h-[1300px] -translate-x-1/2 -translate-y-1/2'
 						/>
 						<RadialGradientCircle
 							color='global-color-two'
-							className='w-[110vw] h-[110vw] lg:w-[800px] lg:h-[800px] absolute top-[65%] left-[95%] -translate-y-1/2 -translate-x-1/2 opacity-20'
+							className='top-[65%] left-[95%] absolute opacity-20 w-[110vw] lg:w-[800px] h-[110vw] lg:h-[800px] -translate-x-1/2 -translate-y-1/2'
 						/>
 						<div
 							ref={circleRef}
-							className='w-8 h-8 absolute top-[30%] -left-4 lg:-left-[10%] z-20 invisible'
+							className='invisible top-[30%] -left-4 lg:-left-[10%] z-20 absolute w-8 h-8'
 						>
-							<CircleShape className='absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2' />
+							<CircleShape className='top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2' />
 						</div>
-						<div className='text-zinc-950 max-w-32 uppercase text-sm font-bold absolute bottom-24 -right-4 lg:top-[20%] lg:-right-[3%] px-5 flex flex-col justify-center items-start z-20'>
+						<div className='lg:top-[20%] -right-4 lg:-right-[3%] bottom-24 z-20 absolute flex flex-col justify-center items-start px-5 max-w-32 font-bold text-zinc-950 text-sm uppercase'>
 							<BackgroundGeometricShape
 								variant='2'
-								className='w-44 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'
+								className='top-1/2 left-1/2 absolute w-44 -translate-x-1/2 -translate-y-1/2'
 							/>
-							<span className='text-7xl relative z-30'>6+</span>
-							<p className='relative z-30 leading-none font-bold'>
+							<span className='z-30 relative text-7xl'>6+</span>
+							<p className='z-30 relative font-bold leading-none'>
 								years of experience
 							</p>
 						</div>
 						<div
 							ref={imageRef}
-							className='relative z-10 aspect-[4/3] w-full h-fit rounded-xl sm:rounded-3xl overflow-hidden'
+							className='z-10 relative rounded-xl sm:rounded-3xl w-full h-fit aspect-[4/3] overflow-hidden'
 						>
 							<Image
-								className='object-cover w-full h-full'
+								className='w-full h-full object-cover'
 								src='/assets/images/summary-image.jpg'
 								alt='Summary'
-								layout='fill'
-								loading='eager'
+								fill
+								sizes='(min-width: 1024px) 500px, 100vw'
+								loading='lazy'
 							/>
 						</div>
 					</div>
-					<div className='w-full sm:w-[80%] lg:max-w-1/2 relative z-40 text-center lg:text-left'>
+					<div className='z-40 relative w-full sm:w-[80%] lg:max-w-1/2 lg:text-left text-center'>
 						<Title variant='h3'>Summary</Title>
 						<Title variant='h2'>About me</Title>
 						<div>
@@ -105,11 +106,11 @@ const Summary = () => {
 								{CONTACTS_LIST.map((item, idx) => (
 									<p
 										key={idx}
-										className='mb-2 flex justify-center lg:justify-start items-center'
+										className='flex justify-center lg:justify-start items-center mb-2'
 									>
 										<FontAwesomeIcon
 											icon={item.icon}
-											className='mr-2 w-4 h-4'
+											className='mr-2 size-4'
 										/>
 										<span className='mr-2 font-semibold'>
 											{item.title}:
@@ -117,7 +118,7 @@ const Summary = () => {
 										{item.title === 'Email' ? (
 											<a
 												href={`mailto:${item.value}`}
-												className='outline-none hover:underline focus-visible:underline focus-visible:ring-1 focus-visible:ring-white rounded-sm'
+												className='rounded-sm outline-none underline decoration-transparent hover:text-white focus-visible:text-white hover:decoration-current focus-visible:decoration-current focus-visible:ring-1 focus-visible:ring-white duration-300'
 											>
 												{item.value}
 											</a>

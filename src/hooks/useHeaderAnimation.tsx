@@ -6,36 +6,45 @@ const useHeaderAnimation = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false)
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const sections = HEADER_ANCHORS.map(([key, value]) => {
-				return document.getElementById(value.slice(1))
-			})
+		const sections = HEADER_ANCHORS.map(
+			([, value]) => document.getElementById(value.slice(1))
+		)
+
+		let ticking = false
+
+		const updateAnchor = () => {
+			const scrollY = window.scrollY
+
+			setIsScrolled(scrollY !== 0)
 
 			sections.forEach((section, index) => {
-				if (section) {
-					const sectionTop = section.offsetTop - 200
-					const sectionBottom =
-						sectionTop + (section.clientHeight || 0)
-
-					if (
-						window.scrollY >= sectionTop &&
-						window.scrollY < sectionBottom
-					) {
-						setActiveAnchor(
-							window.scrollY === 0
-								? null
-								: HEADER_ANCHORS[index][1].slice(1)
-						)
-					}
+				if (!section) {
+					return
 				}
 
-				setIsScrolled(window.scrollY !== 0)
+				const sectionTop = section.offsetTop - 200
+				const sectionBottom = sectionTop + (section.clientHeight || 0)
+
+				if (scrollY >= sectionTop && scrollY < sectionBottom) {
+					setActiveAnchor(
+						scrollY === 0 ? null : HEADER_ANCHORS[index][1].slice(1)
+					)
+				}
 			})
+
+			ticking = false
 		}
 
-		window.addEventListener('scroll', handleScroll)
+		const handleScroll = () => {
+			if (!ticking) {
+				requestAnimationFrame(updateAnchor)
+				ticking = true
+			}
+		}
 
-		handleScroll()
+		window.addEventListener('scroll', handleScroll, { passive: true })
+
+		updateAnchor()
 
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
