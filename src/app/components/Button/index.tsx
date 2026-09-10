@@ -41,12 +41,12 @@ const getContextClassNames = (
 	primary:
 		'text-sm sm:text-base h-[56px] overflow-hidden text-zinc-950 w-full lg:w-fit flex justify-center items-center px-6 py-4 rounded-[32px] group-hover:text-white group-hover:scale-[1.1] after:pointer-events-none after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-zinc-900 after:absolute after:top-full after:rounded-full group-hover:after:w-[calc(100%-4px)] group-hover:after:h-[calc(100%-4px)] group-hover:after:top-1/2 group-hover:after:-translate-y-1/2 group-hover:after:opacity-100',
 	secondary:
-		'text-sm sm:text-base h-[56px] overflow-hidden bg-zinc-800 w-full lg:w-fit flex justify-center items-center border-2 border-zinc-700 px-6 py-4 rounded-[32px] group-hover:text-zinc-950 group-hover:border-white group-hover:scale-[1.1] after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-white after:absolute after:top-full group-hover:after:-translate-y-1/2 after:rounded-full group-hover:after:w-[calc(100%+2px)] group-hover:after:h-[calc(100%+2px)] group-hover:after:top-1/2 group-hover:after:opacity-100',
+		'text-sm sm:text-base h-[56px] overflow-hidden bg-zinc-800 w-full lg:w-fit flex justify-center items-center border-2 border-zinc-700 px-6 py-4 rounded-[32px] group-hover:text-zinc-950 group-hover:border-white group-hover:scale-[1.1] after:pointer-events-none after:duration-300 after:w-14 after:h-14 after:opacity-0 after:bg-white after:absolute after:top-full group-hover:after:-translate-y-1/2 after:rounded-full group-hover:after:w-[calc(100%+2px)] group-hover:after:h-[calc(100%+2px)] group-hover:after:top-1/2 group-hover:after:opacity-100',
 	'icon-v1':
 		'w-14 h-14 sm:w-16 sm:h-16 bg-zinc-950 !text-2xl flex justify-center items-center rounded-full group-hover:text-zinc-950 group-hover:scale-[1.1]',
 	'icon-v2': `${
 		isSmallButton ? 'w-8 h-8' : 'w-14 h-14'
-	} sm:w-12 sm:h-12 bg-zinc-800 border-2 border-transparent !text-xl flex justify-center items-center rounded-full group-hover:text-zinc-950 group-hover:border-white group-hover:scale-[1.1] after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full group-hover:after:w-full group-hover:after:h-full`,
+	} sm:w-12 sm:h-12 bg-zinc-800 border-2 border-transparent !text-xl flex justify-center items-center rounded-full group-hover:text-zinc-950 group-hover:border-white group-hover:scale-[1.1] after:pointer-events-none after:duration-300 after:w-0 after:h-0 after:bg-white after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full group-hover:after:w-full group-hover:after:h-full`,
 })
 
 const CONTEXT_ROUNDED: Record<ButtonContext, string> = {

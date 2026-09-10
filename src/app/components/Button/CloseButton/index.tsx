@@ -10,7 +10,7 @@ type PropsType = {
 const CloseButton: FC<PropsType> = ({ isMenuHidden, toggleIsMenuHidden }) => {
 	return (
 		<button
-			className='md:hidden z-40 relative w-8 h-8 !text-2xl duration-300'
+			className='md:hidden z-40 relative w-8 h-8 !text-2xl duration-300 cursor-pointer'
 			onClick={toggleIsMenuHidden}
 		>
 			<FontAwesomeIcon

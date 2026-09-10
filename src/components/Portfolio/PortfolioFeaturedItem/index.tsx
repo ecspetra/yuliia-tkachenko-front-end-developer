@@ -135,7 +135,7 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 								onClick={() => setSelectedIndex(idx)}
 								aria-label={`Show screenshot ${idx + 1}`}
 								aria-pressed={idx === selectedIndex}
-								className={`relative rounded-xl sm:rounded-3xl w-[25%] sm:w-[35%] lg:w-[30%] aspect-[16/10] overflow-hidden duration-300 snap-center shrink-0 border-2 ${
+								className={`relative rounded-xl sm:rounded-3xl w-[25%] sm:w-[35%] lg:w-[30%] aspect-[16/10] overflow-hidden duration-300 snap-center shrink-0 border-2 cursor-pointer ${
 									idx === selectedIndex
 										? 'border-white'
 										: 'border-zinc-700 hover:border-zinc-500'
