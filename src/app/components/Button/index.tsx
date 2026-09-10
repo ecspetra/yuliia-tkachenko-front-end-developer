@@ -14,7 +14,7 @@ const BackgroundSvgFill = dynamic(
 	{ ssr: false }
 )
 
-const RESUME_FILE_NAME = 'Resume_Yuliia_Tkachenko_Front-End-Developer.pdf'
+const RESUME_FILE_NAME = 'Resume_Yuliia_Tkachenko_Software_Developer.pdf'
 const RESUME_LINK = `/resume/${RESUME_FILE_NAME}`
 
 const EXTERNAL_LINK_PROPS = {
