@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 import { useColorScheme } from '@/context/ColorSchemeContext'
 import { generateRandomId } from '@/handlers/generateRandomId'
@@ -11,7 +11,7 @@ interface PropsType {
 
 const CircleShape: FC<PropsType> = ({ className, isBlurred, color }) => {
 	const { colorScheme } = useColorScheme()
-	const id = generateRandomId('circleShape', 5)
+	const [id] = useState(() => generateRandomId('circleShape', 5))
 
 	return (
 		<svg

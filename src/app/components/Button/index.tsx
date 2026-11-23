@@ -33,6 +33,7 @@ type PropsType = {
 	isDownloadLink?: boolean
 	isSmallButton?: boolean
 	buttonClassNames?: string
+	ariaLabel?: string
 }
 
 const getContextClassNames = (
@@ -65,6 +66,7 @@ const Button: FC<PropsType> = ({
 	isDownloadLink = false,
 	isSmallButton,
 	buttonClassNames = '',
+	ariaLabel,
 }) => {
 	const isPrimary = context === 'primary'
 	const isSecondary = context === 'secondary'
@@ -77,17 +79,13 @@ const Button: FC<PropsType> = ({
 	const showRadialGradient = isPrimary || isSecondary
 	const showBackgroundFill = isPrimary || isIconV1
 
-	return (
-		<a
-			href={href}
-			download={download}
-			className={classNames(
-				'group block relative w-full sm:w-fit outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900',
-				CONTEXT_ROUNDED[context]
-			)}
-			onClick={onClick}
-			{...EXTERNAL_LINK_PROPS}
-		>
+	const wrapperClassNames = classNames(
+		'group block relative w-full sm:w-fit outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900',
+		CONTEXT_ROUNDED[context]
+	)
+
+	const content = (
+		<>
 			{showRadialGradient && (
 				<RadialGradientCircle
 					color='global-color-two'
@@ -128,6 +126,32 @@ const Button: FC<PropsType> = ({
 					/>
 				)}
 			</span>
+		</>
+	)
+
+	if (!href) {
+		return (
+			<button
+				type='button'
+				className={wrapperClassNames}
+				onClick={onClick}
+				aria-label={ariaLabel}
+			>
+				{content}
+			</button>
+		)
+	}
+
+	return (
+		<a
+			href={href}
+			download={download}
+			className={wrapperClassNames}
+			onClick={onClick}
+			aria-label={ariaLabel}
+			{...(download ? {} : EXTERNAL_LINK_PROPS)}
+		>
+			{content}
 		</a>
 	)
 }

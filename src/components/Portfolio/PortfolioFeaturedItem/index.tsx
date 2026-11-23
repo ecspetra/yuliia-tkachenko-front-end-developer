@@ -3,7 +3,10 @@ import Title from '@/app/components/Title'
 import ZoomIndicator from '@/app/components/ZoomIndicator'
 import Tag from '@/components/Tag'
 import usePortfolioImagesAnimation from '@/hooks/usePortfolioImagesAnimation'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import {
+	faChevronLeft,
+	faChevronRight,
+} from '@fortawesome/free-solid-svg-icons'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
@@ -153,15 +156,16 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 						))}
 					</div>
 					<div
-						aria-hidden
 						className={`top-0 bottom-2 left-0 flex justify-start items-center z-10 absolute w-8 sm:w-16 bg-gradient-to-r from-background-color to-transparent duration-300 ${
-							canScrollLeft ? 'opacity-100' : 'opacity-0'
+							canScrollLeft
+								? 'opacity-100'
+								: 'opacity-0 pointer-events-none'
 						}`}
 					>
 						<Button
 							context='icon-v2'
-							link={repositoryLink}
 							icon={faChevronLeft}
+							ariaLabel='Scroll screenshots left'
 							onClick={() => scrollSlider('left')}
 							buttonClassNames={`z-20 ${
 								canScrollLeft
@@ -172,15 +176,16 @@ const PortfolioFeaturedItem: FC<PropsType> = ({
 						/>
 					</div>
 					<div
-						aria-hidden
 						className={`top-0 right-0 bottom-2 flex justify-end items-center z-10 absolute w-8 sm:w-16 bg-gradient-to-l from-background-color to-transparent duration-300 ${
-							canScrollRight ? 'opacity-100' : 'opacity-0'
+							canScrollRight
+								? 'opacity-100'
+								: 'opacity-0 pointer-events-none'
 						}`}
 					>
 						<Button
 							context='icon-v2'
-							link={repositoryLink}
 							icon={faChevronRight}
+							ariaLabel='Scroll screenshots right'
 							onClick={() => scrollSlider('right')}
 							buttonClassNames={`z-20 ${
 								canScrollRight

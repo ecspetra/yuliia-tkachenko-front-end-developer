@@ -31,6 +31,7 @@ const Contacts: FC<PropsType> = ({
 						context={variant}
 						link={item.link}
 						icon={item.icon}
+						ariaLabel={item.title}
 					/>
 					{isShowTitle && (
 						<span className='text-zinc-400 text-base tracking-[4px] [writing-mode:vertical-lr]'>

@@ -1,6 +1,6 @@
+import { gsap } from 'gsap'
 import { RefObject, useEffect } from 'react'
 import SplitType from 'split-type'
-import { gsap } from 'gsap'
 
 const useTextAnimation = (
 	textRefOne: RefObject<HTMLHeadingElement>,
@@ -8,64 +8,58 @@ const useTextAnimation = (
 	textRefThree: RefObject<HTMLHeadingElement>
 ) => {
 	useEffect(() => {
-		const startAnimation = () => {
-			if (
-				textRefOne.current &&
-				textRefTwo.current &&
-				textRefThree.current
-			) {
-				;[textRefOne, textRefTwo, textRefThree].forEach(ref => {
-					ref.current!.style.visibility = 'hidden'
-				})
+		const elements = [
+			textRefOne.current,
+			textRefTwo.current,
+			textRefThree.current,
+		]
 
-				const createAnimation = (chars: HTMLElement[] | null) => {
-					return gsap.fromTo(
-						chars,
-						{
-							y: 100,
-							opacity: 0,
-						},
-						{
-							y: 0,
-							opacity: 1,
-							stagger: 0.05,
-							duration: 5,
-							ease: 'power4.out',
-						}
-					)
-				}
-
-				const animatedTextOne = new SplitType(textRefOne.current, {
-					types: 'chars',
-					tagName: 'span',
-				})
-				const animatedTextTwo = new SplitType(textRefTwo.current, {
-					types: 'chars',
-					tagName: 'span',
-				})
-				const animatedTextThree = new SplitType(textRefThree.current, {
-					types: 'chars',
-					tagName: 'span',
-				})
-
-				const timeline = gsap.timeline()
-
-				timeline.add(createAnimation(animatedTextOne.chars))
-				timeline.add(createAnimation(animatedTextTwo.chars), '-=4')
-				timeline.add(createAnimation(animatedTextThree.chars), '-=4')
-				;[textRefOne, textRefTwo, textRefThree].forEach(ref => {
-					ref.current!.style.visibility = 'visible'
-				})
-			}
+		if (elements.some(element => !element)) {
+			return
 		}
+
+		const createAnimation = (chars: HTMLElement[] | null) =>
+			gsap.fromTo(
+				chars,
+				{
+					y: 100,
+					opacity: 0,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.05,
+					duration: 5,
+					ease: 'power4.out',
+				}
+			)
+
+		const splitTexts = elements.map(
+			element =>
+				new SplitType(element!, {
+					types: 'chars',
+					tagName: 'span',
+				})
+		)
+
+		const timeline = gsap.timeline()
+
+		splitTexts.forEach((splitText, idx) => {
+			timeline.add(
+				createAnimation(splitText.chars),
+				idx === 0 ? undefined : '-=4'
+			)
+		})
+
+		elements.forEach(element => {
+			element!.style.visibility = 'visible'
+		})
 
 		const handleVisibilityChange = () => {
 			if (!document.hidden) {
-				startAnimation()
+				timeline.restart()
 			}
 		}
-
-		startAnimation()
 
 		document.addEventListener('visibilitychange', handleVisibilityChange)
 
@@ -74,6 +68,8 @@ const useTextAnimation = (
 				'visibilitychange',
 				handleVisibilityChange
 			)
+			timeline.kill()
+			splitTexts.forEach(splitText => splitText.revert())
 		}
 	}, [textRefOne, textRefTwo, textRefThree])
 }

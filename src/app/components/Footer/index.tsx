@@ -16,6 +16,7 @@ const Footer: FC<PropsType> = ({ className }) => (
 		<a
 			href='https://github.com/ecspetra/yuliia-tkachenko-front-end-developer'
 			target='_blank'
+			rel='noopener noreferrer'
 			className='border-b border-b-zinc-500 duration-300 hover:text-white'
 		>
 			Link to repository

@@ -63,7 +63,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 	return (
 		<div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center gap-16 mb-14 lg:mb-40 last:mb-0'>
 			<div
-				className={`w-full sm:max-w-[80%] lg:max-w-1/2 relative ${
+				className={`w-full sm:max-w-[80%] lg:max-w-[50%] relative ${
 					isEven ? 'lg:order-last' : 'lg:order-first'
 				}`}
 			>
@@ -127,7 +127,7 @@ const PortfolioFrontEndItem: FC<PropsType> = ({
 				</div>
 			</div>
 			<div
-				className={`w-full relative z-40 max-w-1/2 text-center lg:text-left ${
+				className={`w-full relative z-40 lg:max-w-[50%] text-center lg:text-left ${
 					isEven ? 'lg:order-first' : 'lg:order-last'
 				}`}
 			>

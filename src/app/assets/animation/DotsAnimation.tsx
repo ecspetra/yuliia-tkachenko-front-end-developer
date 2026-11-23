@@ -7,6 +7,9 @@ type PropsType = {
 	className?: string
 }
 
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg'
+const DOTS_COUNT = 50
+
 const generateRandomPath = () => {
 	const x1 = Math.random() * 1200
 	const y1 = Math.random() * 1200
@@ -28,67 +31,54 @@ const generateRandomOpacity = () => {
 	return Math.random()
 }
 
+const createCircle = (index: number) => {
+	const circle = document.createElementNS(SVG_NAMESPACE, 'circle')
+	circle.setAttribute('r', generateRandomSize().toString())
+	circle.setAttribute(
+		'fill',
+		index % 2 === 0 ? 'rgb(var(--background-color))' : 'white'
+	)
+	circle.setAttribute('opacity', generateRandomOpacity().toString())
+
+	const animateMotion = document.createElementNS(
+		SVG_NAMESPACE,
+		'animateMotion'
+	)
+	animateMotion.setAttribute('dur', '30s')
+	animateMotion.setAttribute('repeatCount', 'indefinite')
+	animateMotion.setAttribute('path', generateRandomPath())
+
+	circle.appendChild(animateMotion)
+
+	return circle
+}
+
 const DotsAnimation: FC<PropsType> = ({ id, className }) => {
 	const svgRef = useRef<SVGSVGElement | null>(null)
 	const [ref, inView] = useInView()
 
-	const createCircles = () => {
-		const circles = Array.from({ length: 50 }).map((_, index) => {
-			const path = generateRandomPath()
-			const size = generateRandomSize()
-			const opacity = generateRandomOpacity()
-			const fillColor =
-				index % 2 === 0 ? `rgb(var(--background-color))` : 'white'
-
-			const circle = document.createElementNS(
-				'http://www.w3.org/2000/svg',
-				'circle'
-			)
-			circle.setAttribute('key', index.toString())
-			circle.setAttribute('r', size.toString())
-			circle.setAttribute('fill', fillColor)
-			circle.setAttribute('opacity', opacity.toString())
-
-			const animateMotion = document.createElementNS(
-				'http://www.w3.org/2000/svg',
-				'animateMotion'
-			)
-			animateMotion.setAttribute('dur', '30s')
-			animateMotion.setAttribute('repeatCount', 'indefinite')
-			animateMotion.setAttribute('path', path)
-
-			circle.appendChild(animateMotion)
-
-			return circle
-		})
-
-		if (svgRef.current && inView) {
-			circles.forEach(circle => {
-				svgRef.current?.appendChild(circle)
-			})
-
-			setTimeout(() => {
-				circles.forEach(_ => {
-					const animateMoves =
-						svgRef.current!.querySelectorAll('animateMotion')
-
-					if (animateMoves) {
-						animateMoves.forEach(animateMove => {
-							animateMove.beginElement()
-						})
-					}
-				})
-			}, 100)
-		}
-	}
-
 	useEffect(() => {
-		if (!inView && svgRef.current && typeof window !== 'undefined') {
-			while (svgRef.current.firstChild) {
-				svgRef.current.removeChild(svgRef.current.firstChild)
-			}
-		} else if (inView && svgRef.current && typeof window !== 'undefined')
-			createCircles()
+		const svg = svgRef.current
+
+		if (!svg || !inView) {
+			return
+		}
+
+		const circles = Array.from({ length: DOTS_COUNT }, (_, index) =>
+			createCircle(index)
+		)
+		circles.forEach(circle => svg.appendChild(circle))
+
+		const timeoutId = window.setTimeout(() => {
+			svg.querySelectorAll('animateMotion').forEach(animateMotion => {
+				;(animateMotion as SVGAnimationElement).beginElement()
+			})
+		}, 100)
+
+		return () => {
+			window.clearTimeout(timeoutId)
+			svg.replaceChildren()
+		}
 	}, [inView])
 
 	return (

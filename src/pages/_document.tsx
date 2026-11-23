@@ -1,10 +1,9 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 const Document = () => {
 	return (
 		<Html lang='en'>
 			<Head>
-				<title>Yuliia Tkachenko | Software Developer</title>
 				<meta
 					name='description'
 					content='Yuliia Tkachenko - Software Developer with more than 6 years of experience.'
@@ -62,7 +61,7 @@ const Document = () => {
 				/>
 				<meta
 					property='og:image'
-					content='/assets/images/opengraph-image.png'
+					content='https://www.yuliia-tkachenko.dev/assets/images/opengraph-image.png'
 				/>
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta
@@ -83,7 +82,7 @@ const Document = () => {
 				/>
 				<meta
 					name='twitter:image'
-					content='/assets/images/opengraph-image.png'
+					content='https://www.yuliia-tkachenko.dev/assets/images/opengraph-image.png'
 				/>
 			</Head>
 			<body>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 import { useColorScheme } from '@/context/ColorSchemeContext'
 import { generateRandomId } from '@/handlers/generateRandomId'
@@ -17,7 +17,7 @@ const BackgroundSvgFill: FC<PropsType> = ({
 	isWithGradient = true,
 }) => {
 	const { colorScheme } = useColorScheme()
-	const id = generateRandomId('backgroundFill', 5)
+	const [id] = useState(() => generateRandomId('backgroundFill', 5))
 	const gradientId = `grad-${id}`
 
 	return (
@@ -26,9 +26,12 @@ const BackgroundSvgFill: FC<PropsType> = ({
 			shapeRendering='geometricPrecision'
 			textRendering='geometricPrecision'
 			className={classNames(
-				`w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none opacity-${opacity}`,
+				'w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none',
 				className
 			)}
+			style={
+				opacity !== undefined ? { opacity: opacity / 100 } : undefined
+			}
 		>
 			<defs>
 				<linearGradient

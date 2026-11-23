@@ -1,6 +1,5 @@
-import { FC, useEffect, useRef, useState } from 'react'
 import { useColorScheme } from '@/context/ColorSchemeContext'
-import {debounce} from "next/dist/server/utils"
+import { FC, useEffect, useRef, useState } from 'react'
 
 type PropsType = {
 	text: string
@@ -24,11 +23,25 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 
 		updateSvgSize()
 
-		const debouncedUpdateSvgSize = debounce(updateSvgSize, 300)
+		let isActive = true
+		document.fonts?.ready.then(() => {
+			if (isActive) {
+				updateSvgSize()
+			}
+		})
+
+		let resizeTimeoutId: number | undefined
+
+		const debouncedUpdateSvgSize = () => {
+			window.clearTimeout(resizeTimeoutId)
+			resizeTimeoutId = window.setTimeout(updateSvgSize, 300)
+		}
 
 		window.addEventListener('resize', debouncedUpdateSvgSize)
 
 		return () => {
+			isActive = false
+			window.clearTimeout(resizeTimeoutId)
 			window.removeEventListener('resize', debouncedUpdateSvgSize)
 		}
 	}, [text])
@@ -36,7 +49,7 @@ const TextSVG: FC<PropsType> = ({ text }) => {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
-			className='h-full inline-block'
+			className='inline-block h-full'
 			width={svgSize.width}
 			height={svgSize.height}
 		>

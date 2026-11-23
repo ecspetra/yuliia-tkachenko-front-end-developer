@@ -55,7 +55,7 @@ const Education = () => {
 								ref={backgroundLinesShapeRef}
 								className='invisible -right-[60%] xl:-right-[30%] bottom-[60%] lg:bottom-[35%] z-10 absolute w-[100vw] sm:w-[70vw] 2xl:w-[900px] xl:w-[80vh] lg:max-w-[65vw] lg:max-h-[65vw]'
 							>
-								<BackgroundLinesShape className='top-1/2 left-1/2 absolute opacity-10 w-full -rotate-120 -translate-x-1/2 -translate-y-1/2' />
+								<BackgroundLinesShape className='top-1/2 left-1/2 absolute opacity-10 w-full -rotate-[120deg] -translate-x-1/2 -translate-y-1/2' />
 							</div>
 							<RadialGradientCircle
 								color='global-color-one'

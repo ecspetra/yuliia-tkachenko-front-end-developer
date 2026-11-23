@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useColorScheme } from '@/context/ColorSchemeContext'
 import { generateRandomId } from '@/handlers/generateRandomId'
 
@@ -12,7 +12,7 @@ const BackgroundGeometricShape: FC<PropsType> = ({
 	variant = '1',
 }) => {
 	const { colorScheme } = useColorScheme()
-	const id = generateRandomId('backgroundShape', 5)
+	const [id] = useState(() => generateRandomId('backgroundShape', 5))
 	const gradientId = `grad-${id}`
 
 	const getShape = () => {

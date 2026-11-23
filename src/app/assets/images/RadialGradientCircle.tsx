@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useColorScheme } from '@/context/ColorSchemeContext'
 import { generateRandomId } from '@/handlers/generateRandomId'
 
@@ -13,7 +13,7 @@ interface PropsType {
 
 const RadialGradientCircle: FC<PropsType> = ({ color, className }) => {
 	const { colorScheme } = useColorScheme()
-	const id = generateRandomId('circle', 5)
+	const [id] = useState(() => generateRandomId('circle', 5))
 	const gradientId = `grad-${id}`
 
 	const getColor = () => {

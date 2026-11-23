@@ -39,7 +39,7 @@ const Summary = () => {
 		<div className='w-screen overflow-hidden' id='summary'>
 			<div className='mx-auto px-6 py-20 2xl:py-60 xl:max-w-6xl container'>
 				<div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between gap-16 mx-auto mb-12 w-full'>
-					<div className='relative flex flex-grow items-end w-full max-w-full lg:max-w-1/2'>
+					<div className='relative flex flex-grow items-end w-full max-w-full lg:max-w-[50%]'>
 						<RadialGradientCircle
 							color='global-color-one'
 							className='top-1/2 left-1/2 absolute opacity-40 w-[110vw] lg:w-[800px] 2xl:w-[1300px] h-[110vw] lg:h-[800px] 2xl:h-[1300px] -translate-x-1/2 -translate-y-1/2'
@@ -78,7 +78,7 @@ const Summary = () => {
 							/>
 						</div>
 					</div>
-					<div className='z-40 relative w-full sm:w-[80%] lg:max-w-1/2 lg:text-left text-center'>
+					<div className='z-40 relative w-full sm:w-[80%] lg:max-w-[50%] lg:text-left text-center'>
 						<Title variant='h3'>Summary</Title>
 						<Title variant='h2'>About me</Title>
 						<div>
